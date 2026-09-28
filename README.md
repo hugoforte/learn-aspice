@@ -11,7 +11,7 @@ A self-paced course on the Automotive SPICE 4.1 process assessment model, taught
 - `learning-records/`: what has been learned, used to pick the next lesson
 - `assets/`: the stylesheet and quiz component every lesson shares
 
-Open a lesson file in a browser to take it.
+Take the lessons at <https://hugoforte.github.io/learn-aspice/>, or open a lesson file in a browser.
 
 ## About the source
 
