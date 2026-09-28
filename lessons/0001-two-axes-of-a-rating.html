@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1 · The two axes of a rating</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 1 · Automotive SPICE through rig</p>
+  <h1>The two axes of a rating</h1>
+  <p class="lede">You cannot ask "what level is rig?" By the end of this lesson you will know what to ask instead, and you will be able to turn a row of ratings into a capability level in your head.</p>
+</header>
+
+<h2>A grid, not a score</h2>
+
+<p>An Automotive SPICE assessment does not give an organisation one number. It fills in a grid with two axes<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=13">[PAM §3, p. 13]</a>:</p>
+
+<ul>
+  <li><strong>The process dimension</strong>: <em>which</em> processes are being looked at. These come from the <strong>process reference model</strong> (PRM): 30-odd named processes such as <code>MAN.3 Project Management</code>, <code>SUP.8 Configuration Management</code> or <code>SUP.10 Change Request Management</code>. Each one has a <em>purpose</em> and a list of <em>outcomes</em>, the observable results of achieving that purpose<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=14">[p. 14]</a>.</li>
+  <li><strong>The capability dimension</strong>: <em>how well</em> each process is run, as a <strong>capability level</strong> from 0 to 5. Each level is made up of <strong>process attributes</strong> (PAs), and each PA gets rated on its own<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=17">[§3.2.1, p. 17]</a>.</li>
+</ul>
+
+<p>The <strong>process assessment model</strong> (PAM) is the PRM plus <em>indicators</em>, meaning practices to look for and information items to look for. An assessor uses them to gather objective evidence and justify each rating<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=23">[§3.3, p. 23]</a>. So the output is a <em>capability profile</em>: one level per assessed process.</p>
+
+<div class="callout">
+  <p><strong>For rig, this changes the question.</strong> Asking "what level is rig?" has no answer. The answerable question is "when a team works through rig, what level does <em>its project management</em> reach? And its <em>configuration management</em>?" One rig can come out at level 2 on one process and level 0 on another.</p>
+</div>
+
+<h2>The PAM is a WHAT; rig is a HOW</h2>
+
+<p>The PAM describes three levels of abstraction for the word "process"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=26">[§3.3.3, Fig. 3, p. 26]</a>:</p>
+
+<table>
+  <tr><th>Level</th><th>What it holds</th><th>In rig's world</th></tr>
+  <tr><td class="id">WHAT</td><td>Goals of the process, why they matter, dependencies. This is where the PAM sits.</td><td>"Progress of the project is monitored and reported" (MAN.3 outcome 6)</td></tr>
+  <tr><td class="id">HOW</td><td>Methods, tools, templates, workflows, who is allowed to do what.</td><td>rig itself: the phase model, the gates, <code>AGENTS.md</code>'s rules, <code>DESIGN.md</code></td></tr>
+  <tr><td class="id">DOING</td><td>Performing the tasks with the method on a real piece of work.</td><td>One work: its <code>work.json</code>, its <code>context.md</code>, its PRs</td></tr>
+</table>
+
+<p>The PAM deliberately prescribes no lifecycle, no order and no document structure<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=26">[§3.3.4, pp. 26–27]</a>. Mapping a HOW such as rig onto the PAM's indicators is the assessor's job: they read the defined HOW, interview people about the DOING, inspect repositories, then rate. The rest of this course practises that mapping on rig.</p>
+
+<h2>Six levels, nine attributes</h2>
+
+<table>
+  <tr><th>Level</th><th>Name</th><th>Its process attributes</th></tr>
+  <tr><td class="id">0</td><td>Incomplete: the purpose is not achieved</td><td>none</td></tr>
+  <tr><td class="id">1</td><td>Performed: the purpose is achieved</td><td>PA 1.1 Process performance</td></tr>
+  <tr><td class="id">2</td><td>Managed: planned, monitored and adjusted, with work products controlled</td><td>PA 2.1 Performance management<br>PA 2.2 Work product management</td></tr>
+  <tr><td class="id">3</td><td>Established: run from a defined, organisation-wide process</td><td>PA 3.1 Process definition<br>PA 3.2 Process deployment</td></tr>
+  <tr><td class="id">4</td><td>Predictable: operates within quantitative limits</td><td>PA 4.1, PA 4.2</td></tr>
+  <tr><td class="id">5</td><td>Innovating: continually improved</td><td>PA 5.1, PA 5.2</td></tr>
+</table>
+<p class="aside">Source: Tables 3 and 4, <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=17">pp. 17–18</a>. This course stops at level 3.</p>
+
+<h3>Each attribute is rated N, P, L or F</h3>
+
+<table>
+  <tr><th>Rating</th><th>Achievement</th><th>Meaning</th></tr>
+  <tr><td class="id">N</td><td>0–15 %</td><td>little or no evidence</td></tr>
+  <tr><td class="id">P</td><td>&gt;15–50 %</td><td>some approach, some achievement; parts unpredictable</td></tr>
+  <tr><td class="id">L</td><td>&gt;50–85 %</td><td>systematic approach, significant achievement; some weaknesses</td></tr>
+  <tr><td class="id">F</td><td>&gt;85–100 %</td><td>complete and systematic; no significant weaknesses</td></tr>
+</table>
+<p class="aside">Source: Tables 5 and 6, <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=18">pp. 18–19</a>. P and L can be refined into P−/P+ and L−/L+.</p>
+
+<h3>The one rule that turns ratings into a level</h3>
+
+<div class="callout">
+  <p><strong>Level <em>n</em> is reached when every attribute of level <em>n</em> is rated L or F, and every attribute below level <em>n</em> is rated F.</strong><a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=22">[§3.2.4, Table 9, p. 22]</a></p>
+</div>
+
+<p>"Largely" is good enough for the top level you claim but not for the levels underneath it. A process with PA 1.1 at L can never be level 2, however well it is managed: the foundation is still missing some of its outcomes.</p>
+
+<h2>Practice</h2>
+
+<section class="drill">
+  <h3>A. Ratings in, level out</h3>
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="1" data-why="Level 2 needs PA 1.1 rated F. It is only L here, so the excellent management counts for nothing yet: level 1.">
+    <p class="q">PA 1.1 L · PA 2.1 F · PA 2.2 F</p>
+    <button data-choice="0">Level 0</button><button data-choice="1">Level 1</button><button data-choice="2">Level 2</button><button data-choice="3">Level 3</button>
+  </div>
+
+  <div class="mcq" data-answer="2" data-why="Level 3 needs both level-2 attributes rated F, and they are only L. The level-2 rule (1.1 at F, 2.x at L or F) holds, so the answer is level 2.">
+    <p class="q">PA 1.1 F · PA 2.1 L · PA 2.2 L · PA 3.1 F · PA 3.2 F</p>
+    <button data-choice="0">Level 0</button><button data-choice="1">Level 1</button><button data-choice="2">Level 2</button><button data-choice="3">Level 3</button>
+  </div>
+
+  <div class="mcq" data-answer="0" data-why="Level 1 needs PA 1.1 rated at least L. P means the purpose is only partly achieved, so the process is incomplete: level 0.">
+    <p class="q">PA 1.1 P · PA 2.1 L · PA 2.2 L</p>
+    <button data-choice="0">Level 0</button><button data-choice="1">Level 1</button><button data-choice="2">Level 2</button><button data-choice="3">Level 3</button>
+  </div>
+
+  <div class="mcq" data-answer="3" data-why="Everything below level 3 is F, and both level-3 attributes are at least L. That gives level 3.">
+    <p class="q">PA 1.1 F · PA 2.1 F · PA 2.2 F · PA 3.1 L · PA 3.2 L</p>
+    <button data-choice="0">Level 0</button><button data-choice="1">Level 1</button><button data-choice="2">Level 2</button><button data-choice="3">Level 3</button>
+  </div>
+
+  <div class="mcq" data-answer="1" data-why="PA 1.1 is F, but PA 2.2 at P fails level 2's need for L or F on both of its attributes. That leaves level 1.">
+    <p class="q">PA 1.1 F · PA 2.1 F · PA 2.2 P</p>
+    <button data-choice="0">Level 0</button><button data-choice="1">Level 1</button><button data-choice="2">Level 2</button><button data-choice="3">Level 3</button>
+  </div>
+
+  <div class="mcq" data-answer="L" data-why="&gt;50–85 % is L. The boundaries are 15, 50 and 85, and each band excludes its lower bound.">
+    <p class="q">An assessor judges PA 2.1 to be about 70 % achieved. What is the rating?</p>
+    <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>B. WHAT, HOW or DOING?</h3>
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="what" data-why="It is an outcome from the PRM, a goal with no method attached. That puts it in the WHAT.">
+    <p class="q">"Progress of the project is monitored and reported."</p>
+    <button data-choice="what">WHAT</button><button data-choice="how">HOW</button><button data-choice="doing">DOING</button>
+  </div>
+
+  <div class="mcq" data-answer="how" data-why="It is a method: a lifecycle rig defines. Note that MAN.3.BP2 asks for a lifecycle to be defined without saying what it should be, and rig's phase model is one answer to that.">
+    <p class="q">rig's phase model: planning → designing → building → reviewing → landing.</p>
+    <button data-choice="what">WHAT</button><button data-choice="how">HOW</button><button data-choice="doing">DOING</button>
+  </div>
+
+  <div class="mcq" data-answer="doing" data-why="It is one performance of the method on one real piece of work, the kind of repository content an assessor samples as evidence.">
+    <p class="q">The <code>context.md</code> of a single closed work, with its ✅ CONFIRMED markers.</p>
+    <button data-choice="what">WHAT</button><button data-choice="how">HOW</button><button data-choice="doing">DOING</button>
+  </div>
+
+  <div class="mcq" data-answer="what" data-why="Base practices are PAM indicators. They say what to achieve and never how to achieve it.">
+    <p class="q">MAN.3.BP2: "Define the project lifecycle."</p>
+    <button data-choice="what">WHAT</button><button data-choice="how">HOW</button><button data-choice="doing">DOING</button>
+  </div>
+
+  <div class="mcq" data-answer="how" data-why="It is a rule of rig's method, so it belongs in the HOW. Whether the works actually obey it shows up in the DOING.">
+    <p class="q">AGENTS.md: "Never write derived state into a doc."</p>
+    <button data-choice="what">WHAT</button><button data-choice="how">HOW</button><button data-choice="doing">DOING</button>
+  </div>
+
+  <div class="mcq" data-answer="doing" data-why="A specific command on a specific day that left a <code>designedAt</code> in one work's record. That is evidence of the method being performed.">
+    <p class="q"><code>rig save --designed</code> run on one work on 2026-09-16.</p>
+    <button data-choice="what">WHAT</button><button data-choice="how">HOW</button><button data-choice="doing">DOING</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>C. From memory</h3>
+  <div class="recall">
+    <p>Close the page above in your mind. State the rule that turns PA ratings into a capability level.</p>
+    <textarea></textarea>
+    <div class="model"><p>Level <em>n</em> requires every PA of level <em>n</em> rated L or F, and every PA of the levels below rated F.</p></div>
+  </div>
+  <div class="recall">
+    <p>A colleague asks, "So what ASPICE level is rig?" In two sentences, what do you answer?</p>
+    <textarea></textarea>
+    <div class="model"><p>ASPICE rates processes (say MAN.3 or SUP.8), not tools, and gives each one its own level. rig is a HOW: an assessor would map what rig does, and the records the works left behind, onto each process's indicators and rate the processes it covers.</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>Your win:</strong> you can read a capability profile and check that it adds up, and you know that rating rig means choosing <em>processes</em> first. Next lesson: read one process, MAN.3 Project Management, and hold its outcomes against a real rig work. That is PA 1.1, the foundation every higher level depends on.</p>
+</div>
+
+<h2>Read next</h2>
+<p>The primary source: <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=13">Automotive SPICE PAM 4.1 (Preview), chapter 3, pp. 13–27</a>. It is fifteen pages and it is the whole model in miniature. Figures 1 and 4 are the ones worth studying.</p>
+
+<p class="aside">Anything unclear, or an objection to the rig mappings above? Ask your teacher (the agent) in the chat. Disagreeing with where something is placed on WHAT/HOW/DOING is a good thing to bring up.</p>
+
+<footer>
+  <nav>
+    <a href="../reference/capability-levels.html">Reference: capability levels</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
