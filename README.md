@@ -6,8 +6,8 @@ Take the course at <https://hugoforte.github.io/learn-aspice/>, or open `index.h
 
 ## Contents
 
-- `lessons/`: nine self-contained HTML lessons, each with a warm-up, a cited explanation and instant-feedback practice
-- `reference/`: printable sheets covering capability levels, process cards, generic practices, assessment rules and the glossary
+- `lessons/`: thirteen self-contained HTML lessons (nine core, four on automation and AI), each with a warm-up, a cited explanation and instant-feedback practice
+- `reference/`: printable sheets covering capability levels, process cards, generic practices, assessment rules, common misconceptions and the glossary
 - `assets/`: the stylesheet, quiz component and diagram that every page shares
 - [MISSION.md](MISSION.md): what the course is for and what success looks like
 - [RESOURCES.md](RESOURCES.md): the sources lessons draw on, and where to find practising assessors

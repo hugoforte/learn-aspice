@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11 · Lifecycles, gates and approvals</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 11 of 13 · Automation and AI · Automotive SPICE, the vital 20 %</p>
+  <h1>Lifecycles, gates and approvals</h1>
+  <p class="lede">ASPICE defines no phases, so no gate model can "map to the phases of the V". What a gate model can do is leave exactly the records an assessor looks for. This lesson shows which records.</p>
+</header>
+
+<section class="drill warmup">
+  <p class="score"></p>
+  <div class="mcq" data-answer="consistency" data-why="A structural checker shows the links are sound. Whether linked items agree is consistency, and that needs a semantic check.">
+    <p class="q">Which of the two can a structural traceability check <em>not</em> establish?</p>
+    <button data-choice="traceability">Traceability</button><button data-choice="consistency">Consistency</button>
+  </div>
+  <div class="mcq" data-answer="2.2.4" data-why="Reviewing work products against defined criteria and resolving the findings is GP 2.2.4.">
+    <p class="q">A reviewer checks an architecture record against a checklist and closes two findings. Which GP?</p>
+    <button data-choice="2.1.5">GP 2.1.5</button><button data-choice="2.2.2">GP 2.2.2</button><button data-choice="2.2.3">GP 2.2.3</button><button data-choice="2.2.4">GP 2.2.4</button>
+  </div>
+</section>
+
+<h2>ASPICE has processes, not phases</h2>
+
+<p>A PRM/PAM "neither predefines, nor discourages, any order in which PRM processes or Base Practices are to be performed"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=26">[PAM §3.3.4, pp. 26–27]</a>. Order belongs to the lifecycle a project defines, which is its answer to MAN.3.BP2 "Define the project lifecycle". The V is a picture of which work products must be consistent and traceable with which. It is not a sequence of phases. So:</p>
+
+<ul>
+  <li><strong>A stage-gate model is a lifecycle, a HOW.</strong> It can be a strong one, and the assessor maps it onto the indicators like any other.</li>
+  <li><strong>Iteration is allowed.</strong> Agile methods "cannot, by definition, contradict" ASPICE<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=78">[Guidelines §2.5.2, p. 76]</a>. Going back through a gate is not a deviation.</li>
+  <li><strong>Plans must still meet the customer's release planning.</strong> Significant gaps there downrate MAN.3.BP4, BP9 and SPL.2.BP1 (AGE.RL.1)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=79">[p. 77]</a>.</li>
+</ul>
+
+<h2>A new process for the course: SPL.2 Product Release</h2>
+
+<p>It is flex, not base, but it is the process a final gate most often lands in. Purpose: "to control the release of a product to the intended customer". Its BPs define release content and criteria, define the package, identify each release uniquely, build it "from items under configuration control", ensure approval before delivery, provide a release note, state the support terms, and deliver<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=30">[PAM pp. 30–32]</a>. The approval record, <code>13-13 Product release approval</code>, identifies the release date and "name and role of approver"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=138">[Annex B, p. 138]</a>.</p>
+
+<h2>Seat-Heat's gates, and where each lands</h2>
+
+<table>
+  <tr><th>Seat-Heat gate</th><th>ASPICE home</th><th>Record it should leave</th></tr>
+  <tr><td class="id">Scope agreed</td><td>MAN.3.BP1 scope, BP3 feasibility; SYS.1 elicitation</td><td>Scope of work (<code>08-53</code>), who confirmed it, when</td></tr>
+  <tr><td class="id">Requirements agreed</td><td>SYS.2 / SWE.1; for a change, SUP.10.BP2–BP3</td><td>Analysed requirements; impact analysis covering side effects</td></tr>
+  <tr><td class="id">Plan and design agreed</td><td>SYS.3 / SWE.2; MAN.3.BP4/BP8; GP 2.1.2–2.1.4</td><td>Approved plan, named responsibilities</td></tr>
+  <tr><td class="id">Candidate frozen</td><td>SUP.8.BP5 baseline; SWE.3.BP4 design ↔ units</td><td>Baseline (<code>13-08</code>)</td></tr>
+  <tr><td class="id">Verified</td><td>SWE.4–SWE.6 and their traceability BPs</td><td>Results traced to measures</td></tr>
+  <tr><td class="id">Ready to release</td><td>SUP.8.BP7 complete, consistent baseline; SUP.9 open problems</td><td>Manifest and open-problem list</td></tr>
+  <tr><td class="id">Released</td><td>SPL.2.BP4–BP8; SUP.10.BP5 confirmation</td><td>Approval (<code>13-13</code>), release note (<code>11-03</code>)</td></tr>
+</table>
+<p class="aside">SUP.8.BP7's note says that a baseline's completeness and consistency "can be used to support, e.g., project gate approval"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=82">[p. 82]</a>. The mapping above is this course's; an assessor makes their own.</p>
+
+<h3>Two things gates are often credited with, wrongly</h3>
+<ul>
+  <li><strong>Requirements analysis happens in SYS.2 and SWE.1, not SYS.1.</strong> SYS.1 is Requirements <em>Elicitation</em>.</li>
+  <li><strong>Independent verification is not an ASPICE demand.</strong> In PAM 4.1 only quality assurance must be independent (SUP.1.BP1, "no self-monitoring")<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=79">[p. 79]</a>. Independence requirements for verification come from functional safety standards such as ISO 26262. Keep them if you need them, but credit the right standard.</li>
+</ul>
+
+<h2>Practice</h2>
+
+<section class="drill">
+  <p class="score"></p>
+  <div class="mcq" data-answer="SPL.2" data-why="Approving a release against defined criteria before delivery is SPL.2.BP5; 13-13 is the approval record.">
+    <p class="q">The final "Released" gate approval is primarily evidence for…</p>
+    <button data-choice="MAN.3">MAN.3</button><button data-choice="SPL.2">SPL.2</button><button data-choice="SUP.9">SUP.9</button><button data-choice="SWE.6">SWE.6</button>
+  </div>
+  <div class="mcq" data-answer="no" data-why="The PAM prescribes no order. Going back from Verified to Built is ordinary iteration inside the team's own lifecycle.">
+    <p class="q">A feature goes back from "Verified" to "Built" after a failed test. Is that a deviation from ASPICE?</p>
+    <button data-choice="yes">Yes</button><button data-choice="no">No</button>
+  </div>
+  <div class="mcq" data-answer="flex" data-why="VAL.1 and SPL.2 are both in the flex/optional set, outside the recommended VDA Scope.">
+    <p class="q">In the recommended VDA Scope, VAL.1 Validation is…</p>
+    <button data-choice="base">Base</button><button data-choice="plugin">Plug-in</button><button data-choice="flex">Flex</button>
+  </div>
+  <div class="mcq" data-answer="role" data-why="13-13 identifies the release date and the name and role of the approver. An account ID alone is weaker evidence.">
+    <p class="q">Besides the decision and date, what must a release approval record carry to match 13-13?</p>
+    <button data-choice="hash">Content digest</button><button data-choice="role">Approver role</button><button data-choice="model">Tool version</button>
+  </div>
+  <div class="mcq" data-answer="sup1" data-why="Only SUP.1 (quality assurance) requires independence in PAM 4.1. Independent verification is a functional-safety demand.">
+    <p class="q">Which ASPICE process explicitly requires independence?</p>
+    <button data-choice="swe6">SWE.6</button><button data-choice="sup1">SUP.1</button><button data-choice="spl2">SPL.2</button>
+  </div>
+</section>
+
+<section class="drill">
+  <div class="recall">
+    <p>Someone says, "Our gates map to the ASPICE V-model phases." Correct them in two sentences.</p>
+    <textarea></textarea>
+    <div class="model"><p>ASPICE defines no phases or order; the V shows which work products must be consistent and traceable with which. The gates are our lifecycle (the HOW), and each should leave the records an assessor looks for: baselines, approvals with name and role, and traced verification results.</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>Your win:</strong> you can present any stage-gate lifecycle for what it is and point to the evidence each gate should leave behind.</p>
+</div>
+
+<h2>Read next</h2>
+<p><a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=30">SPL.2 Product Release, PAM pp. 30–32</a>, and its rating rules in the <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=115">Guidelines §3.2, pp. 113–114</a>.</p>
+
+<footer>
+  <nav class="pager">
+    <a href="0010-automated-checks.html">← Lesson 10: Automated checks</a>
+    <a href="0012-ai-generated-work-products.html">Lesson 12: AI-generated work products →</a>
+  </nav>
+  <nav>
+    <a href="../reference/misconceptions.html">Misconceptions</a>
+    <a href="../reference/glossary.html">Glossary</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

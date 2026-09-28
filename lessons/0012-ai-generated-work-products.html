@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12 · AI-generated work products</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 12 of 13 · Automation and AI · Automotive SPICE, the vital 20 %</p>
+  <h1>AI-generated work products under assessment</h1>
+  <p class="lede">When agents draft the requirements, the code and the tests, what does an assessor look at? The VDA Guidelines answer directly, and the answer is mostly "the same things, plus configuration management of the AI itself".</p>
+</header>
+
+<section class="drill warmup">
+  <p class="score"></p>
+  <div class="mcq" data-answer="SPL.2" data-why="Approval of a release against defined criteria before delivery is SPL.2.BP5.">
+    <p class="q">A release approval naming approver and role is evidence for…</p>
+    <button data-choice="MAN.3">MAN.3</button><button data-choice="SPL.2">SPL.2</button><button data-choice="SUP.9">SUP.9</button><button data-choice="SWE.6">SWE.6</button>
+  </div>
+  <div class="mcq" data-answer="ignore" data-why="Plausibility check (lesson 8): created shortly before the assessment with no plausible reason, so not considered.">
+    <p class="q">A design document first appears in the repo four days before the assessment. The assessor…</p>
+    <button data-choice="accept">Credits it</button><button data-choice="ignore">Ignores it</button>
+  </div>
+</section>
+
+<h2>Seat-Heat adopts coding agents</h2>
+
+<div class="evidence">Agents draft software requirements from customer specifications, write code, and generate unit and HIL test specifications.
+Engineers review each agent pull request before merging.
+Which model, version and settings produced a change is not recorded; prompts live in engineers' chat histories.
+At the end of the release, an agent writes the missing design documentation from the code.</div>
+
+<h2>What the Guidelines say</h2>
+
+<p>The Guidelines' section on AI assistance starts from the WHAT/HOW split: "there is no limitation or recommendation regarding tool usage", and using an AI tool "is a how-level decision". The assessor still rates the WHAT<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=100">[Guidelines §2.5.5, p. 98]</a>. Their worked example: a developer generates code with an AI tool, reviews it against the detailed design and the coding guidelines, and corrects it. The assessor spot-checks, and "if no deviations are found, there is no negative impact on the rating"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=100">[p. 98]</a>.</p>
+
+<p>Then the warning: AI tools produce "less accurate and sometimes even unusable results … just as often as good ones", so "the assessed organization shall ensure with clear criteria that risks from AI engineering tools will be adequately handled", whether through review, test-driven development or another approach<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=101">[p. 99]</a>. The Guidelines name SUP.8, SUP.1 and PA 2.2 as the places this reaches, with examples<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=101">[p. 99]</a>:</p>
+
+<ul>
+  <li>new configuration items, such as the prompts used to generate source code;</li>
+  <li>a maintained list of development tools, including approval of specific AI tools;</li>
+  <li>version control of "AI tools, models, and settings, because their behavior changes over time";</li>
+  <li>input and output work products of AI assistance under quality control.</li>
+</ul>
+
+<h2>Four consequences worth designing for</h2>
+
+<table>
+  <tr><th>Concern</th><th>Where ASPICE puts it</th></tr>
+  <tr><td class="id">Reproducibility</td><td>Model, version, settings and prompt as configuration items: SUP.8.BP1–BP4, GP 2.2.3.</td></tr>
+  <tr><td class="id">Clear criteria for AI output</td><td>Review and quality criteria (GP 2.2.1), reviews against them (GP 2.2.4); SUP.1.BP2–BP3.</td></tr>
+  <tr><td class="id">Who may approve</td><td>ASPICE doesn't name a role. It asks that responsibilities and authorities are defined (GP 2.1.3). For changes, the Guidelines expect the approving body to include all relevant stakeholders "with the necessary authority to take decisions"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=211">[§3.26.2.3, p. 209]</a>.</td></tr>
+  <tr><td class="id">Evidence written after the fact</td><td>The plausibility check: documents made shortly before an assessment are not considered, and histories should match the work's rhythm<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=40">[§1.4.3.2, p. 38]</a>. AI makes it cheap to generate plausible documents late, and an assessor looking at the history will notice.</td></tr>
+</table>
+
+<div class="callout">
+  <p><strong>Self-review is a design question, not an ASPICE rule.</strong> GP 2.2.4 asks for reviews against criteria, not independent ones. Only SUP.1 requires independence, "no self-monitoring"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=79">[p. 79]</a>. An agent that checks its own output against the criteria is doing verification, not quality assurance, and it cannot stand in for SUP.1. Making the reviewer differ from the producer is sound practice. Present it as your choice, not as ASPICE's demand.</p>
+</div>
+
+<h2>Practice</h2>
+
+<section class="drill">
+  <p class="score"></p>
+  <div class="mcq" data-answer="sup8" data-why="The Guidelines name version control of AI tools, models and settings as a configuration management concern: SUP.8 (and PA 2.2).">
+    <p class="q">Seat-Heat doesn't record which model and settings produced a change. Which process does that hit first?</p>
+    <button data-choice="man3">MAN.3</button><button data-choice="sup8">SUP.8</button><button data-choice="sup9">SUP.9</button><button data-choice="swe3">SWE.3</button>
+  </div>
+  <div class="mcq" data-answer="no" data-why="The Guidelines' own example: AI-generated code, reviewed and corrected against the design, with spot checks finding no deviations, has no negative impact on the rating.">
+    <p class="q">Does using an agent to write code, by itself, lower SWE.3's PA 1.1?</p>
+    <button data-choice="yes">Yes</button><button data-choice="no">No</button>
+  </div>
+  <div class="mcq" data-answer="risk" data-why="The design documentation appears at the end, generated from the code. That is exactly what plausibility checks catch, and a design reverse-engineered from code can't show the code was built consistent with a design.">
+    <p class="q">An agent writes the missing design documents from the code at release end. The main assessment risk is…</p>
+    <button data-choice="cost">Wasted effort</button><button data-choice="risk">Implausible evidence</button><button data-choice="none">No real risk</button>
+  </div>
+  <div class="mcq" data-answer="ci" data-why="The Guidelines list prompts used to generate source code as possible new configuration items.">
+    <p class="q">Prompts that generate code are, according to the Guidelines' examples, candidates for…</p>
+    <button data-choice="ci">Configuration items</button><button data-choice="req">Software requirements</button><button data-choice="test">Verification measures</button>
+  </div>
+  <div class="mcq" data-answer="no" data-why="Only SUP.1 must be independent. An agent reviewing its own output can support GP 2.2.4, but it is not quality assurance and cannot satisfy SUP.1.BP1.">
+    <p class="q">Can an agent's self-check of its own output count as SUP.1 quality assurance?</p>
+    <button data-choice="yes">Yes</button><button data-choice="no">No</button>
+  </div>
+</section>
+
+<section class="drill">
+  <div class="recall">
+    <p>List three things Seat-Heat should put under configuration management now that agents write code.</p>
+    <textarea></textarea>
+    <div class="model"><p>The prompts (or task instructions) that generate work products; the AI tools, models and their versions and settings; and the approved-tool list. Also keep the inputs and outputs of AI assistance under quality control.</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>Your win:</strong> you can set up AI-assisted development so its output is assessable, and you know which of your safeguards are ASPICE demands and which are your own choices.</p>
+</div>
+
+<h2>Read next</h2>
+<p><a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=100">Guidelines §2.5.5 AI assistance in development, pp. 98–100</a>. It's four pages and the most current thing VDA has said on the topic.</p>
+
+<footer>
+  <nav class="pager">
+    <a href="0011-lifecycles-gates-and-approvals.html">← Lesson 11: Lifecycles, gates and approvals</a>
+    <a href="0013-red-pen.html">Lesson 13: Red pen →</a>
+  </nav>
+  <nav>
+    <a href="../reference/misconceptions.html">Misconceptions</a>
+    <a href="../reference/glossary.html">Glossary</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

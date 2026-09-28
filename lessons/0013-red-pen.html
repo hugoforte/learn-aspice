@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13 · Red pen: correct the brochure</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 13 of 13 · Automation and AI · Automotive SPICE, the vital 20 %</p>
+  <h1>Red pen: correct the brochure</h1>
+  <p class="lede">Claims about ASPICE in slide decks, blog posts and product pages are often slightly wrong in the same few ways. Here is an invented brochure for an AI engineering tool. Mark each claim, then check yourself against the sources.</p>
+</header>
+
+<p>The brochure is fictional and so is its tool. Some claims are right. This is interleaved practice across the whole course, so answer each one from memory before reading the explanation.</p>
+
+<section class="drill">
+  <h3>The brochure, claim by claim</h3>
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="wrong" data-why="The 4.1 reference model has no SEC processes; ISO/SAE 21434 appears only among its reference standards. Cybersecurity has its own VDA model, and the Guidelines say that volume &quot;remains a separate document&quot; (Guidelines preface, p. 4).">
+    <p class="q">"ASPICE 4.1 brings cybersecurity into the model with the new SEC.1–SEC.4 processes."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="wrong" data-why="Process attributes are rated N/P/L/F. Capability levels 0–5 are derived from those ratings by the level rule (lesson 1).">
+    <p class="q">"Our dashboard rates every process attribute from Level 0 to Level 5."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="wrong" data-why="The consistency and traceability BPs are base practices, so they count at level 1 (PA 1.1). Only traceability within one process's own work products is level-2 territory (GP 2.2.2) (lesson 4).">
+    <p class="q">"Bidirectional traceability is what lifts you to Level 2."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="wrong" data-why="Links don't prove that the items agree (SWE.1.BP5 note 11), assessors check content by hand, and compliance is an assessor's judgement about a process (lesson 10).">
+    <p class="q">"When our traceability check is green, compliance is proven."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="wrong" data-why="The PAM &quot;neither predefines, nor discourages, any order&quot;. The V shows consistency and traceability relationships, not phases. Gates are the team's lifecycle, a HOW (lesson 11).">
+    <p class="q">"Our release gates follow the phases of the ASPICE V-model."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="wrong" data-why="SYS.1 is Requirements Elicitation. System requirements are analysed in SYS.2 (lesson 3).">
+    <p class="q">"We check every system requirement in SYS.1 for atomicity."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="wrong" data-why="In PAM 4.1, only quality assurance must be independent (SUP.1.BP1). Independent verification comes from functional safety standards such as ISO 26262 (lesson 11).">
+    <p class="q">"ASPICE requires verification to be performed independently of development."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="wrong" data-why="An assessment rates an organisation's processes. A tool can supply evidence for specific practices, but it has no level of its own and confers none (lesson 1).">
+    <p class="q">"Adopt our tool and your projects are ASPICE Level 2."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="wrong" data-why="SWE.6.BP4 traces verification measures to the software requirements, and results to measures. There is no ASPICE trace from SWE.6 to &quot;risk mitigation&quot;.">
+    <p class="q">"Every software verification result traces back to the risk it mitigates, as SWE.6 requires."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="right" data-why="The Guidelines list tools that enforce workflows, automated workflows and CI among valid forms of a process performance strategy (lesson 5).">
+    <p class="q">"Tool-enforced workflows and CI can serve as your process performance strategy at Level 2."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="right" data-why="The plausibility check: without a plausible reason, a document first created shortly before the assessment should not be considered (lesson 8).">
+    <p class="q">"Evidence written up just before the assessment may be disregarded, so we capture it as the work happens."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="wrong" data-why="SWE.1.BP5 note 10: some non-functional requirements legitimately have no software requirement tracing to them, and are still verified. An orphan rule needs a justified exception.">
+    <p class="q">"Every requirement must have a downstream link; anything without one is an error."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="right" data-why="The Guidelines treat AI use as a HOW-level choice. The assessor rates the WHAT, spot-checks the output, and looks at configuration management of the tools, models and settings (lesson 12).">
+    <p class="q">"Using AI to write code doesn't lower your rating by itself; how you control and check its output does."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>Rewrite it</h3>
+  <div class="recall">
+    <p>Rewrite "When our traceability check is green, compliance is proven" so that it is true and still a selling point.</p>
+    <textarea></textarea>
+    <div class="model"><p>"Every commit is checked for complete, well-formed trace links, and every change leaves a recorded review, so your assessor finds traceability evidence and consistency evidence captured as the work happened."</p></div>
+  </div>
+  <div class="recall">
+    <p>Rewrite "Adopt our tool and your projects are ASPICE Level 2" the same way.</p>
+    <textarea></textarea>
+    <div class="model"><p>"The tool produces evidence for the level 2 practices your assessor will look at (planned and monitored work, controlled and reviewed work products, baselines), so a well-run project can show it is managed."</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>Your win:</strong> you can read anything written about ASPICE, spot the usual mistakes, and fix them without losing the point being made. The <a href="../reference/misconceptions.html">misconceptions sheet</a> keeps the list, with sources.</p>
+</div>
+
+<p class="aside">Found a claim in the wild you're unsure about? Paste it to your teacher (the agent) and check it against the PAM together.</p>
+
+<footer>
+  <nav class="pager">
+    <a href="0012-ai-generated-work-products.html">← Lesson 12: AI-generated work products</a>
+    <a href="../index.html">Course index →</a>
+  </nav>
+  <nav>
+    <a href="../reference/misconceptions.html">Misconceptions</a>
+    <a href="../reference/glossary.html">Glossary</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

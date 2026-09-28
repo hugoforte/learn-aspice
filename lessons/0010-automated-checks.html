@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10 · Automated checks: structure, not consistency</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 10 of 13 · Automation and AI · Automotive SPICE, the vital 20 %</p>
+  <h1>Automated checks: structure, not consistency</h1>
+  <p class="lede">Put requirements, architecture and tests in Git with trace links, and a CI job can check the whole graph on every commit. That's a real gain. This lesson is about exactly how much such a check establishes, and how much it doesn't.</p>
+</header>
+
+<section class="drill warmup">
+  <p class="score"></p>
+  <div class="mcq" data-answer="L1" data-why="The consistency and traceability BPs belong to the engineering processes' base practices, so they feed PA 1.1: level 1.">
+    <p class="q">At which capability level do the SYS/SWE "consistency and traceability" base practices count?</p>
+    <button data-choice="L1">Level 1</button><button data-choice="L2">Level 2</button><button data-choice="L3">Level 3</button>
+  </div>
+  <div class="mcq" data-answer="ok" data-why="TAC.RL.1: tracing between reasonable clusters shall not be downrated.">
+    <p class="q">Components trace to groups of requirements rather than to each one. Acceptable, or a weakness?</p>
+    <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
+  </div>
+</section>
+
+<h2>Seat-Heat goes docs-as-code</h2>
+
+<div class="evidence">Every requirement, architecture element, test specification and test result is a Markdown file in Git.
+Each file's front-matter holds an ID, the ASPICE process it belongs to (SWE.1, SWE.2, …) and a list of IDs it traces to.
+A CI job runs on every pull request and blocks the merge if any check fails:
+  1. every referenced ID exists;
+  2. each record has the parent its type requires (a unit test must trace to a unit, and so on);
+  3. links only join legal pairs of record types;
+  4. records nobody traces to are flagged;
+  5. IDs are unique and front-matter is well-formed;
+  6. each requirement states one "shall", follows a sentence template, and isn't empty.</div>
+
+<h2>What each check supports</h2>
+
+<table>
+  <tr><th>Check</th><th>Supports</th><th>Watch out for</th></tr>
+  <tr><td class="id">1 references resolve</td><td>The traceability BPs; SUP.8.BP7 consistency of baseline information.</td><td>Nothing: pure gain.</td></tr>
+  <tr><td class="id">2 required parent</td><td>The traceability BPs.</td><td>The required parent depends on context. In software-only development, software requirements trace to <em>stakeholder</em> requirements<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=45">[SWE.1.BP5 note 12, p. 45]</a>.</td></tr>
+  <tr><td class="id">3 legal pairs</td><td>The V's pairings, e.g. unit verification ↔ units (SWE.4.BP4). "Redundant traceability is not intended" (note 9).</td><td>Don't forbid edges the PAM asks for. SWE.3.BP4 includes traceability from the detailed design to the <strong>software requirements</strong><a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=49">[p. 49]</a>.</td></tr>
+  <tr><td class="id">4 orphans</td><td>Coverage, one of the benefits the Guidelines list for traceability<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=59">[§2.3.4.2, p. 57]</a>.</td><td>Some items legitimately have no downstream link. Non-functional system requirements the software doesn't trace to "are still subject to verification" (SWE.1.BP5 note 10). Allow a recorded justification.</td></tr>
+  <tr><td class="id">5 IDs and metadata</td><td>Identification, storage and control: GP 2.2.2/2.2.3; SUP.8.BP1/BP2.</td><td>That's <em>level 2</em> evidence, not level 1.</td></tr>
+  <tr><td class="id">6 requirement wording</td><td>Requirement characteristics (SWE.1.BP1 notes 1–2: ISO 29148, INCOSE) and GP 2.2.1 quality criteria.</td><td>The PAM's examples are verifiability, unambiguity, freedom from design and non-contradiction. A sentence template like EARS is a HOW, not an ASPICE demand.</td></tr>
+</table>
+
+<h3>Stricter than ASPICE is fine; just don't say ASPICE demands it</h3>
+<p>The Guidelines protect lighter approaches with "shall not be downrated" rules: cluster-level tracing (TAC.RL.1), manual snapshot checks (TAC.RL.2), and consistency shown through pair work or commit comments without formal review records (TAC.RL.3)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=60">[§2.3.4.3–5, pp. 58–60]</a>. An automated, atomic, merge-blocking checker goes beyond all of them. That's a sound engineering choice, but it is not what the model requires.</p>
+
+<h2>What no structural check can establish</h2>
+
+<div class="callout">
+  <p>"Traceability alone, e.g., the existence of links, does not necessarily mean that the information is consistent."<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=45">[SWE.1.BP5 note 11, p. 45]</a> A green CI run proves the graph is well-formed. It does not prove the architecture implements the requirement or that the test tests it, and assessors check exactly that content<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=41">[Guidelines §1.4.3.3, p. 39]</a>. Nor does it prove compliance: that is an assessor's judgement about a process.</p>
+</div>
+
+<p>Consistency needs a semantic check, and the repository has to show one happened. Information item <code>13-51 Consistency evidence</code> accepts pair or group work, revision histories and repository meta-information showing corrections made against other documents<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=57">[Guidelines §2.3.4.1, pp. 55–56]</a>. For Seat-Heat, the natural fit is a reviewer approving the pull request that changes a requirement <em>and</em> its linked tests, with the review recorded.</p>
+
+<h2>Practice</h2>
+
+<section class="drill">
+  <p class="score"></p>
+  <div class="mcq" data-answer="consistency" data-why="Every link resolves and every pairing is legal, so CI is green. But the two items disagree, and only a semantic check catches that.">
+    <p class="q">CI is green. A SWE.6 test checks a 90 s ramp; the requirement it traces to now says 60 s. What failed?</p>
+    <button data-choice="traceability">Traceability</button><button data-choice="consistency">Consistency</button>
+  </div>
+  <div class="mcq" data-answer="wrong" data-why="SWE.3.BP4 asks for traceability from detailed design to software requirements. Blocking that edge rejects a structure the PAM asks for.">
+    <p class="q">A new rule blocks any detailed-design record (SWE.3) that traces to a software requirement (SWE.1).</p>
+    <button data-choice="supports">Supports</button><button data-choice="beyond">Beyond</button><button data-choice="wrong">Wrong</button>
+  </div>
+  <div class="mcq" data-answer="beyond" data-why="TAC.RL.1 allows reasonable clusters. Requiring atomic links is stricter than ASPICE: fine as a choice, but not an ASPICE demand.">
+    <p class="q">A rule forbids cluster-level links: every requirement must be traced individually.</p>
+    <button data-choice="supports">Supports</button><button data-choice="beyond">Beyond</button><button data-choice="wrong">Wrong</button>
+  </div>
+  <div class="mcq" data-answer="supports" data-why="Unique identification and control of work products is GP 2.2.2/2.2.3 and SUP.8.BP1: level-2 evidence.">
+    <p class="q">CI blocks two records that share an ID.</p>
+    <button data-choice="supports">Supports</button><button data-choice="beyond">Beyond</button><button data-choice="wrong">Wrong</button>
+  </div>
+  <div class="mcq" data-answer="wrong" data-why="SYS.1 is Requirements Elicitation (stakeholder requirements). System requirements belong to SYS.2, so records filed this way land in the wrong process.">
+    <p class="q">The wording check is configured for "system requirements, process SYS.1".</p>
+    <button data-choice="supports">Supports</button><button data-choice="beyond">Beyond</button><button data-choice="wrong">Wrong</button>
+  </div>
+</section>
+
+<section class="drill">
+  <div class="recall">
+    <p>In two sentences: what does a green traceability check establish, and what doesn't it?</p>
+    <textarea></textarea>
+    <div class="model"><p>It establishes that the trace graph is structurally sound: references resolve, links follow the V's pairings, IDs are unique and records are well-formed. It doesn't establish that linked items agree in content (consistency) or that any process is compliant; that needs recorded semantic review and, in the end, an assessor's judgement.</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>Your win:</strong> you can design a traceability checker that supports the right practices, doesn't reject valid structures, and isn't oversold.</p>
+</div>
+
+<h2>Read next</h2>
+<p>Every traceability BP and its notes, <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=44">PAM pp. 44–57</a>; then <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=57">Guidelines §2.3.4, pp. 55–60</a>.</p>
+
+<p class="aside">Have a check that isn't covered here? Ask your teacher (the agent) to map it to a practice.</p>
+
+<footer>
+  <nav class="pager">
+    <a href="0009-capstone-assess-seat-heat.html">← Lesson 9: Capstone</a>
+    <a href="0011-lifecycles-gates-and-approvals.html">Lesson 11: Lifecycles, gates and approvals →</a>
+  </nav>
+  <nav>
+    <a href="../reference/misconceptions.html">Misconceptions</a>
+    <a href="../reference/glossary.html">Glossary</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

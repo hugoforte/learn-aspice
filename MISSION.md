@@ -2,7 +2,7 @@
 
 ## Why
 
-Become well versed in Automotive SPICE 4.1 in as little time as possible: learn the few ideas that decide most ratings well enough to read the model fluently, judge a real project's processes the way an assessor would, and hold your own in a conversation with an assessor or an OEM's supplier-quality engineer.
+Get people on a team up to speed on Automotive SPICE 4.1 in as little time as possible: learn the few ideas that decide most ratings well enough to read the model fluently, judge a real project's processes the way an assessor would, and hold your own in a conversation with an assessor or an OEM's supplier-quality engineer, including about automated tooling and AI-generated work.
 
 ## Success looks like
 
@@ -12,6 +12,8 @@ Become well versed in Automotive SPICE 4.1 in as little time as possible: learn 
 - Tell a level 1 weakness from a level 2 weakness from a level 3 weakness, and say which generic practice it hits.
 - Spot the consistency and traceability gaps an assessor would find in a modern Git, pull request and CI workflow.
 - Run a paper assessment of a small project: sample evidence, rate PAs, aggregate instances and write a weakness statement that would survive review.
+- Say what an automated traceability check, a stage-gate lifecycle and AI-generated work products can and cannot evidence, and which safeguards are ASPICE demands rather than your own choices.
+- Correct the common mistakes in anything written about ASPICE, with a page reference.
 
 ## Constraints
 
