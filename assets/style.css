@@ -66,6 +66,33 @@ td.id { font-weight: 600; white-space: nowrap; }
 }
 .win strong { color: var(--good); }
 
+.warmup { border-left: 3px solid var(--muted); }
+.warmup::before {
+  content: "Warm-up · from earlier lessons";
+  display: block;
+  font: 600 0.72rem/1 system-ui, sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.evidence {
+  font: 0.88rem/1.5 "Cascadia Code", Consolas, monospace;
+  background: white;
+  border: 1px solid var(--rule);
+  padding: 0.7rem 0.9rem;
+  margin: 0.8rem 0;
+  white-space: pre-wrap;
+}
+
+figure { margin: 1.4rem 0; }
+figure img { max-width: 100%; display: block; margin: 0 auto; }
+figcaption { font-size: 0.85rem; color: var(--muted); text-align: center; margin-top: 0.4rem; }
+
+footer nav.pager { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; }
+footer nav.pager a { margin: 0; }
+
 footer { margin-top: 3rem; border-top: 1px solid var(--rule); padding-top: 1rem; font-size: 0.9rem; color: var(--muted); }
 footer nav a { margin-right: 1rem; }
 

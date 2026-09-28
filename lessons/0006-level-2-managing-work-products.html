@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6 · Level 2: managing work products</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 6 of 9 · Automotive SPICE, the vital 20 %</p>
+  <h1>Level 2, part 2: managing work products (PA 2.2)</h1>
+  <p class="lede">PA 2.1 manages the activity; PA 2.2 manages what the activity produces. Four generic practices, in two pairs, and a close tie to SUP.1 and SUP.8.</p>
+</header>
+
+<section class="drill warmup">
+  <p class="score"></p>
+  <div class="mcq" data-answer="2.1.5" data-why="Noticing a deviation from the plan and acting on it is GP 2.1.5, monitor and adjust.">
+    <p class="q">The CR backlog breaches its limit, and the lead moves two stories out of the sprint to catch up. Which GP?</p>
+    <button data-choice="2.1.1">GP 2.1.1</button><button data-choice="2.1.2">GP 2.1.2</button><button data-choice="2.1.5">GP 2.1.5</button><button data-choice="2.1.6">GP 2.1.6</button>
+  </div>
+  <div class="mcq" data-answer="0" data-why="PA 1.1 at P fails level 1, which needs L or F. Nothing above it counts.">
+    <p class="q">PA 1.1 P · PA 2.1 F · PA 2.2 F. Which level?</p>
+    <button data-choice="0">Level 0</button><button data-choice="1">Level 1</button><button data-choice="2">Level 2</button><button data-choice="3">Level 3</button>
+  </div>
+</section>
+
+<h2>Four generic practices, two pairs</h2>
+
+<table>
+  <tr><th>GP</th><th>Name</th><th>In practice</th></tr>
+  <tr><td class="id">2.2.1</td><td>Define the requirements for the work products</td><td>Content and structure (often a template), quality criteria, review and approval criteria.</td></tr>
+  <tr><td class="id">2.2.4</td><td>Review and adjust work products</td><td>Review against those criteria, and make sure the findings get resolved.</td></tr>
+  <tr><td class="id">2.2.2</td><td>Define the requirements for storage and control</td><td>Where it lives, how it is identified and distributed, and a status model where the BPs need a status.</td></tr>
+  <tr><td class="id">2.2.3</td><td>Identify, store and control the work products</td><td>Change control, versioning, baselining, availability with revision status.</td></tr>
+</table>
+<p class="aside">Source: <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=104">PAM §5.3.2, pp. 104–105</a>. The Guidelines group them the same way: 2.2.1 with 2.2.4 (requirements, quality and review), 2.2.2 with 2.2.3 (storage and control)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=253">[Guidelines §4.2.3.1, p. 251]</a>.</p>
+
+<p>The logic is "define, then do": first say what a good work product looks like and how it is kept, then show that it was kept that way and checked against the definition. A review with no defined criteria fails GP 2.2.4 half-way, because there is nothing to review <em>against</em>.</p>
+
+<h3>Which work products count</h3>
+
+<p>The relevant work products are the ones needed for level 1 plus the ones PA 2.1 and 2.2 themselves need, such as the plan or the review records. Records in tools count ("change requests or problem reports implemented in a workflow tool are also work products"). Process descriptions and role descriptions do not: they belong to level 3, so badly versioned process documents must not pull PA 2.2 down<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=248">[Guidelines §4.2.1, p. 246]</a>.</p>
+
+<h3>Review evidence has a shape</h3>
+
+<p>Information item <code>13-19 Review evidence</code> identifies the review object with its version, the reviewers with their roles, the date, the status, the review criteria and the non-conformances found<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=139">[PAM Annex B, p. 139]</a>. A GitHub or GitLab approval records most of that automatically. What it usually lacks is the <em>criteria</em>.</p>
+
+<div class="callout">
+  <p><strong>PA 2.2 and the SUP processes move together.</strong> The Guidelines expect SUP.1.BP2 to be in line with GP 2.2.1, SUP.1.BP3 with GP 2.2.4, SUP.8.BP2 with GP 2.2.2, and SUP.8.BP4/BP5 with GP 2.2.3, across the other processes<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=253">[Guidelines §4.2.3.2, pp. 251–252]</a>. One example rule: SUP.1.BP3 "shall not be rated higher than the ratings across GP 2.2.4 of all processes"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=44">[Guidelines §1.5.2, p. 42]</a>. Weak configuration management shows up everywhere at level 2.</p>
+</div>
+
+<h3>AI assistants are a PA 2.2 question</h3>
+
+<p>The Guidelines' section on AI assistance says tool use is a HOW-level choice, and that assessors still rate the WHAT. It names PA 2.2, SUP.8 and SUP.1 as the places AI tools reach, with examples: prompts that generate source code as new configuration items, approval of which AI tools may be used, and version control of "AI tools, models, and settings, because their behavior changes over time"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=100">[Guidelines §2.5.5, pp. 98–99]</a>.</p>
+
+<h2>Seat-Heat's software requirements (SWE.1) at level 2</h2>
+
+<div class="evidence">Jira issue type "SW Requirement" with mandatory fields: ID, text, rationale, verification criteria, ASIL.
+A Confluence page lists the quality criteria: atomic, verifiable, no design, unambiguous.
+Workflow: Draft → In review → Approved → Obsolete. Only the SW lead can move to Approved.
+Jira keeps each issue's history; at every release a filter export is stored with the release tag.
+Reviews: the lead moves requirements to Approved after "a look". No checklist, no record of findings.
+Developers paste requirement text into an AI assistant to draft test cases; which model version was used is not recorded.</div>
+
+<section class="drill">
+  <h3>A. Which GP does each line speak to?</h3>
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="2.2.1" data-why="Mandatory fields and written quality criteria define what a good requirement contains: GP 2.2.1.">
+    <p class="q">Mandatory fields plus the page of quality criteria.</p>
+    <button data-choice="2.2.1">GP 2.2.1</button><button data-choice="2.2.2">GP 2.2.2</button><button data-choice="2.2.3">GP 2.2.3</button><button data-choice="2.2.4">GP 2.2.4</button>
+  </div>
+  <div class="mcq" data-answer="2.2.2" data-why="A defined status model, and who may change status, are requirements for storage and control: GP 2.2.2 (PAM note 5).">
+    <p class="q">The Draft → In review → Approved → Obsolete workflow, with only the lead approving.</p>
+    <button data-choice="2.2.1">GP 2.2.1</button><button data-choice="2.2.2">GP 2.2.2</button><button data-choice="2.2.3">GP 2.2.3</button><button data-choice="2.2.4">GP 2.2.4</button>
+  </div>
+  <div class="mcq" data-answer="2.2.3" data-why="Versioning through history and a baseline at each release is performing storage and control: GP 2.2.3.">
+    <p class="q">Issue history, and the export stored with each release tag.</p>
+    <button data-choice="2.2.1">GP 2.2.1</button><button data-choice="2.2.2">GP 2.2.2</button><button data-choice="2.2.3">GP 2.2.3</button><button data-choice="2.2.4">GP 2.2.4</button>
+  </div>
+  <div class="mcq" data-answer="2.2.4" data-why="The criteria exist (GP 2.2.1), but the review doesn't check against them or record findings. That is a GP 2.2.4 weakness, and SUP.1.BP3 can't be rated higher than it.">
+    <p class="q">Approval after "a look", with no checklist and no record of findings. Which GP is weak?</p>
+    <button data-choice="2.2.1">GP 2.2.1</button><button data-choice="2.2.2">GP 2.2.2</button><button data-choice="2.2.3">GP 2.2.3</button><button data-choice="2.2.4">GP 2.2.4</button>
+  </div>
+  <div class="mcq" data-answer="sup8" data-why="The Guidelines point to version control of AI tools, models and settings as a configuration management (SUP.8) and PA 2.2 concern.">
+    <p class="q">The AI model version used to draft test cases isn't recorded. Which area does the Guideline point to first?</p>
+    <button data-choice="man3">MAN.3</button><button data-choice="sup8">SUP.8</button><button data-choice="sup9">SUP.9</button><button data-choice="swe6">SWE.6</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>B. Level 1 or level 2?</h3>
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="L1" data-why="Specifying requirements is SWE.1.BP1, a base practice. It is about the outcome existing: level 1.">
+    <p class="q">"Every feature has its software requirements written down."</p>
+    <button data-choice="L1">Level 1</button><button data-choice="L2">Level 2</button>
+  </div>
+  <div class="mcq" data-answer="L2" data-why="Checking that requirements meet defined criteria, and that findings are resolved, is GP 2.2.4: level 2.">
+    <p class="q">"Every requirement is reviewed against the quality checklist before approval, and findings are closed."</p>
+    <button data-choice="L1">Level 1</button><button data-choice="L2">Level 2</button>
+  </div>
+  <div class="mcq" data-answer="L1" data-why="Consistency and traceability between processes' work products is a base practice (SWE.6.BP4): level 1. Traceability within one process's work products would be GP 2.2.2.">
+    <p class="q">"Each HIL test traces to the software requirement it verifies."</p>
+    <button data-choice="L1">Level 1</button><button data-choice="L2">Level 2</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>C. From memory</h3>
+  <div class="recall">
+    <p>Name the four GPs of PA 2.2 and how they pair up.</p>
+    <textarea></textarea>
+    <div class="model"><p>2.2.1 define requirements for the work products, paired with 2.2.4 review and adjust against them. 2.2.2 define requirements for storage and control, paired with 2.2.3 identify, store and control accordingly.</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>Your win:</strong> you can audit a team's templates, tool workflows and reviews and say exactly which level-2 practice falls short. That completes level 2. Next: level 3, where the process itself becomes an organisational asset.</p>
+</div>
+
+<h2>Read next</h2>
+<p><a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=248">VDA Guidelines §4.2, pp. 246–253</a>, and the AI-assistance section, <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=99">§2.5.5, pp. 97–100</a>.</p>
+
+<p class="aside">Unsure whether a practice is level 1 or level 2? Ask your teacher (the agent) in the chat. It is the most useful distinction to get fluent in.</p>
+
+<footer>
+  <nav class="pager">
+    <a href="0005-level-2-managing-performance.html">← Lesson 5: Managing performance</a>
+    <a href="0007-level-3-standard-and-defined-process.html">Lesson 7: Level 3 →</a>
+  </nav>
+  <nav>
+    <a href="../reference/generic-practices.html">Generic practices</a>
+    <a href="../reference/glossary.html">Glossary</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

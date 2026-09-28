@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2 · Reading a process</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 2 of 9 · Automotive SPICE, the vital 20 %</p>
+  <h1>Reading a process</h1>
+  <p class="lede">Every one of the 32 processes is written to the same template. Learn to read one and you can read them all, and you can judge whether a team reaches level 1 on it.</p>
+</header>
+
+<section class="drill warmup">
+  <p class="score"></p>
+  <div class="mcq" data-answer="1" data-why="PA 2.1 and 2.2 are both fine, but level 2 needs PA 1.1 at F, and it is only L.">
+    <p class="q">PA 1.1 L · PA 2.1 L · PA 2.2 F. Which level?</p>
+    <button data-choice="0">Level 0</button><button data-choice="1">Level 1</button><button data-choice="2">Level 2</button><button data-choice="3">Level 3</button>
+  </div>
+  <div class="mcq" data-answer="how" data-why="A tool configuration is a method, so it belongs to the HOW. The PAM never names tools.">
+    <p class="q">"Every Jira story must have an acceptance-criteria field filled in." WHAT, HOW or DOING?</p>
+    <button data-choice="what">WHAT</button><button data-choice="how">HOW</button><button data-choice="doing">DOING</button>
+  </div>
+</section>
+
+<h2>The anatomy of a process</h2>
+
+<p>Chapter 4 describes every process with the same four parts<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=28">[Table 10, p. 28]</a>:</p>
+
+<table>
+  <tr><th>Part</th><th>What it is</th><th>How to use it</th></tr>
+  <tr><td class="id">Purpose</td><td>One sentence: why the process exists.</td><td>The test of last resort: is this achieved?</td></tr>
+  <tr><td class="id">Outcomes</td><td>A numbered list of observable results.</td><td><strong>This is what PA 1.1 rates.</strong></td></tr>
+  <tr><td class="id">Base practices</td><td><code>BP1…BPn</code>: activities that achieve the outcomes. Process-specific.</td><td>Activity-oriented evidence: "do they do this?"</td></tr>
+  <tr><td class="id">Output information items</td><td>Numbered items such as <code>08-56 Schedule</code>, described in Annex B.</td><td>Result-oriented evidence: "what should I find?"</td></tr>
+</table>
+
+<p>A table at the end of each process says which BP and which information item support which outcome. That table is the assessor's map.</p>
+
+<h3>PA 1.1 in one line</h3>
+
+<p>Level 1 has a single attribute with a single generic practice: <strong>GP 1.1.1 "Achieve the process outcomes"</strong>, which means achieving the intent of the base practices and producing work products that evidence the outcomes<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=100">[§5.2.1, p. 100]</a>. So rating PA 1.1 comes down to rating the base practices of that process.</p>
+
+<h3>Information items are not documents to write</h3>
+
+<p>This is the most common beginner mistake. An <em>information item</em> is what the assessor <em>looks for</em>. A <em>work product</em> is what the team actually <em>produced</em>. There is no 1:1 relationship: one Jira board can contain the characteristics of several information items, and one information item can be spread over many artefacts<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=24">[§3.3.2, pp. 24–25]</a>. The characteristics in Annex B "shall not be interpreted as a required structure"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=24">[p. 24]</a>. Evidence comes from two sources only: <strong>work products</strong> (including repository content) and <strong>testimony</strong> from the people doing the work<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=24">[p. 24]</a>.</p>
+
+<div class="callout">
+  <p>A ticket in Jira is a work product. The Guidelines say so explicitly: change requests or problem reports held in a workflow tool count<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=248">[Guidelines §4.2.1, p. 246]</a>. Nobody needs a Word document called "Change Request".</p>
+</div>
+
+<h2>A worked example: MAN.3 Project Management</h2>
+
+<p><strong>Purpose:</strong> "to identify and control the activities, and to establish resources necessary for a project to develop a product, in the context of the project's requirements and constraints"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=89">[p. 89]</a>.</p>
+
+<table>
+  <tr><th>Outcome</th><th>Mainly achieved by</th></tr>
+  <tr><td>1 · Scope of work defined</td><td>BP1 Define the scope of work</td></tr>
+  <tr><td>2 · Feasibility evaluated</td><td>BP3 Evaluate feasibility</td></tr>
+  <tr><td>3 · Activities and resources sized and estimated</td><td>BP4 Work packages · BP5 Estimates and resources · BP6 Skills</td></tr>
+  <tr><td>4 · Interfaces identified and monitored</td><td>BP7 Interfaces and agreed commitments</td></tr>
+  <tr><td>5 · Plans developed, implemented, maintained</td><td>BP2 Lifecycle · BP8 Schedule</td></tr>
+  <tr><td>6 · Progress monitored and reported</td><td>BP10 Review and report progress</td></tr>
+  <tr><td>7 · Adjustment when goals are not achieved</td><td>BP9 Ensure consistency</td></tr>
+</table>
+<p class="aside">Simplified from the mapping table on <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=90">p. 90</a>; some BPs support several outcomes. Output information items include 08-53 Scope of work, 14-10 Work package, 08-56 Schedule and 15-06 Project status.</p>
+
+<h3>What the assessor found at Seat-Heat</h3>
+
+<div class="evidence">Confluence "Project charter": goals, customer, the ECU variants in and out of scope.
+Jira: epics per customer release; stories estimated in points for the current sprint only.
+No estimate of the effort remaining for the features due in the next two releases.
+Sprint reviews every two weeks; burndown charts; a status mail to the OEM each month.
+The HVAC team supplies a CAN signal Seat-Heat needs; the dependency lives in one engineer's head.
+Release plan: three customer releases with dates, consistent with the epics.</div>
+
+<p>The Guidelines contain rating rules written for exactly this situation. One is <code>[AGE.RL.2]</code>: "If remaining effort for features, which are to be delivered in the current or next release, is not estimated, then MAN.3.BP5 shall be downrated"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=79">[Guidelines §2.5.2.1, p. 77]</a>. Lesson 8 covers rating rules in full.</p>
+
+<h2>Practice</h2>
+
+<section class="drill">
+  <h3>A. Which base practice does this evidence speak to?</h3>
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="BP1" data-why="Goals, boundaries and what is in or out of scope are BP1: define the scope of work.">
+    <p class="q">The project charter with goals and the variants in and out of scope.</p>
+    <button data-choice="BP1">BP1</button><button data-choice="BP5">BP5</button><button data-choice="BP7">BP7</button><button data-choice="BP10">BP10</button>
+  </div>
+
+  <div class="mcq" data-answer="BP7" data-why="Interfaces with other projects and the commitments agreed with them are BP7. An untracked dependency is a weakness here.">
+    <p class="q">The CAN-signal dependency on the HVAC team.</p>
+    <button data-choice="BP1">BP1</button><button data-choice="BP5">BP5</button><button data-choice="BP7">BP7</button><button data-choice="BP10">BP10</button>
+  </div>
+
+  <div class="mcq" data-answer="BP10" data-why="Regularly reviewing and reporting status to affected parties is BP10.">
+    <p class="q">Sprint reviews every two weeks and a monthly status mail to the OEM.</p>
+    <button data-choice="BP1">BP1</button><button data-choice="BP5">BP5</button><button data-choice="BP7">BP7</button><button data-choice="BP10">BP10</button>
+  </div>
+
+  <div class="mcq" data-answer="BP5" data-why="Estimates of effort and resources are BP5, and [AGE.RL.2] names BP5 when the remaining effort for upcoming releases isn't estimated.">
+    <p class="q">No estimate of the effort still needed for the next two releases.</p>
+    <button data-choice="BP1">BP1</button><button data-choice="BP5">BP5</button><button data-choice="BP7">BP7</button><button data-choice="BP10">BP10</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>B. Traps</h3>
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="no" data-why="Information items describe what to look for, not a document structure to produce. The schedule can live in Jira releases, a Gantt chart or a spreadsheet.">
+    <p class="q">Must Seat-Heat produce a document titled "08-56 Schedule" to satisfy BP8?</p>
+    <button data-choice="yes">Yes</button><button data-choice="no">No</button>
+  </div>
+
+  <div class="mcq" data-answer="testimony" data-why="The two sources of evidence are work products and testimony. An interview is testimony, and the assessor will usually back it with a spot check.">
+    <p class="q">An engineer explains in the interview how feasibility was checked. What kind of evidence is that?</p>
+    <button data-choice="work">Work product</button><button data-choice="testimony">Oral testimony</button>
+  </div>
+
+  <div class="mcq" data-answer="L" data-why="Most outcomes are clearly achieved; BP5 and BP7 have real weaknesses. Significant achievement with some weaknesses is L. That's level 1, but not the F that level 2 would need.">
+    <p class="q">Across the whole dossier above, what would you rate MAN.3 PA 1.1?</p>
+    <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>C. From memory</h3>
+  <div class="recall">
+    <p>Name the four parts of a process description, and say which one PA 1.1 rates.</p>
+    <textarea></textarea>
+    <div class="model"><p>Purpose, outcomes, base practices and output information items. PA 1.1 rates whether the <strong>outcomes</strong> are achieved, judged through the base practices (activity indicators) and information items (result indicators).</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>Your win:</strong> you can open any process, map evidence to its base practices and give a defensible PA 1.1 rating. Next: which processes an assessment actually looks at, so you know which dozen of the 32 to learn.</p>
+</div>
+
+<h2>Read next</h2>
+<p><a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=89">MAN.3 in the PAM, pp. 89–90</a>. Two pages, and the process nearly every assessment includes. Then look up 08-56 Schedule and 15-06 Project status in Annex B to see what "characteristics" look like.</p>
+
+<p class="aside">Unsure why a piece of evidence maps to one BP rather than another? Ask your teacher (the agent) in the chat.</p>
+
+<footer>
+  <nav class="pager">
+    <a href="0001-two-axes-of-a-rating.html">← Lesson 1: The two axes</a>
+    <a href="0003-the-vda-scope.html">Lesson 3: The VDA Scope →</a>
+  </nav>
+  <nav>
+    <a href="../reference/process-cards.html">Process cards</a>
+    <a href="../reference/glossary.html">Glossary</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

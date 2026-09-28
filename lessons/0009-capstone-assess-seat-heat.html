@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9 · Capstone: assess Seat-Heat</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 9 of 9 · Automotive SPICE, the vital 20 %</p>
+  <h1>Capstone: assess Seat-Heat's change management</h1>
+  <p class="lede">A paper assessment of one process, SUP.10, with a target of level 2. Everything from lessons 1–8 turns up here, deliberately mixed. Try each question before you look anything up.</p>
+</header>
+
+<h2>The assessment input</h2>
+
+<table>
+  <tr><td class="id">Purpose</td><td>OEM supplier assessment ahead of the start-of-production decision.</td></tr>
+  <tr><td class="id">Org. unit</td><td>The Seat-Heat team, one site.</td></tr>
+  <tr><td class="id">Process</td><td>SUP.10 Change Request Management, target capability level 2.</td></tr>
+  <tr><td class="id">Context</td><td>All change requests for releases 2.0 to 2.3. Two instances: <em>application code</em> (Seat-Heat's own) and <em>platform code</em> (a shared base-software layer that Seat-Heat maintains for three projects).</td></tr>
+</table>
+
+<h3>SUP.10 in brief</h3>
+<p>Purpose: "to ensure that change requests are recorded, analyzed, tracked, approved, and implemented". The base practices are BP1 identify and record · BP2 analyse and assess · BP3 approve before implementation · BP4 bidirectional traceability · BP5 confirm implementation · BP6 track to closure<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=85">[PAM pp. 85–86]</a>. Guideline rules you will need<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=210">[Guidelines §3.26, pp. 208–211]</a>:</p>
+<ul>
+  <li><code>SUP.10.RL.1</code> If the analysis omits potential side effects, BP2 shall not be rated F.</li>
+  <li><code>SUP.10.RL.3</code> If not all relevant disciplines or stakeholders are in the approval authority, BP3 shall not be rated F.</li>
+  <li><code>SUP.10.RL.4</code> If approval decisions are apparently not taken, or not taken in time, without justification, BP3 shall be downrated.</li>
+</ul>
+
+<h2>The evidence: application-code instance</h2>
+
+<div class="evidence">Jira issue type "Change Request". Mandatory fields: initiator, reason, description, affected components, effort, risk.
+Workflow: Open → Analysed → Approved → Implemented → Verified → Closed. Issue history intact back to release 2.0.
+Sample of 10 CRs, chosen by the assessor, traced from OEM request to release:
+  · all 10 recorded with initiator and reason;
+  · 10 of 10 list affected components; 3 of 10 say nothing about side effects on other functions;
+  · CCB (product owner + SW lead) meets weekly; the test lead is not a member; minutes in Confluence, one page per meeting, edited the same week;
+  · 2 of 10 went Open → Implemented, skipping Approved ("urgent customer fix"); no emergency path is defined;
+  · every CR links to the requirement issues it changes and to its PRs; PRs cite the CR key; CRs raised from bugs link to the bug;
+  · the test lead sets Verified only after the linked HIL tests pass;
+  · a dashboard shows CR status; the OEM portal is synced weekly.
+Project handbook: "Every CR analysed within 5 working days. No unanalysed CR 4 weeks before a release."
+Dashboard of analysis age reviewed at stand-up. It showed the 5-day target missed in sprints 12 and 13; no action was recorded.
+CCB membership and the OEM portal channel are defined in the handbook.
+A Confluence page lists "analysis complete" criteria; the CCB checks them before approving. A tool template enforces the fields.</div>
+
+<h2>Round 1: base practices and PA 1.1</h2>
+
+<section class="drill">
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="L" data-why="Affected components are analysed every time, but 3 of 10 skip side effects. RL.1 rules out F; this is significant achievement with some weakness, so L.">
+    <p class="q">BP2 analyse and assess the change requests.</p>
+    <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
+  </div>
+  <div class="mcq" data-answer="L" data-why="The CCB works for most CRs, but the test lead is missing (RL.3 rules out F) and 2 of 10 skipped approval with no defined emergency path (RL.4 downrates). L is defensible; a stricter assessor might argue P+. F is not possible.">
+    <p class="q">BP3 approve before implementation.</p>
+    <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
+  </div>
+  <div class="mcq" data-answer="F" data-why="CR ↔ requirement, CR ↔ PR and CR ↔ bug are all linked, in both directions. That is what SUP.10.BP4 asks for (lesson 4).">
+    <p class="q">BP4 establish bidirectional traceability.</p>
+    <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
+  </div>
+  <div class="mcq" data-answer="L" data-why="BP1, BP4, BP5 and BP6 are strong; BP2 and BP3 carry real weaknesses. Overall: significant achievement with some weaknesses, so L.">
+    <p class="q">PA 1.1 for the application-code instance.</p>
+    <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
+  </div>
+</section>
+
+<h2>Round 2: level 2 attributes</h2>
+
+<section class="drill">
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="yes" data-why="&quot;Analysed within 5 days&quot; and &quot;none unanalysed 4 weeks before release&quot; say how the process is to be performed, not a project goal or a restated outcome (lesson 5).">
+    <p class="q">Are the handbook's two targets valid process performance objectives?</p>
+    <button data-choice="yes">Yes</button><button data-choice="no">No</button>
+  </div>
+  <div class="mcq" data-answer="2.1.5" data-why="Monitoring happened (the dashboard), but the deviation led to no adjustment. GP 2.1.5 is monitor <em>and adjust</em>.">
+    <p class="q">Which GP does "target missed twice, no action recorded" hit?</p>
+    <button data-choice="2.1.1">GP 2.1.1</button><button data-choice="2.1.4">GP 2.1.4</button><button data-choice="2.1.5">GP 2.1.5</button><button data-choice="2.1.6">GP 2.1.6</button>
+  </div>
+  <div class="mcq" data-answer="L" data-why="Objectives, resources and interfaces are in place; monitoring works but adjustment doesn't. One real weakness in the loop: L.">
+    <p class="q">PA 2.1 for this instance.</p>
+    <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
+  </div>
+  <div class="mcq" data-answer="2.2.1" data-why="Mandatory fields and written &quot;analysis complete&quot; criteria define what a good CR contains: GP 2.2.1. The CCB checking against them is GP 2.2.4.">
+    <p class="q">The Jira template's mandatory fields and the "analysis complete" criteria page. Which GP?</p>
+    <button data-choice="2.2.1">GP 2.2.1</button><button data-choice="2.2.2">GP 2.2.2</button><button data-choice="2.2.3">GP 2.2.3</button><button data-choice="2.2.4">GP 2.2.4</button>
+  </div>
+  <div class="mcq" data-answer="F" data-why="Requirements for content, a status model, history and control in Jira, and reviews against criteria are all present. No significant weakness: F.">
+    <p class="q">PA 2.2 for this instance.</p>
+    <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
+  </div>
+  <div class="mcq" data-answer="1" data-why="PA 1.1 is L. Level 2 needs it at F, so the good level-2 attributes don't count: level 1. It is the lesson-1 trap, now with real evidence.">
+    <p class="q">Capability level for the application-code instance (PA 1.1 L, 2.1 L, 2.2 F)?</p>
+    <button data-choice="0">Level 0</button><button data-choice="1">Level 1</button><button data-choice="2">Level 2</button><button data-choice="3">Level 3</button>
+  </div>
+</section>
+
+<h2>Round 3: the platform instance and the verdict</h2>
+
+<div class="evidence">Platform code: changes arrive as Slack messages from the three projects; about half get a Jira ticket afterwards.
+No impact analysis recorded; no approval step; changes are merged by the platform maintainer.
+PRs are reviewed, and release notes list the changes.</div>
+
+<section class="drill">
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="P" data-why="Some recording (half), and PR review and release notes give some tracking, but no analysis and no approval. Some achievement, largely unpredictable: P.">
+    <p class="q">PA 1.1 for the platform instance.</p>
+    <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
+  </div>
+  <div class="mcq" data-answer="L" data-why="(L 2 + P 1) / 2 = 1.5. Exactly halfway rounds up, to 2: L. With equal weights, the platform's weakness is hidden in the aggregate. That's why instance ratings go in the report.">
+    <p class="q">Aggregated PA 1.1 for SUP.10, equal weights (application L, platform P)?</p>
+    <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
+  </div>
+  <div class="mcq" data-answer="ignore" data-why="Created shortly before the assessment with no plausible reason: it should not be considered (lesson 8, plausibility).">
+    <p class="q">The day before the assessment, the platform maintainer creates a "Platform CR process" page. The assessor…</p>
+    <button data-choice="accept">Credits it</button><button data-choice="ignore">Ignores it</button>
+  </div>
+  <div class="mcq" data-answer="bp3" data-why="With PA 2.2 at F and PA 2.1 at L, what blocks level 2 is PA 1.1 below F. The approval gap (BP3) is the widest; defining an emergency path and adding the test lead fixes the application instance fastest. The platform instance needs its whole process built.">
+    <p class="q">For the application instance, which fix does most to reach level 2?</p>
+    <button data-choice="bp3">Fix approvals</button><button data-choice="gp215">Fix monitoring</button><button data-choice="gp221">Fix templates</button>
+  </div>
+</section>
+
+<h2>Round 4: write it like an assessor</h2>
+
+<section class="drill">
+  <div class="recall">
+    <p>Write the weakness statement for BP3 in the application instance: what is missing, the evidence, and the risk.</p>
+    <textarea></textarea>
+    <div class="model"><p>"Change requests are not consistently approved before implementation: 2 of 10 sampled CRs (e.g. the two 'urgent customer fix' CRs) moved from Open to Implemented without CCB approval, and no emergency approval path is defined. The CCB does not include the test lead. Risk: changes reach the product without assessed impact on verification or agreed release scope."</p></div>
+  </div>
+  <div class="recall">
+    <p>In three sentences, explain to Seat-Heat's manager why they got level 1 despite a strong level 2 setup.</p>
+    <textarea></textarea>
+    <div class="model"><p>Level 2 requires PA 1.1 to be fully achieved, and ours is largely achieved because side effects aren't always analysed and some changes skip approval. The management practices (objectives, templates, Jira workflow) are genuinely good and would count once the base is fixed. Close those two gaps and start acting on the analysis-age dashboard, and level 2 is within reach for the application code. The platform code needs a change process of its own.</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>You've finished the course.</strong> You can now read the model, pick the processes that matter, trace the V, tell level 1 from level 2 from level 3 weaknesses, and reach a rating the way an assessor does. That is the vital 20 %. The other 80 % is detail you can look up in the PAM and Guidelines when a real project needs it.</p>
+</div>
+
+<h2>Where to go from here</h2>
+<ul>
+  <li><strong>Deepen per process.</strong> For each process you meet in real life, read its PAM pages and then its chapter in the Guidelines (chapter 3 for level 1). The rating rules show where assessors actually look.</li>
+  <li><strong>Test your judgement against people.</strong> An intacs <a href="https://intacs.info/training-center">Gate4SPICE event</a> is the lowest-cost way to hear practising assessors reason about ratings.</li>
+  <li><strong>Revisit in a week.</strong> Retake the warm-ups of lessons 2–8 without rereading the lessons. What you can't retrieve is what to review, and spacing is where long-term retention comes from.</li>
+</ul>
+
+<p class="aside">Want a second capstone on another process (SUP.8, SWE.1, MAN.3), or to walk through your own team's evidence? Ask your teacher (the agent) in the chat.</p>
+
+<footer>
+  <nav class="pager">
+    <a href="0008-how-assessors-rate.html">← Lesson 8: How assessors rate</a>
+    <a href="../index.html">Course index →</a>
+  </nav>
+  <nav>
+    <a href="../reference/assessment-rules.html">Assessment rules</a>
+    <a href="../reference/glossary.html">Glossary</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

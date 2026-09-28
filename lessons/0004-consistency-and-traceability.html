@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4 · Consistency and traceability</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 4 of 9 · Automotive SPICE, the vital 20 %</p>
+  <h1>Consistency and traceability</h1>
+  <p class="lede">One base practice appears, almost word for word, in every engineering process. It is where modern Git-based teams most often lose points, and it is cheap to get right once you know what the assessor is checking.</p>
+</header>
+
+<section class="drill warmup">
+  <p class="score"></p>
+  <div class="mcq" data-answer="SUP.10" data-why="SUP.10 handles change requests: analyse impact, approve before implementing, trace to the work products affected.">
+    <p class="q">The OEM wants the heating ramp shortened from 90 s to 60 s. Which process handles the request?</p>
+    <button data-choice="SUP.8">SUP.8</button><button data-choice="SUP.9">SUP.9</button><button data-choice="SUP.10">SUP.10</button><button data-choice="MAN.3">MAN.3</button>
+  </div>
+  <div class="mcq" data-answer="2" data-why="PA 1.1 at F and both level-2 attributes at L or better: level 2. Level 3 would need 2.1 and 2.2 at F.">
+    <p class="q">PA 1.1 F · PA 2.1 L · PA 2.2 F · PA 3.1 L · PA 3.2 L. Which level?</p>
+    <button data-choice="0">Level 0</button><button data-choice="1">Level 1</button><button data-choice="2">Level 2</button><button data-choice="3">Level 3</button>
+  </div>
+</section>
+
+<h2>One base practice, everywhere</h2>
+
+<p>Every SYS and SWE process has a BP called <strong>"Ensure consistency and establish bidirectional traceability"</strong>. SUP.10 has one for change requests, and MAN.3.BP9 asks for consistency across the plan<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=57">[Guidelines §2.3.4, p. 55]</a>. Together they form a chain down the left side of the V and across to the verification on the right:</p>
+
+<figure>
+  <img src="../assets/v-model.svg" alt="The system and software V: requirements and design on the left, verification on the right, with double-headed arrows down the left leg and dashed arrows across to the matching verification process.">
+  <figcaption>Simplified from PAM Annex C.4, Figure 9 (<a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=157">p. 157</a>). Each right-hand process also traces its results to its verification measures.</figcaption>
+</figure>
+
+<h3>Two words, two different demands</h3>
+
+<ul>
+  <li><strong>Bidirectional traceability.</strong> From each requirement you can find what implements and verifies it, and from each test or code element you can find which requirement it serves. Both directions matter: forwards gives coverage, backwards catches code nobody asked for.</li>
+  <li><strong>Consistency.</strong> The linked items actually <em>agree</em>. "Traceability alone, e.g., the existence of links, does not necessarily mean that the information is consistent"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=45">[PAM SWE.1.BP5 note 11, p. 45]</a>. A test linked to a requirement that checks something else is a consistency failure with perfect traceability.</li>
+</ul>
+
+<p>The assessor checks content too: system requirements are checked "not only … for traceability to the stakeholder requirements but also if [they] reflect the intention"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=41">[Guidelines §1.4.3.3, p. 39]</a>.</p>
+
+<h2>What counts as evidence, and what doesn't have to</h2>
+
+<p>Information item <code>13-51 Consistency evidence</code> lists traceability through "hyperlinks, repository location or editorial references", naming conventions, revision history and "notes in Git commits comments", with "evidence of Definition of Done (DoD) adherence" given as an example<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=140">[PAM Annex B, p. 140]</a>. The Guidelines then protect several lightweight practices with "shall not be downrated" rules<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=60">[Guidelines §2.3.4.3–5, pp. 58–60]</a>:</p>
+
+<table>
+  <tr><th>Rule</th><th>Allowed without downrating</th></tr>
+  <tr><td class="id">TAC.RL.1</td><td>Tracing between reasonable <em>clusters</em> (a group of requirements to a component) instead of every atomic element.</td></tr>
+  <tr><td class="id">TAC.RL.2</td><td>A manual approach with snapshot-based checks instead of an automated tool.</td></tr>
+  <tr><td class="id">TAC.RL.3</td><td>No formal review record, when consistency is ensured by pair work, peer spot checks, revision-history notes or commit comments.</td></tr>
+</table>
+
+<div class="callout">
+  <p><strong>The agile trap.</strong> Teams that keep requirements only inside tickets can trace a story to its code easily, but have "no overview of all requirements". At the end, "the requirements of the feature can only be determined by assessing all tasks of the feature"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=80">[Guidelines §2.5.2.3, p. 78]</a>. Traceability then points at a moving pile of changes rather than a current requirement set, and consistency can't be judged.</p>
+</div>
+
+<p class="aside">Traceability <em>within</em> one process's work products (between two sections of the architecture, for instance) is not a level 1 matter. It belongs to GP 2.2.2 at level 2<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=59">[Guidelines §2.3.4.2, p. 57]</a>.</p>
+
+<h2>Practice: find the weakness at Seat-Heat</h2>
+
+<div class="evidence">Requirements: Jira "Requirement" issues, one per SW requirement, grouped by feature epic.
+Architecture: a C4-style diagram in the repo; each component page lists the requirement epics it serves.
+Code: PR titles carry the Jira key of the story, not of the requirement.
+Unit tests: named after the module they test.
+HIL tests: each test file has a header "@verifies SHREQ-123".
+CI: uploads HIL results to the build page, linked to the commit.</div>
+
+<section class="drill">
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="ok" data-why="Tracing requirement clusters (epics) to components is explicitly allowed by TAC.RL.1 when the clusters are reasonable.">
+    <p class="q">Architecture components trace to requirement <em>epics</em>, not individual requirements.</p>
+    <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
+  </div>
+
+  <div class="mcq" data-answer="ok" data-why="Requirement to HIL test via the header tag, and test to result via CI linked to the commit: SWE.6.BP4's chain is there in both directions, provided someone checks the tests actually test the requirement.">
+    <p class="q">HIL tests carry <code>@verifies SHREQ-123</code>, and CI links their results to the commit.</p>
+    <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
+  </div>
+
+  <div class="mcq" data-answer="weak" data-why="PRs trace to stories, and stories are changes, not requirements. Unless each story links to the requirement it implements, there is no path from a requirement down to its units.">
+    <p class="q">PRs reference the story's Jira key, and stories are not linked to requirement issues.</p>
+    <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
+  </div>
+
+  <div class="mcq" data-answer="weak" data-why="SWE.4.BP4 needs verification measures traced to the units in the detailed design, and results to measures. A naming convention can serve as trace ('linked-by-name'), but only if the detailed design names the same units, and here that is not shown.">
+    <p class="q">Unit tests are named after modules, and there is no detailed design naming those modules.</p>
+    <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
+  </div>
+
+  <div class="mcq" data-answer="consistency" data-why="The link exists, so traceability is fine. What's missing is agreement between the two items, which is consistency.">
+    <p class="q">A HIL test tagged <code>@verifies SHREQ-40</code> checks the 60 s ramp, but SHREQ-40 still says 90 s. What is violated?</p>
+    <button data-choice="traceability">Traceability</button><button data-choice="consistency">Consistency</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>From memory</h3>
+  <div class="recall">
+    <p>Why can a project have complete traceability and still be downrated on the "consistency and traceability" BP?</p>
+    <textarea></textarea>
+    <div class="model"><p>Because links only prove a relationship was recorded, not that the linked items agree. The BP demands consistency too: the test really checks the requirement, and the architecture really implements it. Links without agreement are traceability without consistency.</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>Your win:</strong> you can walk a team's toolchain and point to exactly where the V breaks. That covers the level 1 content. Next: what turns a <em>performed</em> process into a <em>managed</em> one, starting with PA 2.1.</p>
+</div>
+
+<h2>Read next</h2>
+<p><a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=57">VDA Guidelines §2.3.4, pp. 55–60</a>, the whole consistency and traceability section, with its figures. Then <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=157">PAM Annex C.4, pp. 157–158</a>.</p>
+
+<p class="aside">Want to check a trace chain from your own tooling? Describe it to your teacher (the agent) in the chat.</p>
+
+<footer>
+  <nav class="pager">
+    <a href="0003-the-vda-scope.html">← Lesson 3: The VDA Scope</a>
+    <a href="0005-level-2-managing-performance.html">Lesson 5: Managing performance →</a>
+  </nav>
+  <nav>
+    <a href="../reference/process-cards.html">Process cards</a>
+    <a href="../reference/glossary.html">Glossary</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3 · The VDA Scope</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 3 of 9 · Automotive SPICE, the vital 20 %</p>
+  <h1>The VDA Scope: the processes that get assessed</h1>
+  <p class="lede">The model has 32 processes. A standard assessment looks at about a dozen of them. This is the biggest 80/20 cut in the whole course: learn these well and skim the rest.</p>
+</header>
+
+<section class="drill warmup">
+  <p class="score"></p>
+  <div class="mcq" data-answer="outcomes" data-why="PA 1.1 asks whether the process achieves its outcomes. BPs and information items are the indicators used to judge that.">
+    <p class="q">PA 1.1 is a judgement about which part of a process description?</p>
+    <button data-choice="purpose">Its purpose</button><button data-choice="outcomes">Its outcomes</button><button data-choice="items">Its items</button>
+  </div>
+  <div class="mcq" data-answer="no" data-why="A Jira ticket is a work product in its own right. Information items describe what to look for, not documents to create.">
+    <p class="q">Seat-Heat keeps change requests only as Jira tickets. Does the assessor need a separate change request document?</p>
+    <button data-choice="yes">Yes</button><button data-choice="no">No</button>
+  </div>
+</section>
+
+<h2>Base plus plug-in</h2>
+
+<p>The VDA Guidelines recommend a standard selection of processes, the <strong>recommended VDA Scope</strong><a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=31">[Guidelines §1.3.2, Fig. 1-1, p. 29]</a>:</p>
+
+<table>
+  <tr><th>Part</th><th>Processes</th></tr>
+  <tr><td class="id">Base</td><td>MAN.3 Project Management · SUP.1 Quality Assurance · SUP.8 Configuration Management · SUP.9 Problem Resolution Management · SUP.10 Change Request Management</td></tr>
+  <tr><td class="id">+ at least one plug-in</td><td>System SYS.2–SYS.5 · Software SWE.1–SWE.6 · Hardware HWE.1–HWE.4 · Machine learning MLE.1–MLE.4 + SUP.11</td></tr>
+  <tr><td class="id">Flex / optional</td><td>ACQ.4 Supplier Monitoring · MAN.5 Risk · MAN.6 Measurement · SYS.1 Requirements Elicitation · VAL.1 Validation · SPL.2 Product Release · PIM.3 Process Improvement · REU.2 Reuse</td></tr>
+</table>
+
+<p>This follows the PAM's "plug-in" concept: management and support processes are domain-independent, and the engineering disciplines plug in underneath the system level<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=153">[PAM Annex C.1, p. 153]</a>.</p>
+
+<p>Three scoping rules worth knowing<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=32">[Guidelines pp. 29–30]</a>:</p>
+<ul>
+  <li>Deviating from the recommended scope needs a documented rationale tied to the assessment purpose.</li>
+  <li>A process may not be declared "not applicable" without the sponsor's approval.</li>
+  <li>"A simple non-existence of evidence shall not be a valid justification of an exclusion": if the team simply does not do it, the usual result is an <strong>N</strong>.</li>
+</ul>
+
+<div class="callout">
+  <p><strong>For Seat-Heat</strong>, a software-only supplier, the scope is the five base processes plus the software plug-in, SWE.1 to SWE.6: eleven processes. Where there is no system development, the "system requirements and architecture" the SWE processes refer to are simply the given operating environment, and stakeholder requirements can stand in for them<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=44">[PAM SWE.1.BP1 note 3, p. 44]</a>.</p>
+</div>
+
+<h2>The eleven, one line each</h2>
+
+<table>
+  <tr><th>ID</th><th>In a sentence</th></tr>
+  <tr><td class="id">MAN.3</td><td>Identify and control the activities and resources the project needs.</td></tr>
+  <tr><td class="id">SUP.1</td><td><em>Independent and objective</em> assurance that work products and processes meet the defined criteria, and that non-conformances are resolved.</td></tr>
+  <tr><td class="id">SUP.8</td><td>Establish and maintain the <em>integrity</em> of configuration items and baselines, and make them available.</td></tr>
+  <tr><td class="id">SUP.9</td><td><em>Problems</em> are identified, recorded, analysed, and their resolution managed.</td></tr>
+  <tr><td class="id">SUP.10</td><td><em>Change requests</em> are recorded, analysed, tracked, approved and implemented.</td></tr>
+  <tr><td class="id">SWE.1</td><td>Software requirements, structured and analysed, consistent with system requirements and architecture.</td></tr>
+  <tr><td class="id">SWE.2</td><td>Software architecture (static and dynamic), consistent with the software requirements.</td></tr>
+  <tr><td class="id">SWE.3</td><td>Detailed design consistent with the architecture, and units built consistent with the design.</td></tr>
+  <tr><td class="id">SWE.4</td><td>Verify that units are consistent with the detailed design.</td></tr>
+  <tr><td class="id">SWE.5</td><td>Verify components against the architecture; integrate and verify the integration.</td></tr>
+  <tr><td class="id">SWE.6</td><td>Verify the integrated software against the software requirements.</td></tr>
+</table>
+<p class="aside">Paraphrased from the purpose statements in PAM chapter 4: <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=44">SWE pp. 44–57</a>, <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=79">SUP pp. 79–86</a>, <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=89">MAN.3 p. 89</a>.</p>
+
+<h3>The two pairs people confuse</h3>
+
+<p><strong>SUP.9 vs SUP.10.</strong> A <em>problem</em> is something wrong: a failed test, a field defect, a broken tool. A <em>change request</em> is a request to change a work product, and it may be triggered by a problem, a new customer wish, or anything else. SUP.9 analyses causes and tracks problems to closure. SUP.10 analyses impact, <strong>approves before implementation</strong>, and keeps bidirectional traceability between the request and the work products it touches<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=83">[pp. 83–86]</a>. When a problem leads to a change, the two records must trace to each other (SUP.10.BP4).</p>
+
+<p><strong>SUP.1 vs review.</strong> A peer review of a pull request is verification by a colleague. SUP.1 is <em>quality assurance</em>, which must be performed "without conflicts of interest", and "no self-monitoring" is the example the PAM gives<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=79">[SUP.1.BP1 note 1, p. 79]</a>. A team checking its own compliance does not satisfy SUP.1 on its own.</p>
+
+<h2>Practice</h2>
+
+<section class="drill">
+  <h3>A. Which process?</h3>
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="SUP.9" data-why="Something went wrong and has to be recorded, analysed for cause and tracked to closure: that is a problem, SUP.9.">
+    <p class="q">A tester finds the seat heats past the limit when the voltage drops. It's logged with steps to reproduce.</p>
+    <button data-choice="SUP.8">SUP.8</button><button data-choice="SUP.9">SUP.9</button><button data-choice="SUP.10">SUP.10</button><button data-choice="MAN.3">MAN.3</button>
+  </div>
+
+  <div class="mcq" data-answer="SUP.10" data-why="A request to change the product, which needs impact analysis and approval before implementation: SUP.10.">
+    <p class="q">The OEM asks for a fourth heat level in the next release.</p>
+    <button data-choice="SUP.8">SUP.8</button><button data-choice="SUP.9">SUP.9</button><button data-choice="SUP.10">SUP.10</button><button data-choice="MAN.3">MAN.3</button>
+  </div>
+
+  <div class="mcq" data-answer="SUP.8" data-why="Baselines, and making sure a release is built from a complete and consistent set of controlled items, are the integrity of configuration items: SUP.8.">
+    <p class="q">Tagging release 2.3.0 and proving which requirement, code and test versions it contains.</p>
+    <button data-choice="SUP.8">SUP.8</button><button data-choice="SUP.9">SUP.9</button><button data-choice="SUP.10">SUP.10</button><button data-choice="MAN.3">MAN.3</button>
+  </div>
+
+  <div class="mcq" data-answer="SWE.6" data-why="Verifying the integrated software against the software requirements is SWE.6. SWE.4 is against the detailed design, SWE.5 against the architecture.">
+    <p class="q">A HIL test suite that checks each software requirement on the fully integrated build.</p>
+    <button data-choice="SWE.4">SWE.4</button><button data-choice="SWE.5">SWE.5</button><button data-choice="SWE.6">SWE.6</button><button data-choice="SUP.1">SUP.1</button>
+  </div>
+
+  <div class="mcq" data-answer="SWE.4" data-why="Unit tests check units against the detailed design: SWE.4.">
+    <p class="q">Unit tests in CI for the PWM duty-cycle module.</p>
+    <button data-choice="SWE.4">SWE.4</button><button data-choice="SWE.5">SWE.5</button><button data-choice="SWE.6">SWE.6</button><button data-choice="SUP.1">SUP.1</button>
+  </div>
+
+  <div class="mcq" data-answer="SUP.1" data-why="An independent check of whether the team follows its own criteria, done by someone without a conflict of interest, is quality assurance: SUP.1.">
+    <p class="q">Someone from the quality department audits whether the team's PRs follow the review checklist.</p>
+    <button data-choice="SWE.4">SWE.4</button><button data-choice="SWE.5">SWE.5</button><button data-choice="SWE.6">SWE.6</button><button data-choice="SUP.1">SUP.1</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>B. Scoping calls</h3>
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="N" data-why="Non-existence of evidence is not grounds for exclusion. Without the sponsor agreeing to a scope change, it is rated, usually N.">
+    <p class="q">Seat-Heat has no QA function at all. The team asks to mark SUP.1 "not applicable". Without sponsor approval, what happens?</p>
+    <button data-choice="NA">Excluded</button><button data-choice="N">Rated N</button><button data-choice="P">Rated P</button>
+  </div>
+
+  <div class="mcq" data-answer="swe" data-why="The base five are always in; the plug-in follows the domain the team develops. A software-only team takes the SWE plug-in.">
+    <p class="q">Which plug-in fits a team that develops only software, on hardware supplied to it?</p>
+    <button data-choice="sys">SYS.2–SYS.5</button><button data-choice="swe">SWE.1–SWE.6</button><button data-choice="hwe">HWE.1–HWE.4</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>C. From memory</h3>
+  <div class="recall">
+    <p>List the five base processes of the recommended VDA Scope.</p>
+    <textarea></textarea>
+    <div class="model"><p>MAN.3 Project Management, SUP.1 Quality Assurance, SUP.8 Configuration Management, SUP.9 Problem Resolution Management, SUP.10 Change Request Management. Plus at least one plug-in.</p></div>
+  </div>
+  <div class="recall">
+    <p>In one sentence each: what does SUP.9 manage, and what does SUP.10 manage?</p>
+    <textarea></textarea>
+    <div class="model"><p>SUP.9 manages problems (something is wrong: find the cause, track it to closure). SUP.10 manages change requests (a change is wanted: analyse its impact, approve it before implementing, trace it both ways to the work products it touches).</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>Your win:</strong> you know which dozen processes decide an assessment, and you can place a piece of daily work in the right one. Next: the one idea that runs through every engineering process, consistency and traceability.</p>
+</div>
+
+<h2>Read next</h2>
+<p><a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=30">VDA Guidelines §1.3, pp. 28–34</a>: how the scope, target levels, context and process instances are set. Then read SUP.9 and SUP.10 side by side in the <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=83">PAM, pp. 83–86</a>.</p>
+
+<p class="aside">Found a piece of your own team's work that could fit two processes? Ask your teacher (the agent) in the chat.</p>
+
+<footer>
+  <nav class="pager">
+    <a href="0002-reading-a-process.html">← Lesson 2: Reading a process</a>
+    <a href="0004-consistency-and-traceability.html">Lesson 4: Consistency and traceability →</a>
+  </nav>
+  <nav>
+    <a href="../reference/process-cards.html">Process cards</a>
+    <a href="../reference/glossary.html">Glossary</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

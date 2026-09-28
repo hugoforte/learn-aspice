@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 · Level 2: managing performance</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 5 of 9 · Automotive SPICE, the vital 20 %</p>
+  <h1>Level 2, part 1: managing performance (PA 2.1)</h1>
+  <p class="lede">Level 1 asks "did the outcomes happen?" Level 2 asks "did you make them happen on purpose, against a target, and would you have noticed if they didn't?"</p>
+</header>
+
+<section class="drill warmup">
+  <p class="score"></p>
+  <div class="mcq" data-answer="consistency" data-why="The link is there. The two ends disagree, which is a consistency failure.">
+    <p class="q">A requirement is linked to its test, but the test checks an outdated threshold. Traceability or consistency?</p>
+    <button data-choice="traceability">Traceability</button><button data-choice="consistency">Consistency</button>
+  </div>
+  <div class="mcq" data-answer="SUP.1" data-why="MAN.3, SUP.1, SUP.8, SUP.9 and SUP.10 are the base. SWE.4 comes in with the software plug-in, and SPL.2 and MAN.5 are flex.">
+    <p class="q">Which of these is in the base of the recommended VDA Scope?</p>
+    <button data-choice="SWE.4">SWE.4</button><button data-choice="SUP.1">SUP.1</button><button data-choice="SPL.2">SPL.2</button><button data-choice="MAN.5">MAN.5</button>
+  </div>
+</section>
+
+<h2>Generic practices apply to every process</h2>
+
+<p>Base practices are specific to one process. From level 2 up, the indicators are <strong>generic practices</strong> (GPs), and the same GPs are applied to <em>each</em> process in scope<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=23">[PAM §3.3.1, p. 23]</a>. So "SUP.10 at level 2" means the GPs of PA 2.1 and PA 2.2 applied to change request management.</p>
+
+<h2>The PA 2.1 loop</h2>
+
+<table>
+  <tr><th>GP</th><th>Name</th><th>The question it asks</th></tr>
+  <tr><td class="id">2.1.1</td><td>Identify objectives, define a strategy</td><td>What target does <em>this process</em> have, and how will you approach it?</td></tr>
+  <tr><td class="id">2.1.2</td><td>Plan the performance</td><td>Which activities and work packages, estimated, scheduled?</td></tr>
+  <tr><td class="id">2.1.3</td><td>Determine resource needs</td><td>How many people, which skills, what tools, and who is responsible for what?</td></tr>
+  <tr><td class="id">2.1.4</td><td>Identify and make resources available</td><td>Are those people and tools actually assigned, and qualified?</td></tr>
+  <tr><td class="id">2.1.5</td><td>Monitor and adjust</td><td>Do you notice deviations from the plan and act on them?</td></tr>
+  <tr><td class="id">2.1.6</td><td>Manage the interfaces</td><td>Who is involved, who is responsible, how do they communicate?</td></tr>
+</table>
+<p class="aside">Source: <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=101">PAM §5.3.1, pp. 101–103</a>. The Guidelines draw them as a chain: objectives and strategy, then a plan, then resources according to the plan, then monitoring against the plan<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=246">[Guidelines §4.1.3.1, p. 244]</a>.</p>
+
+<h3>The keystone: process performance objectives</h3>
+
+<p>Everything in PA 2.1 hangs off GP 2.1.1, and it is the GP most often misunderstood. A process performance objective is <strong>not a project goal and not a restated outcome</strong><a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=101">[PAM GP 2.1.1 note 1, p. 101]</a>. It says how the process's outcomes are to be <em>organised</em>. The PAM's own examples:</p>
+
+<ul>
+  <li>SUP.10: "all incoming CRs are analyzed within z days"</li>
+  <li>SUP.8: a maximum share of configuration items "in work" at given milestones before the next delivery</li>
+  <li>SWE.6: "Test coverage of Functional Safety Requirements at baseline y is 100%"</li>
+</ul>
+
+<p>They may be quantitative or qualitative, ideally SMART, and they do <em>not</em> require the formal measurement of MAN.6 or level 4<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=237">[Guidelines §4.1.2.1, p. 235]</a>. The strategy doesn't have to be a document either: tools that enforce a workflow, automated pipelines and continuous integration all count<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=238">[Guidelines §4.1.2.2, p. 236]</a>. Explicit process descriptions are not required at level 2 at all<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=236">[Guidelines §4.1.1, p. 234]</a>.</p>
+
+<div class="callout">
+  <p><strong>MAN.3 vs PA 2.1.</strong> MAN.3 manages the <em>whole project</em>. PA 2.1 manages <em>one process</em>. They are linked: the ratings of MAN.3.BP4–BP8 "should be in line with" GP 2.1.2–2.1.6 of the other processes, and a gap of more than one NPLF step between them "might be indicative of an inconsistent rating"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=246">[Guidelines §4.1.3.2, pp. 244–245]</a>. A team with a weak project plan rarely has well-planned processes.</p>
+</div>
+
+<h2>Seat-Heat's SUP.9, two ways</h2>
+
+<div class="evidence">Version A: Bugs are logged in Jira, analysed and fixed. Everyone picks up bugs when they have time.
+
+Version B: Objective: every new bug triaged within 2 working days; severity-1 bugs fixed before the next release.
+A weekly triage rota (named in Confluence) and a 20 % sprint capacity reserved for bugs.
+A Jira dashboard of untriaged bugs older than 2 days, reviewed at every stand-up;
+breaches go to the project lead, who re-plans the sprint.
+Bugs from the OEM arrive via their portal; the triage owner answers there within 1 day.</div>
+
+<p>Both versions may reach PA 1.1 = F for SUP.9: problems are recorded, analysed and closed. Only version B has anything for PA 2.1 to rate.</p>
+
+<h2>Practice</h2>
+
+<section class="drill">
+  <h3>A. Is it a process performance objective?</h3>
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="no" data-why="That's a project goal (MAN.3 territory), not an objective for how one process is performed.">
+    <p class="q">"Release 3.0 ships on 1 March."</p>
+    <button data-choice="yes">Objective</button><button data-choice="no">Not one</button>
+  </div>
+  <div class="mcq" data-answer="yes" data-why="It sets a measurable target for how SUP.10 is run, close to the Guidelines' own example (a maximum number of open CRs six weeks before release).">
+    <p class="q">"No more than 10 open change requests six weeks before each release."</p>
+    <button data-choice="yes">Objective</button><button data-choice="no">Not one</button>
+  </div>
+  <div class="mcq" data-answer="no" data-why="That is SUP.10 outcome 3 restated. Objectives say how the outcomes are organised, not that they happen.">
+    <p class="q">"Change requests are approved before implementation."</p>
+    <button data-choice="yes">Objective</button><button data-choice="no">Not one</button>
+  </div>
+  <div class="mcq" data-answer="yes" data-why="A target for the verification process at a defined point: the PAM's own SWE.6 example has this shape.">
+    <p class="q">"Every safety-relevant software requirement has a passing HIL test at the release-candidate baseline."</p>
+    <button data-choice="yes">Objective</button><button data-choice="no">Not one</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>B. Which generic practice does version B's evidence show?</h3>
+  <p class="score"></p>
+
+  <div class="mcq" data-answer="2.1.1" data-why="Stating the target (triage within 2 days, sev-1 fixed before release) is GP 2.1.1.">
+    <p class="q">"Every new bug triaged within 2 working days."</p>
+    <button data-choice="2.1.1">GP 2.1.1</button><button data-choice="2.1.4">GP 2.1.4</button><button data-choice="2.1.5">GP 2.1.5</button><button data-choice="2.1.6">GP 2.1.6</button>
+  </div>
+  <div class="mcq" data-answer="2.1.4" data-why="Named people on a rota and reserved capacity are resources identified and made available: GP 2.1.4, built on the needs from GP 2.1.3.">
+    <p class="q">The named triage rota and the reserved 20 % sprint capacity.</p>
+    <button data-choice="2.1.1">GP 2.1.1</button><button data-choice="2.1.4">GP 2.1.4</button><button data-choice="2.1.5">GP 2.1.5</button><button data-choice="2.1.6">GP 2.1.6</button>
+  </div>
+  <div class="mcq" data-answer="2.1.5" data-why="Watching for deviations (the dashboard) and acting on them (escalating and re-planning) is GP 2.1.5.">
+    <p class="q">The dashboard of overdue bugs, and re-planning when the target is breached.</p>
+    <button data-choice="2.1.1">GP 2.1.1</button><button data-choice="2.1.4">GP 2.1.4</button><button data-choice="2.1.5">GP 2.1.5</button><button data-choice="2.1.6">GP 2.1.6</button>
+  </div>
+  <div class="mcq" data-answer="2.1.6" data-why="Defining who deals with an external party, through which channel and how fast, is managing interfaces: GP 2.1.6.">
+    <p class="q">OEM bugs arrive via their portal, and the triage owner answers there within one day.</p>
+    <button data-choice="2.1.1">GP 2.1.1</button><button data-choice="2.1.4">GP 2.1.4</button><button data-choice="2.1.5">GP 2.1.5</button><button data-choice="2.1.6">GP 2.1.6</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>C. From memory</h3>
+  <div class="recall">
+    <p>What is a process performance objective, and what two things is it <em>not</em>?</p>
+    <textarea></textarea>
+    <div class="model"><p>A target for how one process is performed, such as "all CRs analysed within 5 days". It is not a project goal (a release date, a budget), and it is not a restatement of the process's level 1 outcomes.</p></div>
+  </div>
+  <div class="recall">
+    <p>List the PA 2.1 loop in order, in your own words.</p>
+    <textarea></textarea>
+    <div class="model"><p>Objectives and strategy → plan → resource needs → resources assigned → monitor and adjust against the plan. Managing the interfaces between the parties runs alongside all of it.</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>Your win:</strong> you can tell a performed process from a managed one, and point to the missing link in the loop when it isn't managed. Next: the other half of level 2, managing the work products themselves.</p>
+</div>
+
+<h2>Read next</h2>
+<p><a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=235">VDA Guidelines chapter 4 introduction and §4.1, pp. 233–245</a>. It is the clearest account of level 2 anywhere, with many examples of objectives and strategies.</p>
+
+<p class="aside">Try writing one process performance objective for a process in your own work, and ask your teacher (the agent) to critique it.</p>
+
+<footer>
+  <nav class="pager">
+    <a href="0004-consistency-and-traceability.html">← Lesson 4: Consistency and traceability</a>
+    <a href="0006-level-2-managing-work-products.html">Lesson 6: Managing work products →</a>
+  </nav>
+  <nav>
+    <a href="../reference/generic-practices.html">Generic practices</a>
+    <a href="../reference/glossary.html">Glossary</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
