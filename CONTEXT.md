@@ -50,7 +50,7 @@ _Avoid_: the eleven processes, ASPICE scope
 Taught in: [L03 · Base plus plug-in](lessons/0003-the-vda-scope.html)
 
 **Plug-in**:
-One domain's engineering processes, added to the base: SYS.2–SYS.5, SWE.1–SWE.6, HWE.1–HWE.4, or MLE.1–MLE.4 with SUP.11.
+One domain's engineering processes, added to the base: SYS.2–SYS.5, SWE.1–SWE.6, HWE.1–HWE.4, or MLE.1–MLE.4 with SUP.11. The Guidelines count system as one domain among four; PAM Annex C.1 keeps the system V above the domains.
 Taught in: [L03 · Base plus plug-in](lessons/0003-the-vda-scope.html)
 
 **Flex process**:
@@ -266,7 +266,7 @@ Taught in: [L14 · The right leg: one pattern, used five times](lessons/0014-the
 
 **Exploratory test**:
 A verification or validation measure with no specification to trace to. Not downrated for that, but it must trace to its results.
-Taught in: [L14 · The right leg: one pattern, used five times](lessons/0014-the-v-system-level.html), [L16 · What VAL.1 asks for](lessons/0016-validation.html)
+Taught in: [L14 · The right leg: one pattern, used five times](lessons/0014-the-v-system-level.html)
 
 **Component verification / integration verification**:
 SWE.5's two halves: each component's behaviour and interfaces, then how the integrated elements work together.
@@ -304,7 +304,7 @@ A deviation found against defined criteria, by a review or by quality assurance.
 Taught in: [L06 · Review evidence has a shape](lessons/0006-level-2-managing-work-products.html)
 
 **Configuration item**:
-A work product, or a group of them, managed as one entity under SUP.8. With AI assistance, prompts can be new configuration items, and AI tools, models and their settings are kept under version control.
+A work product, or a group of them, managed as one entity under SUP.8. For AI assistance, the Guidelines' examples include prompts as new configuration items and version control of AI tools, models and their settings.
 Taught in: [L12 · What the Guidelines say](lessons/0012-ai-generated-work-products.html)
 
 **Baseline**:
@@ -322,7 +322,7 @@ _Avoid_: CR in prose; bug or defect, for a change request
 Taught in: [L03 · The two pairs people confuse](lessons/0003-the-vda-scope.html)
 
 **CCB (change control board)**:
-The decision authority that approves change requests (SUP.10.BP3), which the Guidelines simplify to "CCB". It represents all affected disciplines and required stakeholders, with authority to decide, and there may be more than one.
+A decision authority that approves change requests (SUP.10.BP3). The PAM gives a CCB as one example mechanism, and the Guidelines call any such authority a CCB for simplicity. It represents all affected disciplines and required stakeholders, with authority to decide, and there may be more than one.
 _Avoid_: approving body; approval authority, except when quoting the Guidelines' rules
 Taught in: [L09 · SUP.10 in brief](lessons/0009-capstone-assess-seat-heat.html)
 
@@ -382,7 +382,7 @@ Taught in: [L12 · Four consequences worth designing for](lessons/0012-ai-genera
 **Assessment purpose**:
 Why the assessment is done, such as supplier evaluation or an improvement baseline. The scope is defined to cover it.
 Taught in: [Assessment rules · Scope first](reference/assessment-rules.html)
-First used in: [L08 · 1. Everything starts from the scope](lessons/0008-how-assessors-rate.html)
+First used in: [L03 · Base plus plug-in](lessons/0003-the-vda-scope.html)
 
 **Assessment scope**:
 Four things: organisational-unit boundaries, the processes, the target capability level per process, and the process context. The purpose is not part of it.
@@ -433,7 +433,7 @@ First used in: [L03 · A. Which process?](lessons/0003-the-vda-scope.html)
 
 **SIL (software-in-the-loop)**:
 Running software against a simulated environment with no target hardware. It can support integration verification.
-First used in: [L15 · A. Which process?](lessons/0015-the-v-software-level.html)
+Taught in: [L15 · The right leg: units, components, the whole software](lessons/0015-the-v-software-level.html)
 
 **CI (continuous integration)**:
 Building and checking every change automatically. Never used for configuration items.
