@@ -21,8 +21,8 @@
     <p class="q">In the recommended VDA Scope, SYS.1 Requirements Elicitation is…</p>
     <button data-choice="base">Base</button><button data-choice="plugin">Plug-in</button><button data-choice="flex">Flex</button>
   </div>
-  <div class="mcq" data-answer="no" data-why="Information items are what the assessor looks for, not documents to write. A model in a tool, wiki pages or diagrams in the repo can all carry the characteristics (lesson 2).">
-    <p class="q">To satisfy SYS.3, must the team write a document titled "System Architecture"?</p>
+  <div class="mcq" data-answer="yes" data-why="Information items are what the assessor looks for, not documents to write. A model in a tool, wiki pages or diagrams in the repo can all carry the characteristics (lesson 2).">
+    <p class="q">Can a model in a design tool, with no document titled "System Architecture", satisfy SYS.3?</p>
     <button data-choice="yes">Yes</button><button data-choice="no">No</button>
   </div>
 </section>
@@ -41,7 +41,7 @@
   <tr><td class="id">SYS.2 System Requirements Analysis</td><td>Specify functional and non-functional system requirements with defined characteristics (such as verifiability), structure and prioritise them, analyse correctness and feasibility, analyse their impact on the system context, trace them to the stakeholder requirements, and communicate them.</td><td>A structured requirement set, analysis results, consistency evidence to the stakeholder requirements.</td></tr>
   <tr><td class="id">SYS.3 System Architectural Design</td><td>Specify the static aspects (system elements, interfaces, relationships) and the dynamic aspects (behaviour and interaction in each system mode), analyse the design, record the rationale for key decisions, derive special characteristics for the non-software elements, trace, and communicate.</td><td>04-06 System architecture, analysis results, 17-57 Special characteristics.</td></tr>
 </table>
-<p>Source: PAM §4.3.1–4.3.3, pp. 33–38.</p>
+<p class="aside">Source: <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=33">PAM §4.3.1–4.3.3, pp. 33–38</a>.</p>
 
 <p>Three things from the Guidelines that decide ratings here:</p>
 <ul>
@@ -72,7 +72,7 @@
   <tr><td class="id">SYS.4.RL.3, SYS.5.RL.3</td><td>Exploratory tests can't trace to the architecture or the requirements, and BP4 is not downrated for that. Each exploratory test must still trace to its results.</td></tr>
   <tr><td class="id">SYS.4.RL.4, SYS.5.RL.4</td><td>A sound selection of measures, made against an inadequate or incomplete release plan: BP2 is not downrated. The weakness belongs to the release planning.</td></tr>
 </table>
-<p>Source: Guidelines §3.6–3.7, pp. 128–132.</p>
+<p class="aside">Source: <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=130">Guidelines §3.6–3.7, pp. 128–132</a>.</p>
 
 <div class="callout">
   <p><strong>Test code is a work product too.</strong> A HIL suite that runs every night proves nothing if nobody has asked whether its scripts check the right thing. The Guidelines make that part of defining the measure, and downrate its absence.</p>
@@ -88,7 +88,7 @@
     <button data-choice="SYS.1">SYS.1</button><button data-choice="SYS.2">SYS.2</button><button data-choice="SYS.3">SYS.3</button><button data-choice="SYS.5">SYS.5</button>
   </div>
   <div class="mcq" data-answer="SYS.2" data-why="A verifiable requirement for the ECU, derived from and traced to the stakeholder requirement: SYS.2.BP1 and BP5.">
-    <p class="q">"The ECU shall bring the seat surface to 35 °C within 4 minutes at an ambient temperature of −20 °C", derived from a line of the OEM specification and linked to it.</p>
+    <p class="q">"The ECU shall regulate the heater-mat temperature measured at its sensor input to the selected setpoint within ±2 °C, at ambient temperatures from −20 °C to 60 °C", derived from a line of the OEM specification and linked to it.</p>
     <button data-choice="SYS.1">SYS.1</button><button data-choice="SYS.2">SYS.2</button><button data-choice="SYS.3">SYS.3</button><button data-choice="SYS.5">SYS.5</button>
   </div>
   <div class="mcq" data-answer="SYS.3" data-why="System elements with their interfaces (static) and their interaction over time (dynamic): SYS.3.BP1 and BP2.">
@@ -100,7 +100,7 @@
     <button data-choice="SYS.3">SYS.3</button><button data-choice="SYS.4">SYS.4</button><button data-choice="SYS.5">SYS.5</button><button data-choice="SWE.6">SWE.6</button>
   </div>
   <div class="mcq" data-answer="SYS.5" data-why="The integrated ECU verified against a system requirement is SYS.5. A climate chamber is simply its verification environment.">
-    <p class="q">In a climate chamber, the complete ECU is checked against the 4-minute heat-up requirement at −20 °C.</p>
+    <p class="q">In a climate chamber, the complete ECU, driving a reference heater mat, is checked against its temperature-regulation requirement at −20 °C.</p>
     <button data-choice="SYS.3">SYS.3</button><button data-choice="SYS.4">SYS.4</button><button data-choice="SYS.5">SYS.5</button><button data-choice="SWE.6">SWE.6</button>
   </div>
 </section>
@@ -121,7 +121,7 @@
     <button data-choice="ok">No downrate</button><button data-choice="down">Downrate</button>
   </div>
   <div class="mcq" data-answer="ok" data-why="Verification is broader than testing: measurements, calculations, analyses and simulations are verification measures too (Guidelines §2.3.6).">
-    <p class="q">The EMC requirements are verified by measurement in an EMC lab, with no test cases in the test tool.</p>
+    <p class="q">The EMC requirements are verified by measurement in an EMC lab, specified as a measurement procedure with pass/fail limits and traced to the requirements, with no test cases in the test tool.</p>
     <button data-choice="ok">No downrate</button><button data-choice="down">Downrate</button>
   </div>
   <div class="mcq" data-answer="ok" data-why="SYS.5.RL.3: exploratory tests can't trace to requirements, and BP4 is not downrated for that. Traceability is still needed between the exploratory tests and their results, which exists here.">
@@ -157,7 +157,7 @@
 
 <footer>
   <nav class="pager">
-    <a href="0013-red-pen.html">← Lesson 13: Red pen</a>
+    <a href="../index.html">← Course index</a>
     <a href="0015-the-v-software-level.html">Lesson 15: The V at software level →</a>
   </nav>
   <nav>
