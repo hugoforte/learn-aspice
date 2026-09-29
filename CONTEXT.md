@@ -433,7 +433,7 @@ First used in: [L03 · A. Which process?](lessons/0003-the-vda-scope.html)
 
 **SIL (software-in-the-loop)**:
 Running software against a simulated environment with no target hardware. It can support integration verification.
-Taught in: [L15 · The right leg: units, components, the whole software](lessons/0015-the-v-software-level.html)
+First used in: [L15 · The right leg: units, components, the whole software](lessons/0015-the-v-software-level.html)
 
 **CI (continuous integration)**:
 Building and checking every change automatically. Never used for configuration items.
