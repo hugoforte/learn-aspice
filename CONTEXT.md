@@ -141,7 +141,7 @@ Taught in: [L06 · Four generic practices, two pairs](lessons/0006-level-2-manag
 
 **Standard process**:
 The organisation-wide reference process, with tailoring guidelines (PA 3.1).
-_Avoid_: the standard, the handbook (the company's own word in L07's story, never the course's)
+_Avoid_: the standard; the handbook (the company's own word in L07's story, never the course's)
 Taught in: [L07 · Two kinds of process](lessons/0007-level-3-standard-and-defined-process.html)
 
 **Defined process**:
