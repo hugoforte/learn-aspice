@@ -38,7 +38,7 @@
 <h2>2. Evidence: sampled, plausible, and read</h2>
 
 <ul>
-  <li><strong>Sampling.</strong> The assessor picks stakeholder requirements covering important, new, reused and safety-relevant content, and follows them so the samples "mark a clear path through the engineering lifecycle". The same goes for changes and problems. The organisation may propose samples, but the assessor decides<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=39">[§1.4.3.1, pp. 37–38]</a>.</li>
+  <li><strong>Sampling.</strong> The assessor picks stakeholder requirements covering the most important functions; new, adapted, reused and platform content; safety- and security-relevant content; and every coding and modelling approach used, and follows them so the samples "mark a clear path through the engineering lifecycle". The same goes for changes and problems. The organisation may propose samples, but the assessor decides<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=39">[§1.4.3.1, pp. 37–38]</a>.</li>
   <li><strong>Plausibility.</strong> Every document is checked for its change history. One "initially generated shortly before the assessment … should not be considered", unless there is a plausible reason. A weekly schedule should show roughly weekly versions<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=40">[§1.4.3.2, p. 38]</a>.</li>
   <li><strong>Content.</strong> "Automotive SPICE must not be mistaken for a checklist." Samples are read for the right content, and what counts as appropriate depends on team size, product complexity and timeline<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=41">[§1.4.3.3, p. 39]</a>.</li>
 </ul>
@@ -74,7 +74,7 @@
 <p>The Guidelines contain hundreds of <strong>rating rules</strong>, such as <code>[TAC.RL.1]</code> or <code>[AGE.RL.2]</code>, which reduce variation between assessors. They come in three patterns: "shall not be downrated", "shall be downrated" (at least one step), and "shall not be rated higher than". There is no "rating rule algebra": three rules that each call for a downrate don't automatically mean three steps. An assessor who departs from a rule must document a compelling justification<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=44">[§1.5, pp. 42–44]</a>.</p>
 
 <div class="callout">
-  <p><strong>The rule that governs all the others:</strong> any downrating needs "a comprehensive explanation of the associated process risk, substantiated by traceable objective evidence". Citing only rules "renders the entire assessment report invalid"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=46">[§1.5.4.2, p. 44]</a>. A good weakness statement names <em>what</em> is missing, <em>where</em> the evidence shows it, and <em>what can go wrong</em> because of it.</p>
+  <p><strong>The rule that governs all the others:</strong> any downrating, and any weakness found within an F rating, needs "a comprehensive explanation of the associated process risk, substantiated by traceable objective evidence". Citing only rules "renders the entire assessment report invalid"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=46">[§1.5.4.2, p. 44]</a>. A good weakness statement names <em>what</em> is missing, <em>where</em> the evidence shows it, and <em>what can go wrong</em> because of it.</p>
 </div>
 
 <h2>Practice</h2>
@@ -102,18 +102,22 @@
   <p class="score"></p>
 
   <div class="mcq" data-answer="ignore" data-why="Created shortly before the assessment, with no plausible reason: it should not be considered for the rating.">
-    <p class="q">Seat-Heat's risk register was created in Confluence nine days before the assessment and has one version.</p>
+    <p class="q">Seat-Heat's risk register, for a project running for two years, was created in Confluence nine days before the assessment and has one version.</p>
+    <button data-choice="accept">Accept it</button><button data-choice="ignore">Ignore it</button>
+  </div>
+  <div class="mcq" data-answer="accept" data-why="Late creation is only a problem without a plausible reason. A project that started twelve days before the assessment couldn't have an older risk register, so the assessor can consider it.">
+    <p class="q">A new sub-project started twelve days before the assessment. Its risk register was created on day three and has two versions since.</p>
     <button data-choice="accept">Accept it</button><button data-choice="ignore">Ignore it</button>
   </div>
   <div class="mcq" data-answer="no" data-why="GEN.RL.1: a weak PA 1.1 in one process must not downrate PA 1.1 of another. Only the explicit connection points, the consistency and traceability BPs, can carry a weakness across.">
     <p class="q">SUP.9 is rated P. Should SUP.10's PA 1.1 be lowered because of it?</p>
     <button data-choice="yes">Yes</button><button data-choice="no">No</button>
   </div>
-  <div class="mcq" data-answer="c" data-why="Only (c) says what is missing, where it was seen, and what risk it creates. (a) cites only a rule, which can make a report invalid; (b) is an opinion with no evidence.">
+  <div class="mcq" data-answer="b" data-why="Only (b) says what is missing, where it was seen, and what risk it creates. (a) is an opinion with no evidence; (c) cites only a rule, and a report that relies on rules instead of weakness statements is invalid.">
     <p class="q">Which is an acceptable weakness statement for MAN.3.BP5?</p>
+    <p class="aside">(a) "Estimation is immature." · (b) "Remaining effort for the features planned for releases 3.0 and 3.1 is not estimated (Jira epics SH-40…SH-52 have no estimates; confirmed in the PM interview), so the team cannot tell whether the release dates are achievable." · (c) "Downrated per AGE.RL.2."</p>
     <button data-choice="a">(a)</button><button data-choice="b">(b)</button><button data-choice="c">(c)</button>
   </div>
-  <p class="aside">(a) "Downrated per AGE.RL.2." · (b) "Estimation is immature." · (c) "Remaining effort for the features planned for releases 3.0 and 3.1 is not estimated (Jira epics SH-40…SH-52 have no estimates; confirmed in the PM interview), so the team cannot tell whether the release dates are achievable."</p>
 </section>
 
 <section class="drill">
@@ -137,7 +141,7 @@
 <h2>Read next</h2>
 <p><a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=28">VDA Guidelines Part 1, pp. 26–44</a>. It is the highest-yield twenty pages in either document. Part 2 (from p. 275) covers running an assessment end to end, if you ever sit on one.</p>
 
-<p class="aside">If you get the chance to talk to a working assessor, ask how they handle plausibility checks on tool-based evidence. Gate4SPICE events are one place to do that.</p>
+<p class="aside">Unsure how a rule or the aggregation would apply to your own project? Ask your teacher (the agent) in the chat. If you get the chance to talk to a working assessor, ask how they handle plausibility checks on tool-based evidence; Gate4SPICE events are one place to do that.</p>
 
 <footer>
   <nav class="pager">
@@ -145,6 +149,7 @@
     <a href="0009-capstone-assess-seat-heat.html">Lesson 9: Capstone →</a>
   </nav>
   <nav>
+    <a href="../index.html">Course index</a>
     <a href="../reference/assessment-rules.html">Assessment rules</a>
     <a href="../reference/glossary.html">Glossary</a>
   </nav>

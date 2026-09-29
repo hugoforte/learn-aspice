@@ -17,11 +17,12 @@
 
 <p>The brochure is fictional and so is its tool. Some claims are right. This is interleaved practice across the whole course, so answer each one from memory before reading the explanation.</p>
 
+<h2>The brochure, claim by claim</h2>
+
 <section class="drill">
-  <h3>The brochure, claim by claim</h3>
   <p class="score"></p>
 
-  <div class="mcq" data-answer="wrong" data-why="The 4.1 reference model has no SEC processes; ISO/SAE 21434 appears only among its reference standards. Cybersecurity has its own VDA model, and the Guidelines say that volume &quot;remains a separate document&quot; (Guidelines preface, p. 4).">
+  <div class="mcq" data-answer="wrong" data-why="The 4.1 reference model has no SEC processes; ISO/SAE 21434 is only mentioned in passing and among the reference standards. Cybersecurity has its own VDA model, and the Guidelines say that volume &quot;remains a separate document&quot; (Guidelines preface, p. 4).">
     <p class="q">"ASPICE 4.1 brings cybersecurity into the model with the new SEC.1–SEC.4 processes."</p>
     <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
   </div>
@@ -31,7 +32,7 @@
     <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
   </div>
 
-  <div class="mcq" data-answer="wrong" data-why="The consistency and traceability BPs are base practices, so they count at level 1 (PA 1.1). Only traceability within one process's own work products is level-2 territory (GP 2.2.2) (lesson 4).">
+  <div class="mcq" data-answer="wrong" data-why="The consistency and traceability BPs are base practices, so they count at level 1 (PA 1.1). Traceability within one process's own work products isn't covered by those BPs and "may be considered" under GP 2.2.2 (lesson 4).">
     <p class="q">"Bidirectional traceability is what lifts you to Level 2."</p>
     <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
   </div>
@@ -51,7 +52,7 @@
     <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
   </div>
 
-  <div class="mcq" data-answer="wrong" data-why="In PAM 4.1, only quality assurance must be independent (SUP.1.BP1). Independent verification comes from functional safety standards such as ISO 26262 (lesson 11).">
+  <div class="mcq" data-answer="wrong" data-why="In PAM 4.1, only quality assurance must be independent (SUP.1.BP1). Any independence rule for verification comes from other standards the project follows (lesson 11).">
     <p class="q">"ASPICE requires verification to be performed independently of development."</p>
     <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
   </div>
@@ -85,10 +86,25 @@
     <p class="q">"Using AI to write code doesn't lower your rating by itself; how you control and check its output does."</p>
     <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
   </div>
+  <div class="mcq" data-answer="right" data-why="TAC.RL.1: tracing between reasonable clusters instead of atomic elements shall not be downrated (lesson 4).">
+    <p class="q">"You can trace groups of requirements to a component; linking every single requirement isn't required."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="right" data-why="SUP.8.BP7's note says a complete and consistent baseline &quot;can be used to support, e.g., project gate approval&quot; (lesson 11).">
+    <p class="q">"A complete, consistent baseline is good evidence to support a gate approval."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
+
+  <div class="mcq" data-answer="right" data-why="The Guidelines list prompts used to generate source code as possible new configuration items, and version control of AI tools, models and settings (lesson 12).">
+    <p class="q">"Prompts, model versions and settings used to generate code belong under configuration management."</p>
+    <button data-choice="right">Right</button><button data-choice="wrong">Wrong</button>
+  </div>
 </section>
 
+<h2>Rewrite it</h2>
+
 <section class="drill">
-  <h3>Rewrite it</h3>
   <div class="recall">
     <p>Rewrite "When our traceability check is green, compliance is proven" so that it is true and still a selling point.</p>
     <textarea></textarea>
@@ -105,6 +121,9 @@
   <p><strong>Your win:</strong> you can read anything written about ASPICE, spot the usual mistakes, and fix them without losing the point being made. The <a href="../reference/misconceptions.html">misconceptions sheet</a> keeps the list, with sources.</p>
 </div>
 
+<h2>Read next</h2>
+<p>Check any claim yourself: the process list in <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=14">PAM §3.1, pp. 14–16</a>, the level rule in <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=22">Table 9, p. 22</a>, the separate cybersecurity volume in the <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=6">Guidelines preface</a>, the traceability rules in <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=57">Guidelines §2.3.4, pp. 55–60</a>, and AI assistance in <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=100">§2.5.5, pp. 98–99</a>.</p>
+
 <p class="aside">Found a claim in the wild you're unsure about? Paste it to your teacher (the agent) and check it against the PAM together.</p>
 
 <footer>
@@ -113,6 +132,7 @@
     <a href="../index.html">Course index →</a>
   </nav>
   <nav>
+    <a href="../index.html">Course index</a>
     <a href="../reference/misconceptions.html">Misconceptions</a>
     <a href="../reference/glossary.html">Glossary</a>
   </nav>

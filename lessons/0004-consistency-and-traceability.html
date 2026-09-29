@@ -12,7 +12,7 @@
 <header>
   <p class="kicker">Lesson 4 of 13 · Automotive SPICE, the vital 20 %</p>
   <h1>Consistency and traceability</h1>
-  <p class="lede">One base practice appears, almost word for word, in every engineering process. It is where modern Git-based teams most often lose points, and it is cheap to get right once you know what the assessor is checking.</p>
+  <p class="lede">One base practice appears, almost word for word, in nearly every engineering process. It is cheap to get right once you know what the assessor is checking.</p>
 </header>
 
 <section class="drill warmup">
@@ -29,11 +29,11 @@
 
 <h2>One base practice, everywhere</h2>
 
-<p>Every SYS and SWE process has a BP called <strong>"Ensure consistency and establish bidirectional traceability"</strong>. SUP.10 has one for change requests, and MAN.3.BP9 asks for consistency across the plan<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=57">[Guidelines §2.3.4, p. 55]</a>. Together they form a chain down the left side of the V and across to the verification on the right:</p>
+<p>Every SYS process from SYS.2 on, and every SWE process, has a BP called <strong>"Ensure consistency and establish bidirectional traceability"</strong>. SUP.10.BP4 asks for bidirectional traceability between change requests and the work products they affect, and MAN.3.BP9 asks for consistency across the plan<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=57">[Guidelines §2.3.4, p. 55]</a>. Together they form a chain down the left side of the V and across to the verification on the right:</p>
 
 <figure>
   <img src="../assets/v-model.svg" alt="The system and software V: requirements and design on the left, verification on the right, with double-headed arrows down the left leg and dashed arrows across to the matching verification process.">
-  <figcaption>Simplified from PAM Annex C.4, Figure 9 (<a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=157">p. 157</a>). Each right-hand process also traces its results to its verification measures.</figcaption>
+  <figcaption>Simplified from PAM Annex C.4, Figure 9 (<a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=157">p. 157</a>). Each right-hand process also traces its results to its verification measures. Not drawn: SWE.3's one-way trace from the detailed design to the software requirements (SWE.3.BP4).</figcaption>
 </figure>
 
 <h3>Two words, two different demands</h3>
@@ -57,10 +57,10 @@
 </table>
 
 <div class="callout">
-  <p><strong>The agile trap.</strong> Teams that keep requirements only inside tickets can trace a story to its code easily, but have "no overview of all requirements". At the end, "the requirements of the feature can only be determined by assessing all tasks of the feature"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=80">[Guidelines §2.5.2.3, p. 78]</a>. Traceability then points at a moving pile of changes rather than a current requirement set, and consistency can't be judged.</p>
+  <p><strong>The agile trap.</strong> Teams that keep requirements only inside tickets can trace a story to its code easily, but have "no overview of all requirements". At the end, "the requirements of the feature can only be determined by assessing all tasks of the feature"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=80">[Guidelines §2.5.2.3, p. 78]</a>. The Guidelines note that this weakens reviews of cross-consistency between requirements.</p>
 </div>
 
-<p class="aside">Traceability <em>within</em> one process's work products (between two sections of the architecture, for instance) is not a level 1 matter. It belongs to GP 2.2.2 at level 2<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=59">[Guidelines §2.3.4.2, p. 57]</a>.</p>
+<p class="aside">Traceability <em>within</em> one process's work products (between two sections of the architecture, for instance) is not addressed by the level 1 BPs. The Guidelines say it "may be considered in the context of GP 2.2.2" at level 2<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=59">[Guidelines §2.3.4.2, p. 57]</a>.</p>
 
 <h2>Practice: find the weakness at Seat-Heat</h2>
 
@@ -84,7 +84,7 @@ CI: uploads HIL results to the build page, linked to the commit.</div>
     <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
   </div>
 
-  <div class="mcq" data-answer="weak" data-why="PRs trace to stories, and stories are changes, not requirements. Unless each story links to the requirement it implements, there is no path from a requirement down to its units.">
+  <div class="mcq" data-answer="weak" data-why="PRs trace to stories, and stories are changes, not requirements. The PAM's chain runs requirement → architecture → detailed design → unit (SWE.2.BP4, SWE.3.BP4). With no detailed design and stories not linked to requirements, PR-to-story links can't close that gap.">
     <p class="q">PRs reference the story's Jira key, and stories are not linked to requirement issues.</p>
     <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
   </div>
@@ -92,6 +92,11 @@ CI: uploads HIL results to the build page, linked to the commit.</div>
   <div class="mcq" data-answer="weak" data-why="SWE.4.BP4 needs verification measures traced to the units in the detailed design, and results to measures. A naming convention can serve as trace ('linked-by-name'), but only if the detailed design names the same units, and here that is not shown.">
     <p class="q">Unit tests are named after modules, and there is no detailed design naming those modules.</p>
     <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
+  </div>
+
+  <div class="mcq" data-answer="traceability" data-why="The test is right, so its content agrees with the requirement. What's missing is any recorded link between the two, which is traceability.">
+    <p class="q">A HIL test correctly checks the 60 s ramp, but has no <code>@verifies</code> tag, and nothing else links it to a requirement. What is violated?</p>
+    <button data-choice="traceability">Traceability</button><button data-choice="consistency">Consistency</button>
   </div>
 
   <div class="mcq" data-answer="consistency" data-why="The link exists, so traceability is fine. What's missing is agreement between the two items, which is consistency.">
@@ -124,6 +129,7 @@ CI: uploads HIL results to the build page, linked to the commit.</div>
     <a href="0005-level-2-managing-performance.html">Lesson 5: Managing performance →</a>
   </nav>
   <nav>
+    <a href="../index.html">Course index</a>
     <a href="../reference/process-cards.html">Process cards</a>
     <a href="../reference/glossary.html">Glossary</a>
   </nav>

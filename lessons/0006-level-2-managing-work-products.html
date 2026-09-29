@@ -49,12 +49,12 @@
 <p>Information item <code>13-19 Review evidence</code> identifies the review object with its version, the reviewers with their roles, the date, the status, the review criteria and the non-conformances found<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=139">[PAM Annex B, p. 139]</a>. A GitHub or GitLab approval records most of that automatically. What it usually lacks is the <em>criteria</em>.</p>
 
 <div class="callout">
-  <p><strong>PA 2.2 and the SUP processes move together.</strong> The Guidelines expect SUP.1.BP2 to be in line with GP 2.2.1, SUP.1.BP3 with GP 2.2.4, SUP.8.BP2 with GP 2.2.2, and SUP.8.BP4/BP5 with GP 2.2.3, across the other processes<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=253">[Guidelines §4.2.3.2, pp. 251–252]</a>. One example rule: SUP.1.BP3 "shall not be rated higher than the ratings across GP 2.2.4 of all processes"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=44">[Guidelines §1.5.2, p. 42]</a>. Weak configuration management shows up everywhere at level 2.</p>
+  <p><strong>PA 2.2 and the SUP processes move together.</strong> The Guidelines expect SUP.1.BP2 to be in line with GP 2.2.1, SUP.1.BP3 with GP 2.2.4, SUP.8.BP2 with GP 2.2.2, and SUP.8.BP4/BP5 with GP 2.2.3, across the other processes<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=253">[Guidelines §4.2.3.2, pp. 251–252]</a>. When the Guidelines explain how rating rules are worded, their illustration is exactly this pairing: "SUP.1.BP3 shall not be rated higher than the ratings across GP 2.2.4 of all processes"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=44">[Guidelines §1.5.2, p. 42]</a>. Weak configuration management or weak reviews tend to show up across the whole level-2 profile.</p>
 </div>
 
 <h3>AI assistants are a PA 2.2 question</h3>
 
-<p>The Guidelines' section on AI assistance says tool use is a HOW-level choice, and that assessors still rate the WHAT. It names PA 2.2, SUP.8 and SUP.1 as the places AI tools reach, with examples: prompts that generate source code as new configuration items, approval of which AI tools may be used, and version control of "AI tools, models, and settings, because their behavior changes over time"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=100">[Guidelines §2.5.5, pp. 98–99]</a>. <a href="0012-ai-generated-work-products.html">Lesson 12</a> goes deeper.</p>
+<p>The Guidelines' section on AI assistance says tool use is a HOW-level choice, and that assessors still rate the WHAT. It names PA 2.2, SUP.8 and SUP.1, among others, as places AI tools reach, with examples: prompts that generate source code as new configuration items, approval of which AI tools may be used, and version control of "AI tools, models, and settings, because their behavior changes over time"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=100">[Guidelines §2.5.5, pp. 98–99]</a>. <a href="0012-ai-generated-work-products.html">Lesson 12</a> goes deeper.</p>
 
 <h2>Seat-Heat's software requirements (SWE.1) at level 2</h2>
 
@@ -81,7 +81,7 @@ Developers paste requirement text into an AI assistant to draft test cases; whic
     <p class="q">Issue history, and the export stored with each release tag.</p>
     <button data-choice="2.2.1">GP 2.2.1</button><button data-choice="2.2.2">GP 2.2.2</button><button data-choice="2.2.3">GP 2.2.3</button><button data-choice="2.2.4">GP 2.2.4</button>
   </div>
-  <div class="mcq" data-answer="2.2.4" data-why="The criteria exist (GP 2.2.1), but the review doesn't check against them or record findings. That is a GP 2.2.4 weakness, and SUP.1.BP3 can't be rated higher than it.">
+  <div class="mcq" data-answer="2.2.4" data-why="The criteria exist (GP 2.2.1), but the review doesn't check against them or record findings. That is a GP 2.2.4 weakness, and the Guidelines expect SUP.1.BP3's rating to be in line with it.">
     <p class="q">Approval after "a look", with no checklist and no record of findings. Which GP is weak?</p>
     <button data-choice="2.2.1">GP 2.2.1</button><button data-choice="2.2.2">GP 2.2.2</button><button data-choice="2.2.3">GP 2.2.3</button><button data-choice="2.2.4">GP 2.2.4</button>
   </div>
@@ -103,7 +103,7 @@ Developers paste requirement text into an AI assistant to draft test cases; whic
     <p class="q">"Every requirement is reviewed against the quality checklist before approval, and findings are closed."</p>
     <button data-choice="L1">Level 1</button><button data-choice="L2">Level 2</button>
   </div>
-  <div class="mcq" data-answer="L1" data-why="Consistency and traceability between processes' work products is a base practice (SWE.6.BP4): level 1. Traceability within one process's work products would be GP 2.2.2.">
+  <div class="mcq" data-answer="L1" data-why="Consistency and traceability between processes' work products is a base practice (SWE.6.BP4): level 1. Traceability within one process's own work products isn't covered by the level-1 BPs; the Guidelines say it may be considered under GP 2.2.2.">
     <p class="q">"Each HIL test traces to the software requirement it verifies."</p>
     <button data-choice="L1">Level 1</button><button data-choice="L2">Level 2</button>
   </div>
@@ -133,6 +133,7 @@ Developers paste requirement text into an AI assistant to draft test cases; whic
     <a href="0007-level-3-standard-and-defined-process.html">Lesson 7: Level 3 →</a>
   </nav>
   <nav>
+    <a href="../index.html">Course index</a>
     <a href="../reference/generic-practices.html">Generic practices</a>
     <a href="../reference/glossary.html">Glossary</a>
   </nav>

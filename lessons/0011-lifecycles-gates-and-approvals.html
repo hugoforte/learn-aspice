@@ -17,9 +17,9 @@
 
 <section class="drill warmup">
   <p class="score"></p>
-  <div class="mcq" data-answer="consistency" data-why="A structural checker shows the links are sound. Whether linked items agree is consistency, and that needs a semantic check.">
-    <p class="q">Which of the two can a structural traceability check <em>not</em> establish?</p>
-    <button data-choice="traceability">Traceability</button><button data-choice="consistency">Consistency</button>
+  <div class="mcq" data-answer="level1" data-why="SUP.8.BP1 and BP2 are base practices, so for SUP.8 itself unique IDs are level-1 evidence. For the engineering processes the same records support GP 2.2.2/2.2.3 at level 2.">
+    <p class="q">A CI check that blocks duplicate record IDs is evidence at which level for SUP.8 itself?</p>
+    <button data-choice="level1">Level 1</button><button data-choice="level2">Level 2</button><button data-choice="level3">Level 3</button>
   </div>
   <div class="mcq" data-answer="2.2.4" data-why="Reviewing work products against defined criteria and resolving the findings is GP 2.2.4.">
     <p class="q">A reviewer checks an architecture record against a checklist and closes two findings. Which GP?</p>
@@ -57,8 +57,8 @@
 
 <h3>Two things gates are often credited with, wrongly</h3>
 <ul>
-  <li><strong>Requirements analysis happens in SYS.2 and SWE.1, not SYS.1.</strong> SYS.1 is Requirements <em>Elicitation</em>.</li>
-  <li><strong>Independent verification is not an ASPICE demand.</strong> In PAM 4.1 only quality assurance must be independent (SUP.1.BP1, "no self-monitoring")<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=79">[p. 79]</a>. Independence requirements for verification come from functional safety standards such as ISO 26262. Keep them if you need them, but credit the right standard.</li>
+  <li><strong>System requirements are analysed in SYS.2, not SYS.1.</strong> SYS.1 is Requirements <em>Elicitation</em>: it gathers and analyses <em>stakeholder</em> needs and their changes. Software requirements are SWE.1.</li>
+  <li><strong>Independent verification is not an ASPICE demand.</strong> In PAM 4.1 only quality assurance must be independent (SUP.1.BP1, "no self-monitoring")<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=79">[p. 79]</a>. ASPICE doesn't require independent verification. Other standards your project follows, such as ISO 26262, have their own independence rules: check which apply, and credit the right standard.</li>
 </ul>
 
 <h2>Practice</h2>
@@ -69,19 +69,19 @@
     <p class="q">The final "Released" gate approval is primarily evidence for…</p>
     <button data-choice="MAN.3">MAN.3</button><button data-choice="SPL.2">SPL.2</button><button data-choice="SUP.9">SUP.9</button><button data-choice="SWE.6">SWE.6</button>
   </div>
-  <div class="mcq" data-answer="no" data-why="The PAM prescribes no order. Going back from Verified to Built is ordinary iteration inside the team's own lifecycle.">
-    <p class="q">A feature goes back from "Verified" to "Built" after a failed test. Is that a deviation from ASPICE?</p>
+  <div class="mcq" data-answer="no" data-why="The PAM prescribes no order. Going back from Verified to Candidate frozen is ordinary iteration inside the team's own lifecycle.">
+    <p class="q">A feature goes back from "Verified" to "Candidate frozen" after a failed test. Is that a deviation from ASPICE?</p>
     <button data-choice="yes">Yes</button><button data-choice="no">No</button>
   </div>
   <div class="mcq" data-answer="flex" data-why="VAL.1 and SPL.2 are both in the flex/optional set, outside the recommended VDA Scope.">
     <p class="q">In the recommended VDA Scope, VAL.1 Validation is…</p>
     <button data-choice="base">Base</button><button data-choice="plugin">Plug-in</button><button data-choice="flex">Flex</button>
   </div>
-  <div class="mcq" data-answer="role" data-why="13-13 identifies the release date and the name and role of the approver. An account ID alone is weaker evidence.">
-    <p class="q">Besides the decision and date, what must a release approval record carry to match 13-13?</p>
+  <div class="mcq" data-answer="role" data-why="13-13 lists the release date and the name and role of the approver among its characteristics. Characteristics are what an assessor looks for, not a required structure.">
+    <p class="q">Besides the decision and date, what does information item 13-13 list for a release approval?</p>
     <button data-choice="hash">Content digest</button><button data-choice="role">Approver role</button><button data-choice="model">Tool version</button>
   </div>
-  <div class="mcq" data-answer="sup1" data-why="Only SUP.1 (quality assurance) requires independence in PAM 4.1. Independent verification is a functional-safety demand.">
+  <div class="mcq" data-answer="sup1" data-why="Only SUP.1 (quality assurance) requires independence in PAM 4.1. Any independence rule for verification comes from other standards.">
     <p class="q">Which ASPICE process explicitly requires independence?</p>
     <button data-choice="swe6">SWE.6</button><button data-choice="sup1">SUP.1</button><button data-choice="spl2">SPL.2</button>
   </div>
@@ -100,7 +100,9 @@
 </div>
 
 <h2>Read next</h2>
-<p><a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=30">SPL.2 Product Release, PAM pp. 30–32</a>, and its rating rules in the <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=115">Guidelines §3.2, pp. 113–114</a>.</p>
+<p><a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=30">SPL.2 Product Release, PAM pp. 30–32</a>, and its rating rules in the <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=114">Guidelines §3.2, pp. 112–113</a>.</p>
+
+<p class="aside">Mapping your own team's gates? Walk through them with your teacher (the agent) in the chat.</p>
 
 <footer>
   <nav class="pager">
@@ -108,6 +110,7 @@
     <a href="0012-ai-generated-work-products.html">Lesson 12: AI-generated work products →</a>
   </nav>
   <nav>
+    <a href="../index.html">Course index</a>
     <a href="../reference/misconceptions.html">Misconceptions</a>
     <a href="../reference/glossary.html">Glossary</a>
   </nav>

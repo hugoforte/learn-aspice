@@ -46,6 +46,7 @@ Sample of 10 CRs, chosen by the assessor, traced from OEM request to release:
   · a dashboard shows CR status; the OEM portal is synced weekly.
 Project handbook: "Every CR analysed within 5 working days. No unanalysed CR 4 weeks before a release."
 Dashboard of analysis age reviewed at stand-up. It showed the 5-day target missed in sprints 12 and 13; no action was recorded.
+The sprint plan reserves the CCB's two hours a week and names the product owner and SW lead for it.
 CCB membership and the OEM portal channel are defined in the handbook.
 A Confluence page lists "analysis complete" criteria; the CCB checks them before approving. A tool template enforces the fields.</div>
 
@@ -85,7 +86,7 @@ A Confluence page lists "analysis complete" criteria; the CCB checks them before
     <p class="q">Which GP does "target missed twice, no action recorded" hit?</p>
     <button data-choice="2.1.1">GP 2.1.1</button><button data-choice="2.1.4">GP 2.1.4</button><button data-choice="2.1.5">GP 2.1.5</button><button data-choice="2.1.6">GP 2.1.6</button>
   </div>
-  <div class="mcq" data-answer="L" data-why="Objectives, resources and interfaces are in place; monitoring works but adjustment doesn't. One real weakness in the loop: L.">
+  <div class="mcq" data-answer="L" data-why="Objectives (GP 2.1.1), planned CCB time and named people (GP 2.1.2–2.1.4) and defined interfaces (GP 2.1.6) are in place. Monitoring works but adjustment doesn't (GP 2.1.5). One real weakness in the loop: L.">
     <p class="q">PA 2.1 for this instance.</p>
     <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
   </div>
@@ -93,13 +94,9 @@ A Confluence page lists "analysis complete" criteria; the CCB checks them before
     <p class="q">The Jira template's mandatory fields and the "analysis complete" criteria page. Which GP?</p>
     <button data-choice="2.2.1">GP 2.2.1</button><button data-choice="2.2.2">GP 2.2.2</button><button data-choice="2.2.3">GP 2.2.3</button><button data-choice="2.2.4">GP 2.2.4</button>
   </div>
-  <div class="mcq" data-answer="F" data-why="Requirements for content, a status model, history and control in Jira, and reviews against criteria are all present. No significant weakness: F.">
+  <div class="mcq" data-answer="L" data-why="The definitions (template, status model, criteria) and the history are strong. But 2 of 10 CRs skipped both the status model and the CCB review, and 3 of 10 passed the &quot;analysis complete&quot; check without any side-effect analysis. Either the criteria miss side effects or the review doesn't apply them; both are GP 2.2.4 weaknesses (PA2.2.RL.8, RL.12). That rules out F: L.">
     <p class="q">PA 2.2 for this instance.</p>
     <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
-  </div>
-  <div class="mcq" data-answer="1" data-why="PA 1.1 is L. Level 2 needs it at F, so the good level-2 attributes don't count: level 1. It is the lesson-1 trap, now with real evidence.">
-    <p class="q">Capability level for the application-code instance (PA 1.1 L, 2.1 L, 2.2 F)?</p>
-    <button data-choice="0">Level 0</button><button data-choice="1">Level 1</button><button data-choice="2">Level 2</button><button data-choice="3">Level 3</button>
   </div>
 </section>
 
@@ -107,26 +104,39 @@ A Confluence page lists "analysis complete" criteria; the CCB checks them before
 
 <div class="evidence">Platform code: changes arrive as Slack messages from the three projects; about half get a Jira ticket afterwards.
 No impact analysis recorded; no approval step; changes are merged by the platform maintainer.
-PRs are reviewed, and release notes list the changes.</div>
+PRs are reviewed, and release notes list the changes.
+Nobody has set targets for platform changes, planned time for them, or tracks how they are handled.</div>
 
 <section class="drill">
   <p class="score"></p>
 
-  <div class="mcq" data-answer="P" data-why="Some recording (half), and PR review and release notes give some tracking, but no analysis and no approval. Some achievement, largely unpredictable: P.">
+  <div class="mcq" data-answer="P" data-why="Some recording (half), and PR review and release notes give some tracking, but no analysis and no approval. Some achievement, with many aspects unpredictable: P.">
     <p class="q">PA 1.1 for the platform instance.</p>
     <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
   </div>
-  <div class="mcq" data-answer="L" data-why="(L 2 + P 1) / 2 = 1.5. Exactly halfway rounds up, to 2: L. With equal weights, the platform's weakness is hidden in the aggregate. That's why instance ratings go in the report.">
-    <p class="q">Aggregated PA 1.1 for SUP.10, equal weights (application L, platform P)?</p>
+  <div class="mcq" data-answer="N" data-why="No objectives, no planning, no monitoring: little or no evidence of managing the process. N.">
+    <p class="q">PA 2.1 for the platform instance.</p>
     <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
+  </div>
+  <div class="mcq" data-answer="L" data-why="Application L (2) and platform P (1): (2 + 1) / 2 = 1.5. Exactly halfway rounds up, to 2: L. With equal weights the platform's weakness is hidden in the aggregate, which is why instance ratings also go in the report.">
+    <p class="q">Using your two instance ratings with equal weights, what is SUP.10's aggregated PA 1.1?</p>
+    <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
+  </div>
+  <div class="mcq" data-answer="P" data-why="Application L (2) and platform N (0): (2 + 0) / 2 = 1.0: P.">
+    <p class="q">And SUP.10's aggregated PA 2.1?</p>
+    <button data-choice="N">N</button><button data-choice="P">P</button><button data-choice="L">L</button><button data-choice="F">F</button>
+  </div>
+  <div class="mcq" data-answer="1" data-why="A process gets one capability level, derived from its aggregated PA ratings. Aggregated PA 1.1 is L, which gives level 1 and blocks level 2. PA 2.1 at P would block it too.">
+    <p class="q">SUP.10's capability level, from the aggregated ratings?</p>
+    <button data-choice="0">Level 0</button><button data-choice="1">Level 1</button><button data-choice="2">Level 2</button><button data-choice="3">Level 3</button>
   </div>
   <div class="mcq" data-answer="ignore" data-why="Created shortly before the assessment with no plausible reason: it should not be considered (lesson 8, plausibility).">
     <p class="q">The day before the assessment, the platform maintainer creates a "Platform CR process" page. The assessor…</p>
     <button data-choice="accept">Credits it</button><button data-choice="ignore">Ignores it</button>
   </div>
-  <div class="mcq" data-answer="bp3" data-why="With PA 2.2 at F and PA 2.1 at L, what blocks level 2 is PA 1.1 below F. The approval gap (BP3) is the widest; defining an emergency path and adding the test lead fixes the application instance fastest. The platform instance needs its whole process built.">
-    <p class="q">For the application instance, which fix does most to reach level 2?</p>
-    <button data-choice="bp3">Fix approvals</button><button data-choice="gp215">Fix monitoring</button><button data-choice="gp221">Fix templates</button>
+  <div class="mcq" data-answer="platform" data-why="Level 2 needs aggregated PA 1.1 at F, a mean of at least 2.5. Even a perfect application instance (3) with the platform still at P (1) averages 2.0: L. The platform instance must reach at least L, and it also drags PA 2.1 down. Fixing the application instance alone cannot get SUP.10 to level 2.">
+    <p class="q">Which single fix does most to get SUP.10 to level 2?</p>
+    <button data-choice="approvals">Fix app approvals</button><button data-choice="platform">Build platform process</button><button data-choice="monitoring">Fix app monitoring</button>
   </div>
 </section>
 
@@ -136,12 +146,12 @@ PRs are reviewed, and release notes list the changes.</div>
   <div class="recall">
     <p>Write the weakness statement for BP3 in the application instance: what is missing, the evidence, and the risk.</p>
     <textarea></textarea>
-    <div class="model"><p>"Change requests are not consistently approved before implementation: 2 of 10 sampled CRs (e.g. the two 'urgent customer fix' CRs) moved from Open to Implemented without CCB approval, and no emergency approval path is defined. The CCB does not include the test lead. Risk: changes reach the product without assessed impact on verification or agreed release scope."</p></div>
+    <div class="model"><p>"Change requests are not consistently approved before implementation: 2 of 10 sampled CRs (the two 'urgent customer fix' CRs) moved from Open to Implemented without CCB approval, and no emergency approval path is defined. The CCB does not include the test lead. Risk: changes reach the product without assessed impact on verification or agreed release scope."</p></div>
   </div>
   <div class="recall">
-    <p>In three sentences, explain to Seat-Heat's manager why they got level 1 despite a strong level 2 setup.</p>
+    <p>In three sentences, explain to Seat-Heat's manager why SUP.10 got level 1.</p>
     <textarea></textarea>
-    <div class="model"><p>Level 2 requires PA 1.1 to be fully achieved, and ours is largely achieved because side effects aren't always analysed and some changes skip approval. The management practices (objectives, templates, Jira workflow) are genuinely good and would count once the base is fixed. Close those two gaps and start acting on the analysis-age dashboard, and level 2 is within reach for the application code. The platform code needs a change process of its own.</p></div>
+    <div class="model"><p>Level 2 needs PA 1.1 fully achieved across both instances, and ours aggregates to largely achieved: the application code sometimes skips side-effect analysis and approval, and the platform code has almost no change process. The application team's management setup is good, but it isn't enough while the platform instance pulls every attribute down. Build a real change process for platform code, then close the approval and side-effect gaps, and level 2 is within reach.</p></div>
   </div>
 </section>
 
@@ -164,6 +174,7 @@ PRs are reviewed, and release notes list the changes.</div>
     <a href="0010-automated-checks.html">Lesson 10: Automated checks →</a>
   </nav>
   <nav>
+    <a href="../index.html">Course index</a>
     <a href="../reference/assessment-rules.html">Assessment rules</a>
     <a href="../reference/glossary.html">Glossary</a>
   </nav>

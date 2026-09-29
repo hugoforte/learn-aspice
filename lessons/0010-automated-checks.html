@@ -44,10 +44,10 @@ A CI job runs on every pull request and blocks the merge if any check fails:
 <table>
   <tr><th>Check</th><th>Supports</th><th>Watch out for</th></tr>
   <tr><td class="id">1 references resolve</td><td>The traceability BPs; SUP.8.BP7 consistency of baseline information.</td><td>Nothing: pure gain.</td></tr>
-  <tr><td class="id">2 required parent</td><td>The traceability BPs.</td><td>The required parent depends on context. In software-only development, software requirements trace to <em>stakeholder</em> requirements<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=45">[SWE.1.BP5 note 12, p. 45]</a>.</td></tr>
+  <tr><td class="id">2 required parent</td><td>The traceability BPs.</td><td>The required parent depends on context. In software-only development, software requirements can trace to <em>stakeholder</em> requirements<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=45">[SWE.1.BP5 note 12, p. 45]</a>.</td></tr>
   <tr><td class="id">3 legal pairs</td><td>The V's pairings, e.g. unit verification ↔ units (SWE.4.BP4). "Redundant traceability is not intended" (note 9).</td><td>Don't forbid edges the PAM asks for. SWE.3.BP4 includes traceability from the detailed design to the <strong>software requirements</strong><a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=49">[p. 49]</a>.</td></tr>
   <tr><td class="id">4 orphans</td><td>Coverage, one of the benefits the Guidelines list for traceability<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=59">[§2.3.4.2, p. 57]</a>.</td><td>Some items legitimately have no downstream link. Non-functional system requirements the software doesn't trace to "are still subject to verification" (SWE.1.BP5 note 10). Allow a recorded justification.</td></tr>
-  <tr><td class="id">5 IDs and metadata</td><td>Identification, storage and control: GP 2.2.2/2.2.3; SUP.8.BP1/BP2.</td><td>That's <em>level 2</em> evidence, not level 1.</td></tr>
+  <tr><td class="id">5 IDs and metadata</td><td>Identification, storage and control: GP 2.2.2/2.2.3; SUP.8.BP1/BP2.</td><td>For the engineering processes this is level-2 evidence (GP 2.2.2/2.2.3). For SUP.8 itself, BP1/BP2 are base practices, so it counts at level 1 there.</td></tr>
   <tr><td class="id">6 requirement wording</td><td>Requirement characteristics (SWE.1.BP1 notes 1–2: ISO 29148, INCOSE) and GP 2.2.1 quality criteria.</td><td>The PAM's examples are verifiability, unambiguity, freedom from design and non-contradiction. A sentence template like EARS is a HOW, not an ASPICE demand.</td></tr>
 </table>
 
@@ -66,6 +66,7 @@ A CI job runs on every pull request and blocks the merge if any check fails:
 
 <section class="drill">
   <p class="score"></p>
+  <p>For each rule or situation: does it <strong>support</strong> an ASPICE practice, go <strong>beyond</strong> what ASPICE asks, or is it <strong>wrong</strong> because it contradicts the model? The first question asks which property failed.</p>
   <div class="mcq" data-answer="consistency" data-why="Every link resolves and every pairing is legal, so CI is green. But the two items disagree, and only a semantic check catches that.">
     <p class="q">CI is green. A SWE.6 test checks a 90 s ramp; the requirement it traces to now says 60 s. What failed?</p>
     <button data-choice="traceability">Traceability</button><button data-choice="consistency">Consistency</button>
@@ -78,7 +79,7 @@ A CI job runs on every pull request and blocks the merge if any check fails:
     <p class="q">A rule forbids cluster-level links: every requirement must be traced individually.</p>
     <button data-choice="supports">Supports</button><button data-choice="beyond">Beyond</button><button data-choice="wrong">Wrong</button>
   </div>
-  <div class="mcq" data-answer="supports" data-why="Unique identification and control of work products is GP 2.2.2/2.2.3 and SUP.8.BP1: level-2 evidence.">
+  <div class="mcq" data-answer="supports" data-why="Unique identification and control of work products supports GP 2.2.2/2.2.3 for the engineering processes, and SUP.8.BP1/BP2 for configuration management.">
     <p class="q">CI blocks two records that share an ID.</p>
     <button data-choice="supports">Supports</button><button data-choice="beyond">Beyond</button><button data-choice="wrong">Wrong</button>
   </div>
@@ -101,7 +102,7 @@ A CI job runs on every pull request and blocks the merge if any check fails:
 </div>
 
 <h2>Read next</h2>
-<p>Every traceability BP and its notes, <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=44">PAM pp. 44–57</a>; then <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=57">Guidelines §2.3.4, pp. 55–60</a>.</p>
+<p>The traceability BPs and their notes: SYS on <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=35">PAM pp. 35–43</a>, SWE on <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=44">pp. 44–57</a>; then <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=57">Guidelines §2.3.4, pp. 55–60</a>.</p>
 
 <p class="aside">Have a check that isn't covered here? Ask your teacher (the agent) to map it to a practice.</p>
 
@@ -111,6 +112,7 @@ A CI job runs on every pull request and blocks the merge if any check fails:
     <a href="0011-lifecycles-gates-and-approvals.html">Lesson 11: Lifecycles, gates and approvals →</a>
   </nav>
   <nav>
+    <a href="../index.html">Course index</a>
     <a href="../reference/misconceptions.html">Misconceptions</a>
     <a href="../reference/glossary.html">Glossary</a>
   </nav>

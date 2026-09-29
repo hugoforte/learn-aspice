@@ -35,6 +35,8 @@
   <path class="down" d="M175,188 L200,215"/>
   <path class="down" d="M215,253 L240,280"/>
   <path class="down" d="M255,318 L300,330"/>
+  <!-- SWE.1 also traces to the system requirements (SWE.1.BP5) -->
+  <path class="down" d="M75,123 C45,180 80,236 140,240"/>
 
   <!-- across the V -->
   <path class="across" d="M210,104 L550,104"/>
@@ -42,6 +44,8 @@
   <path class="across" d="M290,234 L470,234"/>
   <path class="across" d="M330,299 L425,299"/>
   <path class="across" d="M435,349 L455,349"/>
+  <!-- SWE.5 verification also traces to the detailed design (SWE.5.BP6) -->
+  <path class="across" d="M420,330 L445,318"/>
 
   <text x="360" y="96" class="p">SYS.5.BP4</text>
   <text x="380" y="161" class="p">SYS.4.BP4</text>

@@ -2,6 +2,6 @@
 Status: mission part superseded by LR-0002; the prior-knowledge part stands
 ---
 
-# First contact; the mission is to rate rig's own process
+# First contact with ASPICE
 
-Hugo starts with no prior knowledge of ASPICE or related models (CMMI, ISO/IEC 330xx), so terms like PRM, PAM, process attribute and capability level must be taught, not assumed. The goal is to use the capability dimension as a mirror on rig's workflow, which makes the measurement framework (levels, PAs, N/P/L/F, the level rule) and the WHAT/HOW/DOING split the first things to teach, ahead of any individual process.
+The course's first learner started with no prior knowledge of ASPICE or related models (CMMI, ISO/IEC 330xx), so terms like PRM, PAM, process attribute and capability level are taught, not assumed. That made the measurement framework (levels, PAs, N/P/L/F, the level rule) and the WHAT/HOW/DOING split the first things to teach, ahead of any individual process. The original mission, rating one specific tool's workflow, was replaced by a general course (LR-0002).
