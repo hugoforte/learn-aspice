@@ -1,0 +1,18 @@
+#separator:Pipe
+#html:true
+#notetype:Basic
+#deck:ASPICE 4.1::10 Automated checks
+#tags:aspice::lesson-10
+#guid column:3
+#columns:Front|Back|GUID
+In two sentences: what does a green traceability check establish, and what doesn't it?|It establishes that the trace graph is structurally sound: references resolve, links follow legal pairings, IDs are unique, records are well-formed. It doesn't establish that linked items agree (consistency), or that any process is compliant.|aspice-10-01
+CI is green, but a SWE.6 test checks a 90 s ramp while its linked requirement says 60 s. What failed?|Consistency. Only a semantic check catches that.|aspice-10-02
+Does ASPICE require an automated, atomic, merge-blocking traceability checker?|No. It goes beyond the model: TAC.RL.1–3 protect clusters, manual snapshot checks and informal consistency evidence. A sound choice, but not an ASPICE demand. (Guidelines §2.3.4.3–5, pp. 58–60)|aspice-10-03
+A checker rule blocks any detailed-design record (SWE.3) that traces to a software requirement (SWE.1). Supports, beyond, or wrong?|Wrong: SWE.3.BP4 includes traceability from the detailed design to the software requirements. (PAM p. 49)|aspice-10-04
+A checker rule forbids cluster-level links: every requirement must be traced individually. Supports, beyond, or wrong?|Beyond: TAC.RL.1 allows reasonable clusters. Stricter is fine; just don't call it an ASPICE demand.|aspice-10-05
+A requirement-wording check is configured for “system requirements, process SYS.1”. Supports, beyond, or wrong?|Wrong: SYS.1 is Requirements Elicitation (stakeholder requirements). System requirements belong to SYS.2.|aspice-10-06
+A checker flags every record nothing traces to. Why must it allow a recorded justification?|Some items legitimately have no downstream link: non-functional system requirements the software doesn't trace to “are still subject to verification”. (PAM SWE.1.BP5 note 10, p. 45)|aspice-10-07
+What does SWE.1.BP5 note 9 say about extra links?|“Redundant traceability is not intended.”|aspice-10-08
+CI blocks duplicate record IDs. At which level is that evidence for the engineering processes, and for SUP.8?|Engineering processes: level 2 (GP 2.2.2/2.2.3). SUP.8 itself: level 1, because BP1/BP2 are its base practices.|aspice-10-09
+Is a requirement sentence template such as EARS an ASPICE demand?|No, it is a HOW. The PAM's requirement characteristics include verifiability, unambiguity, freedom from design and non-contradiction. (PAM SWE.1.BP1 notes 1–2)|aspice-10-10
+In a docs-as-code repo, what is the natural way to show consistency was checked?|A recorded review: e.g. a reviewer approving the pull request that changes a requirement and its linked tests. 13-51 accepts pair work, revision histories and repository meta-information. (Guidelines §2.3.4.1, pp. 55–56)|aspice-10-11

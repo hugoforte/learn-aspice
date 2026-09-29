@@ -1,0 +1,21 @@
+#separator:Pipe
+#html:true
+#notetype:Basic
+#deck:ASPICE 4.1::13 Red pen
+#tags:aspice::lesson-13
+#guid column:3
+#columns:Front|Back|GUID
+Right or wrong, and why? “ASPICE 4.1 brings cybersecurity into the model with new SEC processes.”|Wrong. The 4.1 PRM has no SEC processes; cybersecurity is a separate VDA model that “remains a separate document”. (Guidelines preface)|aspice-13-01
+Right or wrong, and why? “Our dashboard rates every process attribute from Level 0 to Level 5.”|Wrong. PAs are rated N/P/L/F; levels 0–5 are derived from them by the level rule. (PAM Table 9, p. 22)|aspice-13-02
+Right or wrong, and why? “Bidirectional traceability is what lifts you to Level 2.”|Wrong. The consistency and traceability BPs count at level 1 (PA 1.1). Traceability within one process's own work products may be considered under GP 2.2.2. (Guidelines §2.3.4.2, p. 57)|aspice-13-03
+Right or wrong, and why? “When our traceability check is green, compliance is proven.”|Wrong. Links don't prove the items agree (SWE.1.BP5 note 11), assessors check content, and compliance is an assessor's judgement about a process.|aspice-13-04
+Right or wrong, and why? “Our release gates follow the phases of the ASPICE V-model.”|Wrong. The PAM predefines no order; the V shows consistency and traceability relationships. Gates are the team's own lifecycle, a HOW. (PAM §3.3.4, pp. 26–27)|aspice-13-05
+Right or wrong, and why? “ASPICE requires verification to be performed independently of development.”|Wrong. Only SUP.1 quality assurance must be independent; any independence rule for verification comes from other standards. (PAM SUP.1.BP1, p. 79)|aspice-13-06
+Right or wrong, and why? “Adopt our tool and your projects are ASPICE Level 2.”|Wrong. Levels belong to an organisation's processes. A tool can supply evidence for specific practices, but has no level and confers none.|aspice-13-07
+Right or wrong, and why? “Every software verification result traces back to the risk it mitigates, as SWE.6 requires.”|Wrong. SWE.6.BP4 traces verification measures to software requirements, and results to measures. (PAM p. 56)|aspice-13-08
+Right or wrong, and why? “Every requirement must have a downstream link; anything without one is an error.”|Wrong. Some non-functional requirements legitimately have none and are still verified (SWE.1.BP5 note 10). An orphan rule needs a justified exception.|aspice-13-09
+Right or wrong, and why? “Tool-enforced workflows and CI can serve as your process performance strategy at Level 2.”|Right. The Guidelines list tool-enforced and automated workflows and CI as valid forms of the strategy (GP 2.1.1). (Guidelines §4.1.2.2, p. 236)|aspice-13-10
+Right or wrong, and why? “Evidence written up just before the assessment may be disregarded, so we capture it as the work happens.”|Right. Plausibility check: a document first created shortly before the assessment, without a plausible reason, should not be considered. (Guidelines §1.4.3.2, p. 38)|aspice-13-11
+Right or wrong, and why? “Using AI to write code doesn't lower your rating by itself; how you control and check its output does.”|Right. AI use is a HOW; the assessor rates the WHAT, spot-checks the output and looks at control of tools, models, settings and prompts. (Guidelines §2.5.5, pp. 98–99)|aspice-13-12
+Rewrite so it is true and still sells: “When our traceability check is green, compliance is proven.”|E.g. “Every commit is checked for complete, well-formed trace links, and every change leaves a recorded review, so your assessor finds traceability and consistency evidence captured as the work happened.”|aspice-13-13
+Rewrite so it is true and still sells: “Adopt our tool and your projects are ASPICE Level 2.”|E.g. “The tool produces evidence for the level 2 practices your assessor will look at (planned and monitored work, controlled and reviewed work products, baselines), so a well-run project can show it is managed.”|aspice-13-14

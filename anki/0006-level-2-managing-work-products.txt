@@ -1,0 +1,21 @@
+#separator:Pipe
+#html:true
+#notetype:Basic
+#deck:ASPICE 4.1::06 Level 2, managing work products
+#tags:aspice::lesson-06
+#guid column:3
+#columns:Front|Back|GUID
+Name the four generic practices of PA 2.2.|2.2.1 define the requirements for the work products · 2.2.2 define the requirements for storage and control · 2.2.3 identify, store and control the work products · 2.2.4 review and adjust the work products. (PAM §5.3.2, pp. 104–105)|aspice-06-01
+How do the four GPs of PA 2.2 pair up?|2.2.1 with 2.2.4: requirements, quality and review.<br>2.2.2 with 2.2.3: storage and control. (Guidelines §4.2.3.1, p. 251)|aspice-06-02
+What is the “define, then do” logic of PA 2.2?|First say what a good work product looks like and how it is kept (2.2.1, 2.2.2), then show it was kept that way and checked against the definition (2.2.3, 2.2.4).|aspice-06-03
+A team reviews work products but has no defined review criteria. Which GP fails, and why?|GP 2.2.4, half-way: there is nothing to review against (the criteria belong to GP 2.2.1).|aspice-06-04
+Which work products does PA 2.2 cover?|Those needed for level 1, plus those PA 2.1 and 2.2 themselves need, such as the plan or review records. Records in tools count. (Guidelines §4.2.1, p. 246)|aspice-06-05
+Should badly versioned process descriptions pull PA 2.2 down?|No. Process and role descriptions belong to level 3. (Guidelines §4.2.1, p. 246)|aspice-06-06
+What does information item 13-19 Review evidence identify?|The review object and its version, the reviewers and their roles, the date, the status, the review criteria and the non-conformances found. (PAM Annex B, p. 139)|aspice-06-07
+A pull request approval records most of 13-19 Review evidence automatically. What does it usually lack?|The review criteria.|aspice-06-08
+Which SUP.1 and SUP.8 base practices move with which PA 2.2 generic practices?|SUP.1.BP2 ↔ GP 2.2.1 · SUP.1.BP3 ↔ GP 2.2.4 · SUP.8.BP2 ↔ GP 2.2.2 · SUP.8.BP4/BP5 ↔ GP 2.2.3. (Guidelines §4.2.3.2, pp. 251–252)|aspice-06-09
+Seat-Heat's requirement workflow: Draft → In review → Approved → Obsolete, only the SW lead approves. Which GP?|GP 2.2.2: storage and control requirements, including a status model.|aspice-06-10
+Jira issue history, plus a filter export stored with every release tag. Which GP?|GP 2.2.3: identify, store and control (versioning and baselines actually applied).|aspice-06-11
+Mandatory requirement fields and a page of quality criteria. Which GP?|GP 2.2.1: requirements for the work products.|aspice-06-12
+Level 1 or level 2: “Every requirement is reviewed against the quality checklist before approval, and findings are closed.”|Level 2 (GP 2.2.4).|aspice-06-13
+Developers draft test cases with an AI assistant and don't record the model version. Which area do the Guidelines point to first?|SUP.8 configuration management (and PA 2.2): AI tools, models and settings under version control “because their behavior changes over time”. (Guidelines §2.5.5, pp. 98–99)|aspice-06-14

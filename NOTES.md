@@ -6,4 +6,5 @@
 - The workspace lives at `D:\learn\aspice` and is published at <https://hugoforte.github.io/learn-aspice/> (repo `hugoforte/learn-aspice`, Pages from `main`).
 - Neither the PAM nor the Guidelines may be redistributed: link with `#page=N`, quote only short phrases. PAM PDF pages equal printed pages; the Guidelines PDF page is the printed page + 2.
 - `assets/quiz.js` shuffles answer buttons except ordered scales (N/P/L/F, digits, a/b/c). Still balance keys by content: mix Yes/No, Right/Wrong, Credits/Ignores and N/P/L/F answers.
+- Each lesson has an Anki deck in `anki/` with the lesson's file name, linked under its "Your win" box. The files use Anki's text-import headers (pipe separator, HTML, Basic note type, one subdeck and tag per lesson) and a stable GUID column, `aspice-LL-NN`, so re-importing updates cards in place: never renumber a GUID, only append. Use curly quotes, since a straight double quote at the start of a field is read as CSV quoting, and avoid `|` and `&`. Cards paraphrase the lessons and cite by page; when a lesson's content changes, change its deck in the same commit.
 - Open lessons with `Start-Process <path>` from PowerShell.

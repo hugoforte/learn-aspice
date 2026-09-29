@@ -1,0 +1,21 @@
+#separator:Pipe
+#html:true
+#notetype:Basic
+#deck:ASPICE 4.1::02 Reading a process
+#tags:aspice::lesson-02
+#guid column:3
+#columns:Front|Back|GUID
+Name the four parts of every process description in the PAM.|Purpose, outcomes, base practices, output information items. (PAM Table 10, p. 28)|aspice-02-01
+Which part of a process description does PA 1.1 rate?|The outcomes: are they achieved? Judged through the base practices and information items as indicators.|aspice-02-02
+Base practices and information items are both indicators. What kind of evidence does each give?|Base practices: activity-oriented (“do they do this?”).<br>Information items: result-oriented (“what should I find?”).|aspice-02-03
+What is the single generic practice of PA 1.1?|GP 1.1.1 Achieve the process outcomes: achieve the intent of the base practices and produce work products that evidence the outcomes. (PAM §5.2.1, p. 100)|aspice-02-04
+Are a process's base practices and information items a mandatory checklist?|No. They are indicators the assessor uses to judge whether the outcomes are achieved. (PAM p. 23)|aspice-02-05
+Information item vs work product: what is the difference?|An information item is what the assessor looks for, described by characteristics in Annex B. A work product is what the team actually produced. There is no 1:1 relationship. (PAM §3.3.2, pp. 24–25)|aspice-02-06
+Must Seat-Heat write a document titled “08-56 Schedule” to satisfy MAN.3.BP8?|No. Annex B characteristics “shall not be interpreted as a required structure”. Any work product showing the characteristics counts. (PAM p. 24)|aspice-02-07
+What are the only two sources of objective evidence?|Work products (including repository content) and testimony from the people doing the work. (PAM p. 24)|aspice-02-08
+Seat-Heat keeps change requests only as Jira tickets. Do they count as work products?|Yes. Change requests or problem reports in a workflow tool are work products. (Guidelines §4.2.1, p. 246)|aspice-02-09
+Where does an assessor see which base practices and information items support which outcome?|In the mapping table at the end of each process description: the assessor's map.|aspice-02-10
+What is MAN.3 Project Management for, in brief?|To identify and control the project's activities and establish the resources it needs, within its requirements and constraints. (PAM p. 89)|aspice-02-11
+Seat-Heat depends on a CAN signal from the HVAC team, and the dependency lives in one engineer's head. Which MAN.3 base practice does that speak to?|MAN.3.BP7 interfaces and commitments.|aspice-02-12
+Seat-Heat's sprint reviews and monthly status mail to the OEM speak to which MAN.3 base practice?|MAN.3.BP10 review and report progress.|aspice-02-13
+Remaining effort for features due in the next release is not estimated. Which base practice suffers, and what does rule AGE.RL.2 say?|MAN.3.BP5 estimates and resources; AGE.RL.2 says it shall be downrated. (Guidelines §2.5.2.1, p. 77)|aspice-02-14

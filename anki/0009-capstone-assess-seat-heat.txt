@@ -1,0 +1,19 @@
+#separator:Pipe
+#html:true
+#notetype:Basic
+#deck:ASPICE 4.1::09 Capstone
+#tags:aspice::lesson-09
+#guid column:3
+#columns:Front|Back|GUID
+List the six base practices of SUP.10 Change Request Management.|BP1 identify and record · BP2 analyse and assess · BP3 approve before implementation · BP4 bidirectional traceability · BP5 confirm implementation · BP6 track to closure. (PAM pp. 85–86)|aspice-09-01
+SUP.10.RL.1: change request analysis omits potential side effects. What follows?|BP2 shall not be rated F. (Guidelines §3.26, pp. 208–211)|aspice-09-02
+SUP.10.RL.3: not all relevant disciplines or stakeholders sit in the approval authority. What follows?|BP3 shall not be rated F.|aspice-09-03
+SUP.10.RL.4: approval decisions are not taken, or not in time, without justification. What follows?|BP3 shall be downrated.|aspice-09-04
+2 of 10 sampled CRs went Open → Implemented as “urgent customer fixes”, and no emergency path is defined. Which BP is hit, and which rule applies?|SUP.10.BP3 approve before implementation; RL.4 calls for a downrate.|aspice-09-05
+Seat-Heat's CCB has no test lead. Which BP can no longer be F, and under which rule?|SUP.10.BP3, under SUP.10.RL.3.|aspice-09-06
+A dashboard showed the CR analysis target missed in two sprints, and no action was recorded. Which GP?|GP 2.1.5: monitoring happened, adjusting didn't.|aspice-09-07
+Application instance PA 1.1 is L, platform instance P, equal weights. Aggregate?|L: (2 + 1) / 2 = 1.5, and exactly halfway rounds up. The platform weakness is hidden in the aggregate, which is why instance ratings also go in the report.|aspice-09-08
+SUP.10's aggregated ratings are PA 1.1 L and PA 2.1 P. What is its capability level?|Level 1: level 2 needs aggregated PA 1.1 at F (and PA 2.1 at L or F).|aspice-09-09
+The platform instance's PA 1.1 is P. Why can't even a perfect application instance get SUP.10 to level 2?|Aggregated PA 1.1 needs a mean of at least 2.5 to round to F. A perfect application instance (3) with the platform at P (1) averages 2.0: L.|aspice-09-10
+The day before the assessment, a maintainer creates a “Platform CR process” page. Does the assessor credit it?|No: created shortly before the assessment with no plausible reason.|aspice-09-11
+Write the weakness statement for Seat-Heat's SUP.10.BP3 in the application instance.|What is missing: CRs are not consistently approved before implementation. Evidence: 2 of 10 sampled CRs went Open → Implemented without CCB approval, no emergency path is defined, and the CCB lacks the test lead. Risk: changes reach the product without assessed impact on verification or release scope.|aspice-09-12

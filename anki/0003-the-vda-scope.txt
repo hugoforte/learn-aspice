@@ -1,0 +1,21 @@
+#separator:Pipe
+#html:true
+#notetype:Basic
+#deck:ASPICE 4.1::03 The VDA Scope
+#tags:aspice::lesson-03
+#guid column:3
+#columns:Front|Back|GUID
+List the five base processes of the recommended VDA Scope.|MAN.3 Project Management · SUP.1 Quality Assurance · SUP.8 Configuration Management · SUP.9 Problem Resolution Management · SUP.10 Change Request Management. (Guidelines Fig. 1-1, p. 29)|aspice-03-01
+Besides the base five, what must the recommended VDA Scope include?|At least one engineering plug-in: SYS.2–SYS.5, SWE.1–SWE.6, HWE.1–HWE.4, or MLE.1–MLE.4 with SUP.11.|aspice-03-02
+What is the PAM's plug-in concept?|Management and support processes are domain-independent; the engineering disciplines (SYS, SWE, HWE, MLE) plug in underneath them. (PAM Annex C.1, p. 153)|aspice-03-03
+Name four flex processes outside the base of the recommended VDA Scope.|Any four of: ACQ.4 Supplier Monitoring, MAN.5 Risk, MAN.6 Measurement, SYS.1 Requirements Elicitation, VAL.1 Validation, SPL.2 Product Release, PIM.3 Process Improvement, REU.2 Reuse.|aspice-03-04
+What does deviating from the recommended scope need?|A documented rationale tied to the assessment purpose. (Guidelines pp. 29–30)|aspice-03-05
+Seat-Heat has no QA function and asks to mark SUP.1 “not applicable”, without the sponsor's approval. What happens?|It stays in scope and is rated, usually N. “Not applicable” needs the sponsor's approval, and non-existence of evidence is not a valid reason to exclude. (Guidelines pp. 29–30)|aspice-03-06
+Which processes make up Seat-Heat's assessment scope, and how many are there?|The five base processes plus the software plug-in SWE.1–SWE.6: eleven.|aspice-03-07
+A software-only supplier has no system development. What do the SWE processes use in place of system requirements?|The given operating environment; stakeholder requirements can be used as their basis, and traceability can then be ensured between stakeholder and software requirements. (PAM SWE.1.BP1 note 3, p. 44; SWE.1.BP5 note 12, p. 45)|aspice-03-08
+In one sentence each: what does SUP.9 manage, and what does SUP.10 manage?|SUP.9: problems (something is wrong: analyse the cause, track to closure).<br>SUP.10: change requests (a change is wanted: analyse impact, approve before implementing, trace both ways). (PAM pp. 83–86)|aspice-03-09
+A problem leads to a change request. What must the two records do?|Trace to each other (SUP.10.BP4).|aspice-03-10
+Why does a peer review of a pull request not satisfy SUP.1 on its own?|A peer review is verification by a colleague. SUP.1 quality assurance must be performed without conflicts of interest; “no self-monitoring” is the PAM's example. (PAM SUP.1.BP1 note 1, p. 79)|aspice-03-11
+SWE.4, SWE.5, SWE.6: what does each verify, and against what?|SWE.4: units against the detailed design.<br>SWE.5: components against the architecture, plus the integration.<br>SWE.6: the integrated software against the software requirements.|aspice-03-12
+A HIL suite checks each software requirement on the fully integrated build. Which process?|SWE.6 Software Verification.|aspice-03-13
+What is SUP.8 Configuration Management for, in brief?|Establishing and maintaining the integrity of configuration items and baselines, and making them available to affected parties. (PAM p. 81)|aspice-03-14

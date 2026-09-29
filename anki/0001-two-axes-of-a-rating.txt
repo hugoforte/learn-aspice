@@ -1,0 +1,25 @@
+#separator:Pipe
+#html:true
+#notetype:Basic
+#deck:ASPICE 4.1::01 The two axes of a rating
+#tags:aspice::lesson-01
+#guid column:3
+#columns:Front|Back|GUID
+An ASPICE assessment fills in a grid. What are its two axes?|The <b>process dimension</b> (which process, from the PRM) and the <b>capability dimension</b> (how well it is run: a level from 0 to 5, built from process attributes). (PAM §3, p. 13)|aspice-01-01
+What does the PAM add to the PRM?|Indicators: practices and information items that the assessor looks for, gathers objective evidence on, and uses to justify each rating. (PAM §3.3, p. 23)|aspice-01-02
+What does an assessment produce, instead of one number for the organisation?|A capability profile: one capability level per assessed process. (PAM §3.3, p. 23)|aspice-01-03
+Seat-Heat's manager asks “Which ASPICE level are we?” Why has that no answer?|Levels belong to processes, not companies. Each assessed process (MAN.3, SUP.8…) gets its own level, so one team can be level 2 on one process and level 0 on another.|aspice-01-04
+Define WHAT, HOW and DOING.|WHAT: the goals of a process (where the PAM sits).<br>HOW: methods, tools, templates, workflows, who may do what.<br>DOING: performing the tasks with the method on real work. (PAM Fig. 3, p. 26)|aspice-01-05
+WHAT, HOW or DOING: Seat-Heat's branch policy that every merge to main needs two approvals.|HOW: a method the team chose.|aspice-01-06
+WHAT, HOW or DOING: pull request #812, with its two approvals and green CI run.|DOING: one performance on real work.|aspice-01-07
+What does the PAM prescribe about lifecycle, order and document structure?|Nothing: it prescribes none of them. The assessor maps the team's HOW and DOING onto the WHAT. (PAM §3.3.4, pp. 26–27)|aspice-01-08
+Why can agile methods not contradict ASPICE, according to the Guidelines?|Agile sits at the HOW, ASPICE at the WHAT, so they “cannot, by definition, contradict each other”. The only question is whether an implementation satisfies the principles. (Guidelines §2.5.2, p. 76)|aspice-01-09
+Name the six capability levels, 0 to 5.|0 Incomplete · 1 Performed · 2 Managed · 3 Established · 4 Predictable · 5 Innovating. (PAM Tables 3–4, pp. 17–18)|aspice-01-10
+Which process attributes make up levels 1, 2 and 3?|1: PA 1.1 Process performance.<br>2: PA 2.1 Performance management, PA 2.2 Work product management.<br>3: PA 3.1 Process definition, PA 3.2 Process deployment.|aspice-01-11
+How many process attributes are there in total?|Nine: one at level 1, and two at each of levels 2 to 5.|aspice-01-12
+Give the achievement band for each of N, P, L and F.|N 0–15 % · P over 15–50 % · L over 50–85 % · F over 85–100 %. (PAM Tables 5–6, pp. 18–19)|aspice-01-13
+An assessor judges a process attribute about 40 % achieved. What is the rating?|P (partially: over 15 % up to 50 %).|aspice-01-14
+State the level rule.|Level n is reached when every PA of level n is rated L or F, and every PA below level n is rated F. (PAM Table 9, p. 22)|aspice-01-15
+PA 1.1 L · PA 2.1 F · PA 2.2 F. Which level, and why?|Level 1. Level 2 needs PA 1.1 at F, however well the process is managed.|aspice-01-16
+PA 1.1 F · PA 2.1 L · PA 2.2 L · PA 3.1 F · PA 3.2 F. Which level?|Level 2. Level 3 needs PA 2.1 and PA 2.2 at F.|aspice-01-17
+Why do the VDA Guidelines give rating rules only for levels 1 to 3?|Because levels 1 to 3 cover most Automotive SPICE assessments. (Guidelines §1.3.3, p. 31)|aspice-01-18

@@ -1,0 +1,20 @@
+#separator:Pipe
+#html:true
+#notetype:Basic
+#deck:ASPICE 4.1::11 Lifecycles, gates and approvals
+#tags:aspice::lesson-11
+#guid column:3
+#columns:Front|Back|GUID
+Does ASPICE define phases or an order of processes?|No. The PAM “neither predefines, nor discourages, any order”. Order belongs to the project's own lifecycle (MAN.3.BP2 define the project lifecycle). (PAM §3.3.4, pp. 26–27)|aspice-11-01
+If not a sequence of phases, what does the V show?|Which work products must be consistent and traceable with which.|aspice-11-02
+Where does a stage-gate model sit on WHAT, HOW, DOING?|HOW: it is a lifecycle, which the assessor maps onto the indicators like any other.|aspice-11-03
+A feature goes back from “Verified” to “Candidate frozen” after a failed test. Is that a deviation from ASPICE?|No: iteration inside the team's own lifecycle is allowed.|aspice-11-04
+What does AGE.RL.1 say about plans and the customer's release planning?|Significant gaps between the plans and the customer's release planning downrate MAN.3.BP4, BP9 and SPL.2.BP1. (Guidelines p. 77)|aspice-11-05
+What is SPL.2 Product Release for, and is it base or flex?|To control the release of a product to the intended customer. It is flex. (PAM pp. 30–32)|aspice-11-06
+Name the eight base practices of SPL.2.|BP1 content and release criteria · BP2 release package · BP3 unique identification · BP4 build from controlled items · BP5 approval before delivery · BP6 release note · BP7 support terms · BP8 deliver.|aspice-11-07
+Besides the decision, what does 13-13 Product release approval identify?|The release date and the name and role of the approver. (PAM Annex B, p. 138)|aspice-11-08
+The final “Released” gate approval is primarily evidence for which process?|SPL.2 (BP5 approval before delivery), recorded as 13-13.|aspice-11-09
+Which base practice's note says a complete, consistent baseline can support a gate approval?|SUP.8.BP7. (PAM p. 82)|aspice-11-10
+Which ASPICE process explicitly requires independence?|Only SUP.1 Quality Assurance (“no self-monitoring”). Independence rules for verification come from other standards, e.g. ISO 26262. (PAM SUP.1.BP1, p. 79)|aspice-11-11
+In which process are system requirements analysed, and what is SYS.1?|SYS.2 System Requirements Analysis. SYS.1 is Requirements Elicitation: stakeholder needs and their changes.|aspice-11-12
+In the recommended VDA Scope, is VAL.1 Validation base, plug-in or flex?|Flex.|aspice-11-13

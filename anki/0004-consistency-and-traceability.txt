@@ -1,0 +1,22 @@
+#separator:Pipe
+#html:true
+#notetype:Basic
+#deck:ASPICE 4.1::04 Consistency and traceability
+#tags:aspice::lesson-04
+#guid column:3
+#columns:Front|Back|GUID
+Which base practice appears in every SYS process from SYS.2 on and in every SWE process?|“Ensure consistency and establish bidirectional traceability”. (Guidelines §2.3.4, p. 55)|aspice-04-01
+Which two base practices outside SYS and SWE join the consistency and traceability chain?|SUP.10.BP4: bidirectional traceability between change requests and the work products they affect.<br>MAN.3.BP9: consistency across the plan.|aspice-04-02
+What is bidirectional traceability, and why do both directions matter?|Links you can follow both ways between related items. Forwards shows coverage (what implements and verifies a requirement); backwards catches code or tests nobody asked for.|aspice-04-03
+What does consistency mean, and why don't links prove it?|Linked items actually agree in content. “Traceability alone, e.g., the existence of links, does not necessarily mean that the information is consistent.” (PAM SWE.1.BP5 note 11, p. 45)|aspice-04-04
+A HIL test tagged @verifies SHREQ-40 checks a 60 s ramp, but SHREQ-40 still says 90 s. Traceability or consistency failure?|Consistency: the link exists, but the items disagree.|aspice-04-05
+A HIL test correctly checks the 60 s ramp but nothing links it to a requirement. Traceability or consistency failure?|Traceability: the content agrees, but no link records the relationship.|aspice-04-06
+At which capability level do the consistency and traceability base practices count?|Level 1: they are base practices, so they feed PA 1.1.|aspice-04-07
+What does TAC.RL.1 protect from downrating?|Tracing between reasonable clusters (e.g. a group of requirements to a component) instead of every atomic element. (Guidelines pp. 58–60)|aspice-04-08
+What does TAC.RL.2 protect from downrating?|A manual approach with snapshot-based checks instead of an automated tool. (Guidelines pp. 58–60)|aspice-04-09
+What does TAC.RL.3 protect from downrating?|No formal review record, when consistency is ensured by pair work, peer spot checks, revision-history notes or commit comments. (Guidelines pp. 58–60)|aspice-04-10
+Name three kinds of evidence information item 13-51 Consistency evidence accepts.|Any three of: hyperlinks, repository location or editorial references; naming conventions; revision history; notes in Git commit comments; evidence of Definition of Done adherence. (PAM Annex B, p. 140)|aspice-04-11
+What is the “agile trap” with requirements kept only in tickets?|A story traces to its code easily, but there is no overview of all requirements: a feature's requirements can only be found by reading all its tasks, which weakens reviews of cross-consistency. (Guidelines §2.5.2.3, p. 78)|aspice-04-12
+Is traceability between two sections of one process's own work products covered by the level 1 base practices?|No. The Guidelines say it “may be considered in the context of GP 2.2.2”, at level 2. (Guidelines §2.3.4.2, p. 57)|aspice-04-13
+Do assessors check only that links exist?|No. They check content too, e.g. whether system requirements reflect the intention of the stakeholder requirements, not only their traceability. (Guidelines §1.4.3.3, p. 39)|aspice-04-14
+Seat-Heat's unit tests are named after modules, but no detailed design names those modules. Acceptable, or a weakness?|A weakness: there is nothing for the unit tests to trace to or be consistent with.|aspice-04-15

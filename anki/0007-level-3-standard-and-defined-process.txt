@@ -1,0 +1,23 @@
+#separator:Pipe
+#html:true
+#notetype:Basic
+#deck:ASPICE 4.1::07 Level 3
+#tags:aspice::lesson-07
+#guid column:3
+#columns:Front|Back|GUID
+Standard process vs defined process: what is each, and which PA rates it?|Standard process: the organisation-wide reference description, with tailoring guidelines (PA 3.1 Process definition).<br>Defined process: one project's tailored instance of it, actually used (PA 3.2 Process deployment).|aspice-07-01
+Besides PA 3.1 and PA 3.2 at L or F, what else does level 3 need?|PA 1.1, PA 2.1 and PA 2.2 all at F (the level rule).|aspice-07-02
+What must the standard process contain under GP 3.1.1?|Activities with inputs and outputs, their sequence and interactions, roles and their involvement (e.g. RASIC), guidance and templates, tailoring guidelines, and maintenance from feedback. (PAM §5.4.1, pp. 106–108)|aspice-07-03
+What do GP 3.1.2, 3.1.3 and 3.1.4 ask for?|3.1.2 competencies per role and how people acquire them · 3.1.3 resources and infrastructure · 3.1.4 methods to monitor whether the standard process works.|aspice-07-04
+What do the four GPs of PA 3.2 ask to be shown?|3.2.1 defined process tailored from the standard process, conformance verified, used · 3.2.2 people in roles by competency, gaps closed · 3.2.3 resources actually available and used · 3.2.4 process data collected, analysed and fed back. (PAM §5.4.2, pp. 108–109)|aspice-07-05
+What makes a tailoring guideline survive assessment?|Predefined, unambiguous criteria, and a statement of who tailors and who approves (PA3.1.RL.14).|aspice-07-06
+Downrate? “Reviews may be skipped where the project lead deems appropriate.”|Downrate: “where the lead deems appropriate” is not a predefined, unambiguous criterion.|aspice-07-07
+Downrate? “Projects under 10 people may combine SWE.5 and SWE.6 test reports”, with tailoring approved by the quality manager.|No downrate: a size threshold is an unambiguous criterion, and the approver is defined.|aspice-07-08
+The same deviation keeps being approved by waiver, and the standard process never changes. What happens?|GP 3.1.1 is downrated (PA3.1.RL.15). A recurring exception is a sign the standard process is wrong. (Guidelines §5.1.2.1, pp. 256–258)|aspice-07-09
+There is no template, but detailed content requirements exist. Downrate?|No (PA3.1.RL.6).|aspice-07-10
+The standard process lacks activity descriptions, or inputs and outputs. What is the cap?|GP 3.1.1 no higher than P (PA3.1.RL.2, RL.3).|aspice-07-11
+Which aspects must not lead to a downrating at level 3?|Configuration management and storage of the process descriptions, the process-description tools, and staffing for process improvement: those belong to PIM.3 or other models. (Guidelines p. 254)|aspice-07-12
+Which versioning of the standard process does GP 3.1.1 still check?|A unique version identifier, documented changes between versions, and clear dates from which a new version applies (PA3.1.RL.10–13). (Guidelines pp. 257–258)|aspice-07-13
+Seat-Heat's signed tailoring sheet: PA 3.1 or PA 3.2?|PA 3.2 (GP 3.2.1): one project's documented tailoring, with conformance checked by an authorised role.|aspice-07-14
+Retrospective actions about the process reach a monthly process board. Which GP, and how does it differ from GP 3.1.4?|GP 3.2.4: collecting data on the defined process and feeding it back. GP 3.1.4 is deciding that such a monitoring method exists.|aspice-07-15
+What is a RASIC?|A matrix of who is Responsible, Approves, Supports, is Informed or Consulted for each activity (GP 3.1.1).|aspice-07-16
