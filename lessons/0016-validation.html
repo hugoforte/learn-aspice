@@ -22,16 +22,18 @@
     <button data-choice="SWE.4">SWE.4</button><button data-choice="SWE.5">SWE.5</button><button data-choice="SWE.6">SWE.6</button>
   </div>
   <div class="mcq" data-answer="SYS.5" data-why="The integrated system verified against a system requirement is SYS.5 (lesson 14).">
-    <p class="q">The complete ECU is checked against its heat-up requirement in a climate chamber. Which process?</p>
+    <p class="q">The complete ECU is checked against its temperature-regulation requirement in a climate chamber. Which process?</p>
     <button data-choice="SYS.4">SYS.4</button><button data-choice="SYS.5">SYS.5</button><button data-choice="SWE.6">SWE.6</button>
   </div>
 </section>
 
 <h2>Verification and validation are different questions</h2>
 
-<p>VAL.1's purpose is to provide evidence that "the end product, allowing direct end user interaction, satisfies the intended use expectations in its operational target environment"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=58">[PAM §4.5.1, p. 58]</a>. Verification checks against a specification; validation checks against intended use.</p>
+<p>VAL.1's purpose is to provide evidence that "the end product, allowing direct end user interaction, satisfies the intended use expectations in its operational target environment"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=58">[PAM §4.5.1, p. 58]</a>. Verification shows the product meets what was specified; validation shows it meets its users' intended use.</p>
 
 <p>The Guidelines' own example is an automatic transmission. Meeting the specified gear-shift times is verification, "given that these can be measured objectively". A good gear-shift <em>feel</em> is validation, "as it requires feedback from end users or their representatives"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=165">[Guidelines §3.14.1, p. 163]</a>. Without legal requirements behind them, validation targets may be "exploratory, or even subjective".</p>
+
+<p>The dividing line is not whether a requirement exists. The Guidelines warn that being able to write a requirement "does not serve as a distinction criterion": a limit on shift noise can be written down, and judging whether that limit is <em>adequate</em> for users is still validation<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=166">[p. 164]</a>. Ask instead: can it be settled by objective measurement, or does it take end users' judgement?</p>
 
 <p>So validation measures look different from verification measures. The PAM's examples: operational use-case testing under real-life conditions, highly accelerated life testing, simulations under real-life conditions, end-user trials, panel or blind tests, and expert panels<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=10">[PAM terminology, p. 10]</a>.</p>
 
@@ -40,7 +42,7 @@
 <p>Because VAL.1 is about end users, the Guidelines say it "excludes looking at pure embedded software products, an ECU, or a drive": none of them "provides a direct end user interface"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=165">[Guidelines §3.14.1, p. 163]</a>.</p>
 
 <div class="callout">
-  <p><strong>For Seat-Heat this settles it.</strong> Its software, and even the whole seat-heating ECU from lesson 14, has no direct end-user interface. Whether level 2 feels warm enough on a winter morning is a question about the seat in the car, and it belongs to whoever delivers that product. The sources don't say whether that is the seat maker or the vehicle maker. What Seat-Heat delivers is evidenced by verification: SWE.4–SWE.6, and SYS.4–SYS.5 for the ECU.</p>
+  <p><strong>For Seat-Heat this settles it.</strong> Its software, and even the whole seat-heating ECU from lesson 14, has no direct end-user interface. Whether heat setting 2 feels warm enough on a winter morning is a question about the seat in the car, and it belongs to whoever delivers that product. The sources don't say whether that is the seat maker or the vehicle maker. What Seat-Heat delivers is evidenced by verification: SWE.4–SWE.6, and SYS.4–SYS.5 for the ECU.</p>
 </div>
 
 <p>VAL.1 is a flex process: outside the base of the recommended VDA Scope, added when the assessment purpose needs it<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=31">[Guidelines Fig. 1-1, p. 29]</a>. In practice, reading this with the exclusion above, that means an organisation delivering an end product that people use directly (the course's inference).</p>
@@ -59,7 +61,7 @@
 <ul>
   <li><strong>One-way tracing can be enough.</strong> When a validation measure comes from a legal or homologation requirement, bidirectional traceability to that source is not possible, and "unidirectional traceability is sufficient"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=59">[VAL.1.BP4 note 8, p. 59]</a>.</li>
   <li><strong>Validation feeds requirements back.</strong> Results can identify new stakeholder or system requirements, for example from mock-ups or concept studies (BP3 note 5). Where needs are unclear or change often, repeated validation of increments helps refine them (BP1 note 2).</li>
-  <li><strong>Similar rating rules to verification</strong>, though with no rule on automated scripts. Entry criteria may be defined per set of measures (VAL.1.RL.1). Exploratory validation needn't trace to requirements (the second rule, which the Guidelines misprint as VAL.4.RL.2). A sound selection against a poor release plan is not downrated (VAL.1.RL.3)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=166">[Guidelines §3.14.2–3.14.3, pp. 164–165]</a>.</li>
+  <li><strong>Its rating rules mirror the verification ones</strong>, minus the rule on automated scripts<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=166">[Guidelines §3.14.2–3.14.3, pp. 164–165]</a>.</li>
 </ul>
 
 <h2>The whole V, in one table</h2>
@@ -73,14 +75,14 @@
   <tr><td>Software architecture (SWE.2)</td><td>SWE.5 component and integration verification</td></tr>
   <tr><td>Detailed design and units (SWE.3)</td><td>SWE.4 unit verification</td></tr>
 </table>
-<p>The pairs are the course's summary of the processes' purposes. Remember lesson 11: this is a map of what must be consistent with what, not a sequence of phases.</p>
+<p>The pairs are the course's summary of the processes' purposes. Like the V itself, this is a map of what must be consistent with what, not a sequence of phases: the PAM prescribes no order (lesson 1).</p>
 
 <h2>Practice</h2>
 
 <section class="drill">
   <h3>A. Verification or validation?</h3>
   <p class="score"></p>
-  <div class="mcq" data-answer="verif" data-why="An objectively measurable check against a specified requirement is verification (SYS.5 at ECU level).">
+  <div class="mcq" data-answer="verif" data-why="It can be settled by objective measurement against the requirement: verification, whoever performs it.">
     <p class="q">The seat reaches 35 °C within 4 minutes at −20 °C, measured in a climate chamber.</p>
     <button data-choice="verif">Verification</button><button data-choice="valid">Validation</button>
   </div>
@@ -88,7 +90,7 @@
     <p class="q">A panel of drivers rates whether the heat-up feels fast enough on a cold morning.</p>
     <button data-choice="verif">Verification</button><button data-choice="valid">Validation</button>
   </div>
-  <div class="mcq" data-answer="verif" data-why="Checking a specified behaviour (switch-off after 60 minutes) is verification, however realistic the setting.">
+  <div class="mcq" data-answer="verif" data-why="Whether heating stops after 60 minutes can be measured objectively: verification.">
     <p class="q">A test confirms that heating switches off after 60 minutes, as the requirement specifies.</p>
     <button data-choice="verif">Verification</button><button data-choice="valid">Validation</button>
   </div>
@@ -105,12 +107,12 @@
     <p class="q">Should Seat-Heat's assessment of its ECU include VAL.1?</p>
     <button data-choice="yes">Yes</button><button data-choice="no">No</button>
   </div>
-  <div class="mcq" data-answer="no" data-why="VAL.1.BP4 note 8: bidirectional traceability to legal or homologation sources isn't possible, so unidirectional traceability is sufficient.">
-    <p class="q">A validation measure is derived from a homologation requirement. Must the trace to that requirement be bidirectional?</p>
+  <div class="mcq" data-answer="yes" data-why="VAL.1.BP4 note 8: bidirectional traceability to legal or homologation sources isn't possible, so unidirectional traceability is sufficient.">
+    <p class="q">A validation measure is derived from a homologation requirement. Is a one-way trace to that requirement enough?</p>
     <button data-choice="yes">Yes</button><button data-choice="no">No</button>
   </div>
   <div class="mcq" data-answer="SYS.1" data-why="Validation results can identify stakeholder requirements (VAL.1.BP3 note 5). A changed user need is a stakeholder requirement change, which SYS.1.BP3 analyses (with SUP.10 if needed).">
-    <p class="q">Trials show occupants want level 1 to be warmer. Where does that finding go next?</p>
+    <p class="q">Trials show occupants want heat setting 1 to be warmer. Where does that finding go next?</p>
     <button data-choice="SYS.1">SYS.1</button><button data-choice="SWE.6">SWE.6</button><button data-choice="SUP.1">SUP.1</button>
   </div>
 </section>
