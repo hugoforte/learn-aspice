@@ -18,3 +18,4 @@ Which base practice's note says a complete, consistent baseline can support a ga
 Which ASPICE process explicitly requires independence?|Only SUP.1 Quality Assurance (“no self-monitoring”). Independence rules for verification come from other standards, e.g. ISO 26262. (PAM SUP.1.BP1, p. 79)|aspice-11-11
 In which process are system requirements analysed, and what is SYS.1?|SYS.2 System Requirements Analysis. SYS.1 is Requirements Elicitation: stakeholder needs and their changes.|aspice-11-12
 In the recommended VDA Scope, is VAL.1 Validation base, plug-in or flex?|Flex.|aspice-11-13
+Can Seat-Heat’s project manager also be the project’s quality engineer?|No. Independent quality assurance must be free of conflicts of interest, so the project manager or a developer of the same project may not take that role, though they may in another project. (Guidelines §3.23.2.1, p. 192)|aspice-11-14

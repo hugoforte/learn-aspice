@@ -73,8 +73,8 @@
   <p><strong>Connection point</strong>: a consistency or traceability BP: the only way a weakness in one process can count against another.</p>
   <p><strong>Cluster</strong>: a group of requirements traced as one. Cluster-level tracing is not downrated (TAC.RL.1).</p>
   <p><strong>System</strong>: whatever the team delivers as its product, whether a mechatronic system, an ECU or a chip. SYS processes are not tied to a fixed product level.</p>
-  <p><strong>System element</strong>: a building block of the system architecture. PAM p. 10 lets it be logical (a design object) or physical (a sensor, a mechanical part, a software executable).</p>
-  <p><strong>Stakeholder requirement (SYS.1)</strong>: an agreed requirement from a stakeholder. Besides the customer's, PAM p. 10 counts regulatory and legal requirements and the supplier's own. System requirements are derived from them. <em>Avoid:</em> "customer requirement", when other stakeholders count too.</p>
+  <p><strong>System element</strong>: a building block of the system architecture, whether logical (a design object) or physical (a sensor, a mechanical part, a software executable).</p>
+  <p><strong>Stakeholder requirement (SYS.1)</strong>: an agreed requirement from a stakeholder: the customer's, but also the supplier's own and legal or regulatory ones. System requirements are derived from them. <em>Avoid:</em> "customer requirement", when other stakeholders count too.</p>
   <p><strong>System requirement (SYS.2)</strong>: a functional or non-functional requirement on the system, derived from the stakeholder requirements.</p>
   <p><strong>Software requirement (SWE.1)</strong>: a requirement on the software, derived from the system requirements and architecture, or from stakeholder requirements in software-only development.</p>
   <p><strong>Static aspects / dynamic aspects</strong>: an architecture's elements, interfaces and relationships / its behaviour and interactions in each mode. An architecture needs at least one view of each. <em>Avoid:</em> "diagrams".</p>
@@ -92,7 +92,7 @@
   <p><strong>Verification measure</strong>: any check against a specification: a test, measurement, calculation, simulation, review or analysis. ASPICE 4 says "verification" rather than "testing". <em>Avoid:</em> "test", when any other kind of measure would do.</p>
   <p><strong>Verification pattern</strong>: the five steps every right-leg process follows: specify measures, select them, perform and record, trace, and summarise and communicate.</p>
   <p><strong>Automated verification measure</strong>: a measure run by scripts or programs. Its definition must address their correctness, completeness and consistency. <em>Avoid:</em> "test code", as if it were exempt.</p>
-  <p><strong>Exploratory test</strong>: a verification or validation measure with no specification to trace to. Not downrated for that, but it must trace to its results.</p>
+  <p><strong>Exploratory test</strong>: a verification measure, or under VAL.1 a validation measure (Guidelines p. 164), with no specification to trace to. Not downrated for that, but it must trace to its results.</p>
   <p><strong>Component verification / integration verification</strong>: SWE.5's two halves: each component's behaviour and interfaces, then how the integrated elements work together.</p>
   <p><strong>Code coverage</strong>: accompanying information on how complete the chosen tests are. Never a verification objective in itself.</p>
   <p><strong>Validation (VAL.1)</strong>: evidence that the end product meets its users' intended-use expectations in its operational target environment. The test is not whether a requirement exists but whether objective measurement settles it (verification) or it needs a judgement of what users need, from end users' feedback or an approximation such as simulation (validation). It does not apply to pure embedded software, an ECU or a drive.</p>
@@ -103,7 +103,7 @@
 <section>
   <h2>Support, change and release</h2>
   <p><strong>Quality assurance (SUP.1)</strong>: independent, objective assurance that work products and processes meet their criteria, with non-conformances resolved.</p>
-  <p><strong>Independence</strong>: SUP.1's demand that quality assurance is unbiased and free of conflicts of interest: no self-monitoring, and, per Guidelines p. 192, not done by the project's own manager or developers. ASPICE demands it of no other process. <em>Avoid:</em> using it for GEN.RL.1, or for verification.</p>
+  <p><strong>Independence</strong>: SUP.1's demand that quality assurance is unbiased and free of conflicts of interest: no self-monitoring, and not done by the project's own manager or developers. ASPICE demands it of no other process. <em>Avoid:</em> using it for GEN.RL.1, or for verification.</p>
   <p><strong>Non-conformance</strong>: a deviation found against defined criteria, by a review or by quality assurance.</p>
   <p><strong>Configuration item</strong>: a work product, or a group of them, managed as one entity under SUP.8. For AI assistance, the Guidelines' examples include prompts as new configuration items and version control of AI tools, models and their settings.</p>
   <p><strong>Baseline</strong>: a defined, consistent, read-only set of configuration items at a point in time, serving as input for the affected parties. <em>Avoid:</em> "snapshot", "tag".</p>
