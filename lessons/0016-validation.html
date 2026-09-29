@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>16 · Validation</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 16 of 16 · The V, process by process · Automotive SPICE, the vital 20 %</p>
+  <h1>Validation: VAL.1</h1>
+  <p class="lede">Every process on the right of the V asks whether the product matches its specification. VAL.1 asks a different question: does the end product do what its users actually need, where they actually use it?</p>
+</header>
+
+<section class="drill warmup">
+  <p class="score"></p>
+  <div class="mcq" data-answer="SWE.5" data-why="Checking data flow and timing between components against the architecture is integration verification: SWE.5 (lesson 15).">
+    <p class="q">A test checks that two software components exchange data within their specified timing. Which process?</p>
+    <button data-choice="SWE.4">SWE.4</button><button data-choice="SWE.5">SWE.5</button><button data-choice="SWE.6">SWE.6</button>
+  </div>
+  <div class="mcq" data-answer="SYS.5" data-why="The integrated system verified against a system requirement is SYS.5 (lesson 14).">
+    <p class="q">The complete ECU is checked against its heat-up requirement in a climate chamber. Which process?</p>
+    <button data-choice="SYS.4">SYS.4</button><button data-choice="SYS.5">SYS.5</button><button data-choice="SWE.6">SWE.6</button>
+  </div>
+</section>
+
+<h2>Verification and validation are different questions</h2>
+
+<p>VAL.1's purpose is to provide evidence that "the end product, allowing direct end user interaction, satisfies the intended use expectations in its operational target environment"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=58">[PAM §4.5.1, p. 58]</a>. Verification checks against a specification; validation checks against intended use.</p>
+
+<p>The Guidelines' own example is an automatic transmission. Meeting the specified gear-shift times is verification, "given that these can be measured objectively". A good gear-shift <em>feel</em> is validation, "as it requires feedback from end users or their representatives"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=165">[Guidelines §3.14.1, p. 163]</a>. Without legal requirements behind them, validation targets may be "exploratory, or even subjective".</p>
+
+<p>So validation measures look different from verification measures. The PAM's examples: operational use-case testing under real-life conditions, highly accelerated life testing, simulations under real-life conditions, end-user trials, panel or blind tests, and expert panels<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=10">[PAM terminology, p. 10]</a>.</p>
+
+<h2>Who validates</h2>
+
+<p>Because VAL.1 is about end users, the Guidelines say it "excludes looking at pure embedded software products, an ECU, or a drive": none of them "provides a direct end user interface"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=165">[Guidelines §3.14.1, p. 163]</a>.</p>
+
+<div class="callout">
+  <p><strong>For Seat-Heat this settles it.</strong> Its software, and even the whole seat-heating ECU from lesson 14, has no direct end-user interface. Whether level 2 feels warm enough on a winter morning is a question about the seat in the car, and it belongs to whoever delivers that product. The sources don't say whether that is the seat maker or the vehicle maker. What Seat-Heat delivers is evidenced by verification: SWE.4–SWE.6, and SYS.4–SYS.5 for the ECU.</p>
+</div>
+
+<p>VAL.1 is a flex process: outside the base of the recommended VDA Scope, added when the assessment purpose needs it<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=31">[Guidelines Fig. 1-1, p. 29]</a>. In practice, reading this with the exclusion above, that means an organisation delivering an end product that people use directly (the course's inference).</p>
+
+<h2>What VAL.1 asks for</h2>
+
+<p>Its five base practices follow lesson 14's pattern, with validation measures in place of verification measures<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=58">[PAM pp. 58–59]</a>:</p>
+<ol>
+  <li><strong>Specify</strong> validation measures for the end product, based on the stakeholder requirements, to show it fulfils its intended use in its operational target environment.</li>
+  <li><strong>Select</strong> them, with criteria including regression, and sufficient coverage for the release scope. Criteria include the release's purpose: test bench, test track, public road, field use by end users.</li>
+  <li><strong>Perform</strong> the validation of the integrated end product, record the results with pass/fail status, and <em>evaluate</em> them. Deviations go to SUP.9.</li>
+  <li><strong>Trace</strong> validation measures to the stakeholder requirements they derive from, "if applicable", and results to measures.</li>
+  <li><strong>Summarise and communicate</strong> the results.</li>
+</ol>
+
+<ul>
+  <li><strong>One-way tracing can be enough.</strong> When a validation measure comes from a legal or homologation requirement, bidirectional traceability to that source is not possible, and "unidirectional traceability is sufficient"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=59">[VAL.1.BP4 note 8, p. 59]</a>.</li>
+  <li><strong>Validation feeds requirements back.</strong> Results can identify new stakeholder or system requirements, for example from mock-ups or concept studies (BP3 note 5). Where needs are unclear or change often, repeated validation of increments helps refine them (BP1 note 2).</li>
+  <li><strong>Similar rating rules to verification</strong>, though with no rule on automated scripts. Entry criteria may be defined per set of measures (VAL.1.RL.1). Exploratory validation needn't trace to requirements (the second rule, which the Guidelines misprint as VAL.4.RL.2). A sound selection against a poor release plan is not downrated (VAL.1.RL.3)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=166">[Guidelines §3.14.2–3.14.3, pp. 164–165]</a>.</li>
+</ul>
+
+<h2>The whole V, in one table</h2>
+
+<table>
+  <tr><th>Left: what is specified</th><th>Right: what checks it</th></tr>
+  <tr><td>Stakeholder requirements (SYS.1)</td><td>VAL.1 validation, where the product has end users</td></tr>
+  <tr><td>System requirements (SYS.2)</td><td>SYS.5 system verification</td></tr>
+  <tr><td>System architecture (SYS.3)</td><td>SYS.4 system integration verification</td></tr>
+  <tr><td>Software requirements (SWE.1)</td><td>SWE.6 software verification</td></tr>
+  <tr><td>Software architecture (SWE.2)</td><td>SWE.5 component and integration verification</td></tr>
+  <tr><td>Detailed design and units (SWE.3)</td><td>SWE.4 unit verification</td></tr>
+</table>
+<p>The pairs are the course's summary of the processes' purposes. Remember lesson 11: this is a map of what must be consistent with what, not a sequence of phases.</p>
+
+<h2>Practice</h2>
+
+<section class="drill">
+  <h3>A. Verification or validation?</h3>
+  <p class="score"></p>
+  <div class="mcq" data-answer="verif" data-why="An objectively measurable check against a specified requirement is verification (SYS.5 at ECU level).">
+    <p class="q">The seat reaches 35 °C within 4 minutes at −20 °C, measured in a climate chamber.</p>
+    <button data-choice="verif">Verification</button><button data-choice="valid">Validation</button>
+  </div>
+  <div class="mcq" data-answer="valid" data-why="Whether it feels fast enough is an intended-use expectation that needs feedback from end users: validation.">
+    <p class="q">A panel of drivers rates whether the heat-up feels fast enough on a cold morning.</p>
+    <button data-choice="verif">Verification</button><button data-choice="valid">Validation</button>
+  </div>
+  <div class="mcq" data-answer="verif" data-why="Checking a specified behaviour (switch-off after 60 minutes) is verification, however realistic the setting.">
+    <p class="q">A test confirms that heating switches off after 60 minutes, as the requirement specifies.</p>
+    <button data-choice="verif">Verification</button><button data-choice="valid">Validation</button>
+  </div>
+  <div class="mcq" data-answer="valid" data-why="End users in the operational target environment, judging intended use: an end-user trial, one of the PAM's examples of a validation measure.">
+    <p class="q">Test drivers use the heated seats through a winter and report how the heat levels feel on long trips.</p>
+    <button data-choice="verif">Verification</button><button data-choice="valid">Validation</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>B. Scope and traceability</h3>
+  <p class="score"></p>
+  <div class="mcq" data-answer="no" data-why="VAL.1 excludes pure embedded software products and ECUs, which have no direct end-user interface (Guidelines p. 163). It is also a flex process, not part of the base scope.">
+    <p class="q">Should Seat-Heat's assessment of its ECU include VAL.1?</p>
+    <button data-choice="yes">Yes</button><button data-choice="no">No</button>
+  </div>
+  <div class="mcq" data-answer="no" data-why="VAL.1.BP4 note 8: bidirectional traceability to legal or homologation sources isn't possible, so unidirectional traceability is sufficient.">
+    <p class="q">A validation measure is derived from a homologation requirement. Must the trace to that requirement be bidirectional?</p>
+    <button data-choice="yes">Yes</button><button data-choice="no">No</button>
+  </div>
+  <div class="mcq" data-answer="SYS.1" data-why="Validation results can identify stakeholder requirements (VAL.1.BP3 note 5). A changed user need is a stakeholder requirement change, which SYS.1.BP3 analyses (with SUP.10 if needed).">
+    <p class="q">Trials show occupants want level 1 to be warmer. Where does that finding go next?</p>
+    <button data-choice="SYS.1">SYS.1</button><button data-choice="SWE.6">SWE.6</button><button data-choice="SUP.1">SUP.1</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>C. From memory</h3>
+  <div class="recall">
+    <p>In one sentence each: what does verification check, and what does validation check?</p>
+    <textarea></textarea>
+    <div class="model"><p>Verification checks a work product or the product against its specification (requirements, architecture, design). Validation checks that the end product meets its users' intended-use expectations in its real operating environment.</p></div>
+  </div>
+  <div class="recall">
+    <p>Why does an ECU supplier usually not perform VAL.1?</p>
+    <textarea></textarea>
+    <div class="model"><p>VAL.1 is about intended use by end users, and the Guidelines exclude pure embedded software, ECUs and drives because none has a direct end-user interface. The supplier's evidence is verification; validation belongs to whoever delivers the end product.</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>Your win:</strong> you can walk the whole V, say what each process asks for and what checks it, and tell verification from validation. If you came here after lesson 4, continue with <a href="0005-level-2-managing-performance.html">lesson 5</a>.</p>
+</div>
+
+<p class="aside">To keep it: import this lesson's <a href="../anki/0016-validation.txt" download>Anki deck</a> (<a href="../index.html#anki">how</a>).</p>
+
+<h2>Read next</h2>
+<p>VAL.1 in the <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=58">PAM, pp. 58–60</a>, and its chapter in the <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=165">Guidelines §3.14, pp. 163–165</a>, with the side-door example.</p>
+
+<p class="aside">Not sure whether your product has end users in VAL.1's sense? Ask your teacher (the agent) in the chat.</p>
+
+<footer>
+  <nav class="pager">
+    <a href="0015-the-v-software-level.html">← Lesson 15: The V at software level</a>
+    <a href="../index.html">Course index →</a>
+  </nav>
+  <nav>
+    <a href="../index.html">Course index</a>
+    <a href="../reference/process-cards.html">Process cards</a>
+    <a href="../reference/glossary.html">Glossary</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

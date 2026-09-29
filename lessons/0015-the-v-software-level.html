@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>15 · The V at software level</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 15 of 16 · The V, process by process · Automotive SPICE, the vital 20 %</p>
+  <h1>The V at software level: SWE.1 to SWE.6</h1>
+  <p class="lede">This is where most of a software team's evidence lives. Whether a person or a coding agent writes the code, each of these six processes asks for something specific, and an assessor knows exactly where to look for it.</p>
+</header>
+
+<section class="drill warmup">
+  <p class="score"></p>
+  <div class="mcq" data-answer="select" data-why="Specify, select, perform and record, trace, summarise and communicate (lesson 14).">
+    <p class="q">In the verification pattern, what comes right after specifying the verification measures?</p>
+    <button data-choice="select">Select them</button><button data-choice="perform">Perform them</button><button data-choice="trace">Trace them</button>
+  </div>
+  <div class="mcq" data-answer="SYS.3" data-why="The hardware-software interface is an aspect of system design, SYS.3 (PAM SWE.2.BP1 note 1). If one exists, it is an input to the software requirements.">
+    <p class="q">Which process owns the hardware-software interface (which pins, signals and timing the software sees)?</p>
+    <button data-choice="SYS.3">SYS.3</button><button data-choice="SWE.1">SWE.1</button><button data-choice="SWE.2">SWE.2</button>
+  </div>
+</section>
+
+<h2>Three words first: element, component, unit</h2>
+
+<ul>
+  <li><strong>Software component:</strong> what the software architecture decomposes the software into, "down to the lowest-level software components".</li>
+  <li><strong>Software unit:</strong> what the detailed design decomposes a component into; a unit "is decided not to be further subdivided".</li>
+  <li><strong>Software element:</strong> either of them, as something that is integrated.</li>
+</ul>
+<p>Source: <a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=10">PAM terminology, p. 10</a>. A unit is a design idea, not a file or a function: "not an implementation-level term but a logical modeling-level term"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=147">[Guidelines p. 145]</a>. In code it may be one subroutine or several<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=48">[PAM SWE.3.BP1 note 1, p. 48]</a>.</p>
+
+<h2>The left leg: requirements, architecture, design and code</h2>
+
+<table>
+  <tr><th>Process</th><th>What it asks for</th></tr>
+  <tr><td class="id">SWE.1 Software Requirements Analysis</td><td>Specify software requirements from the system requirements and architecture, with defined characteristics; structure and prioritise; analyse correctness and feasibility; analyse the impact on the operating environment; trace to the system requirements and the system architecture (one path per requirement, see below); communicate.</td></tr>
+  <tr><td class="id">SWE.2 Software Architectural Design</td><td>Static aspects (components, interfaces, relationships) and dynamic aspects (behaviour, modes, concurrency such as interrupts and threads); analysis, e.g. of timing and resource consumption (RAM, ROM, CPU load), with rationales; trace to the software requirements; communicate.</td></tr>
+  <tr><td class="id">SWE.3 Detailed Design and Unit Construction</td><td>For each component, the behaviour of its units, their structure and interfaces, including valid value ranges and physical units such as <code>0..3.8 [A]</code>; the interactions between units; units developed to the design and to coding principles; traces from design to architecture, from units to design, and from design to software requirements; communicate.</td></tr>
+</table>
+<p>Source: PAM §4.4.1–4.4.3, pp. 44–50.</p>
+
+<ul>
+  <li><strong>Trace one path, not two.</strong> A software requirement traces to whichever of system requirement or system architecture fits it. "Redundant traceability is not intended"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=45">[PAM SWE.1.BP5 note 9, p. 45]</a>, and tracing only one path is not downrated (SWE.1.RL.10)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=139">[Guidelines p. 137]</a>. For a software-only supplier, lesson 3's shortcut applies: stakeholder requirements can take the place of system requirements.</li>
+  <li><strong>Coding principles are a level 1 matter.</strong> The PAM's examples are no implicit type conversions, one entry and one exit per subroutine, and range checks<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=49">[SWE.3.BP3 note 7, p. 49]</a>.</li>
+</ul>
+
+<div class="callout">
+  <p><strong>A detailed design is not a picture of the code.</strong> It says "what each software unit shall do and how it interacts with other units", and it "is not a mere graphical representation of the source code logic"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=146">[Guidelines §3.10.1, p. 144]</a>. Who writes the code, a person or a coding agent, is a HOW (lesson 12). What SWE.3 needs is units consistent with a design that says what they should do. Diagrams generated from the code after the fact describe what the code does, so they can't show that. (That last step is this course's inference; the Guidelines have no rule about generated designs.)</p>
+</div>
+
+<h2>The right leg: units, components, the whole software</h2>
+
+<table>
+  <tr><th>Process</th><th>Verifies</th><th>Against</th></tr>
+  <tr><td class="id">SWE.4 Unit Verification</td><td>Each software unit, by static analysis, code reviews and unit tests</td><td>The detailed design</td></tr>
+  <tr><td class="id">SWE.5 Component and Integration Verification</td><td>Each component's behaviour and interfaces; then the integration: data flow, timing, interface interpretation, resource consumption</td><td>The architecture (and the detailed design)</td></tr>
+  <tr><td class="id">SWE.6 Software Verification</td><td>The fully integrated software</td><td>The software requirements</td></tr>
+</table>
+<p>Source: PAM §4.4.4–4.4.6, pp. 50–57. Each follows lesson 14's five-step pattern, broadly: SWE.5 specifies and performs component and integration verification separately.</p>
+
+<ul>
+  <li><strong>Verify against the design, not the code.</strong> A unit "shall not be verified against the code itself": that "would just prove that the code works as programmed"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=156">[Guidelines §3.11.1, p. 154]</a>. Unit tests generated by reading the code, by a person or an agent, fall into exactly this trap (the course's reading of this rule).</li>
+  <li><strong>Coverage is not the goal.</strong> Code coverage is "accompanying information that helps judging completeness" of the chosen tests; "code coverage alone is not a verification objective"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=156">[p. 154]</a>.</li>
+  <li><strong>Integrate however you like.</strong> Big-bang, continuous integration or stepwise integration are all allowed<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=53">[PAM SWE.5.BP4 note 6, p. 53]</a>, and software-in-the-loop simulation can support integration verification (SWE.5.BP1 note 2).</li>
+  <li><strong>Check the test code.</strong> As at system level, an automated measure whose definition doesn't address the correctness, completeness and consistency of its scripts means BP1 shall be downrated, or for SWE.5 BP1 or BP2 (SWE.4.RL.2, SWE.5.RL.2, SWE.6.RL.2)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=159">[Guidelines pp. 157, 159–161]</a>.</li>
+</ul>
+
+<p class="aside">Generated code has its own rule in the Guidelines' section on model-based development: without evidence that auto-generated code complies with the detailed design, SWE.3.BP4 "shall not be rated higher than P" (MBD.RL.5)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=77">[Guidelines §2.5.1, p. 75]</a>. It was written for code generators, not agents, but it shows what assessors expect: evidence that generated output matches the design.</p>
+
+<h2>Practice: Seat-Heat's software</h2>
+
+<section class="drill">
+  <h3>A. Which process?</h3>
+  <p class="score"></p>
+  <div class="mcq" data-answer="SWE.3" data-why="Unit interfaces with valid value ranges and physical units are SWE.3.BP1, the static aspects of the detailed design.">
+    <p class="q">The temperature-conversion unit's interface: input <code>0..5 [V]</code>, output <code>−40..125 [°C]</code>.</p>
+    <button data-choice="SWE.2">SWE.2</button><button data-choice="SWE.3">SWE.3</button><button data-choice="SWE.4">SWE.4</button><button data-choice="SWE.5">SWE.5</button>
+  </div>
+  <div class="mcq" data-answer="SWE.4" data-why="Static analysis against a coding ruleset is a unit verification measure (SWE.4.BP1 notes 1–2).">
+    <p class="q">Static analysis with a MISRA ruleset runs on every pull request.</p>
+    <button data-choice="SWE.3">SWE.3</button><button data-choice="SWE.4">SWE.4</button><button data-choice="SWE.5">SWE.5</button><button data-choice="SWE.6">SWE.6</button>
+  </div>
+  <div class="mcq" data-answer="SWE.5" data-why="Data flow and timing between components, checked against the architecture, is integration verification: SWE.5.">
+    <p class="q">A software-in-the-loop test checks that the sensor component hands a new temperature to the control component within 10 ms.</p>
+    <button data-choice="SWE.4">SWE.4</button><button data-choice="SWE.5">SWE.5</button><button data-choice="SWE.6">SWE.6</button><button data-choice="SYS.4">SYS.4</button>
+  </div>
+  <div class="mcq" data-answer="SWE.6" data-why="The integrated software checked against a software requirement is SWE.6. Boundary values and equivalence classes are among the techniques its BP1 note names.">
+    <p class="q">Boundary-value tests of the requirement "accept heat levels 0 to 3 from LIN" on the fully integrated software.</p>
+    <button data-choice="SWE.4">SWE.4</button><button data-choice="SWE.5">SWE.5</button><button data-choice="SWE.6">SWE.6</button><button data-choice="SYS.5">SYS.5</button>
+  </div>
+  <div class="mcq" data-answer="SWE.2" data-why="Analysing the architecture for resource consumption, with a rationale, is SWE.2.BP3.">
+    <p class="q">A spreadsheet estimates each component's RAM and CPU load, with the reasons for putting the PWM control on a timer interrupt.</p>
+    <button data-choice="SWE.1">SWE.1</button><button data-choice="SWE.2">SWE.2</button><button data-choice="SWE.3">SWE.3</button><button data-choice="SWE.5">SWE.5</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>B. Acceptable, or a weakness?</h3>
+  <p class="score"></p>
+  <div class="mcq" data-answer="weak" data-why="Tests derived from the code prove the code works as programmed, not that it does what the design says (Guidelines p. 154). And coverage is not a verification objective.">
+    <p class="q">An agent writes unit tests by reading each function's source code. All pass, with 100 % line coverage.</p>
+    <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
+  </div>
+  <div class="mcq" data-answer="ok" data-why="Redundant traceability is not intended, and tracing one path only is not downrated (SWE.1.RL.10).">
+    <p class="q">Software requirements trace to the system architecture, but not also to the system requirements.</p>
+    <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
+  </div>
+  <div class="mcq" data-answer="weak" data-why="A design generated from the code describes the code; it can't show the units were built consistent with a design. And a design that only appears at release end has a history the plausibility check (lesson 8) will question.">
+    <p class="q">At release end, an agent generates class diagrams from the code and files them as the detailed design.</p>
+    <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
+  </div>
+  <div class="mcq" data-answer="ok" data-why="The PAM allows big-bang, continuous or stepwise integration (SWE.5.BP4 note 6). What matters is that the measures are specified, selected, run and traced.">
+    <p class="q">There is no staged integration plan: every merge builds the whole software, and CI runs the selected integration tests on it.</p>
+    <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
+  </div>
+  <div class="mcq" data-answer="weak" data-why="SWE.1.RL.4: if functional/non-functional is the only categorisation, SWE.1.BP2 shall be rated N.">
+    <p class="q">Software requirements are tagged "functional" or "non-functional", and that is their only structure.</p>
+    <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>C. From memory</h3>
+  <div class="recall">
+    <p>Why must unit verification be derived from the detailed design and not from the code?</p>
+    <textarea></textarea>
+    <div class="model"><p>Because verifying code against itself only proves it works as programmed. SWE.4 checks units against what the detailed design says they should do, which is the only way to catch a unit that faithfully implements the wrong thing.</p></div>
+  </div>
+  <div class="recall">
+    <p>What does each of SWE.4, SWE.5 and SWE.6 verify, and against what?</p>
+    <textarea></textarea>
+    <div class="model"><p>SWE.4: software units, against the detailed design. SWE.5: components and their integration, against the architecture (and the detailed design). SWE.6: the integrated software, against the software requirements.</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>Your win:</strong> you can say what each software process asks for, spot the verification that only proves the code works as programmed, and set up agent-written code and tests so the evidence holds. Next: the one process that asks whether the product is the <em>right</em> one.</p>
+</div>
+
+<p class="aside">To keep it: import this lesson's <a href="../anki/0015-the-v-software-level.txt" download>Anki deck</a> (<a href="../index.html#anki">how</a>).</p>
+
+<h2>Read next</h2>
+<p>The SWE processes in the <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=44">PAM, pp. 44–57</a>. In the Guidelines, <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=146">§3.10–3.11, pp. 144–158</a>, the detailed design and unit verification chapters, with worked examples of what a unit is.</p>
+
+<p class="aside">Using coding agents? Describe your agent's inputs and outputs to your teacher (the agent) in the chat, and map them to SWE.3 and SWE.4.</p>
+
+<footer>
+  <nav class="pager">
+    <a href="0014-the-v-system-level.html">← Lesson 14: The V at system level</a>
+    <a href="0016-validation.html">Lesson 16: Validation →</a>
+  </nav>
+  <nav>
+    <a href="../index.html">Course index</a>
+    <a href="../reference/process-cards.html">Process cards</a>
+    <a href="../reference/glossary.html">Glossary</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

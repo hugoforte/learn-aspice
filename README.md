@@ -6,7 +6,7 @@ Take the course at <https://hugoforte.github.io/learn-aspice/>, or open `index.h
 
 ## Contents
 
-- `lessons/`: thirteen self-contained HTML lessons (nine core, four on automation and AI), most opening with a warm-up, each with a cited explanation and instant-feedback practice
+- `lessons/`: sixteen self-contained HTML lessons (nine core, four on automation and AI, three on the V process by process), most opening with a warm-up, each with a cited explanation and instant-feedback practice
 - `anki/`: one Anki deck per lesson, as plain text files Anki imports directly, for spaced repetition after each lesson, and `aspice-4.1.apkg`, all of them in one package built by `build.py`
 - `reference/`: printable sheets covering capability levels, process cards, generic practices, assessment rules, common misconceptions and the glossary
 - `assets/`: the stylesheet, quiz component and diagram that every page shares

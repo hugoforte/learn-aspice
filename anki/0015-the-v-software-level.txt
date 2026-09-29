@@ -1,0 +1,22 @@
+#separator:Pipe
+#html:true
+#notetype:Basic
+#deck:ASPICE 4.1::15 The V at software level
+#tags:aspice::lesson-15
+#guid column:3
+#columns:Front|Back|GUID
+Software component, software unit, software element: define each.|Component: what the architecture decomposes the software into. Unit: what the detailed design decomposes a component into, not subdivided further. Element: either, as something integrated. (PAM p. 10)|aspice-15-01
+Is a software unit a function or a file?|Neither by definition: it is “a logical modeling-level term”, not an implementation term. In code it may be one subroutine or several. (Guidelines p. 145; PAM SWE.3.BP1 note 1, p. 48)|aspice-15-02
+What does SWE.1 Software Requirements Analysis ask for?|Specify software requirements from the system requirements and architecture, structure and prioritise, analyse, analyse the impact on the operating environment, trace, communicate. (PAM pp. 44–45)|aspice-15-03
+A software requirement traces to the system architecture but not also to the system requirements. Downrate?|No: redundant traceability is not intended (SWE.1.BP5 note 9), and one path only is not downrated (SWE.1.RL.10). (Guidelines p. 137)|aspice-15-04
+What does SWE.2 Software Architectural Design ask for?|Static aspects (components, interfaces, relationships), dynamic aspects (behaviour, modes, concurrency), analysis such as timing and resource consumption with rationales, traceability to the software requirements, communication. (PAM pp. 46–47)|aspice-15-05
+What must the detailed design specify for each unit's interface under SWE.3.BP1?|Valid data value ranges and physical or measurement units for inputs and outputs, from the application domain's view, e.g. 0..3.8 [A]. (PAM p. 48)|aspice-15-06
+Give two coding principles the PAM expects already at level 1.|Any two of: no implicit type conversions; one entry and one exit per subroutine; range checks (design-by-contract, defensive programming). (PAM SWE.3.BP3 note 7, p. 49)|aspice-15-07
+Is a picture of the code a detailed design?|No: the detailed design says what each unit shall do and “is not a mere graphical representation of the source code logic”. (Guidelines §3.10.1, p. 144)|aspice-15-08
+Name the three kinds of unit verification measure the PAM gives.|Static analysis, code reviews and unit tests. (PAM SWE.4.BP1 note 1, p. 50)|aspice-15-09
+Why must unit tests be derived from the detailed design, not from the code?|Verifying code against itself “would just prove that the code works as programmed”. (Guidelines §3.11.1, p. 154)|aspice-15-10
+Is 100 % code coverage the goal of unit verification?|No. Coverage is “accompanying information” on the completeness of the chosen tests; “code coverage alone is not a verification objective”. (Guidelines p. 154)|aspice-15-11
+What two things does SWE.5 verify?|Each component's behaviour and interfaces (component verification), and the integration of the elements: data flow, timing, interface interpretation, resource consumption. (PAM pp. 52–54)|aspice-15-12
+Must software integration be stepwise?|No: big-bang, continuous integration or stepwise integration are all allowed. (PAM SWE.5.BP4 note 6, p. 53)|aspice-15-13
+What does SWE.6 verify, and against what?|The fully integrated software, against the software requirements. (PAM pp. 55–56)|aspice-15-14
+Auto-generated code has no evidence that it complies with the detailed design. What does MBD.RL.5 say?|SWE.3.BP4 shall not be rated higher than P. The rule was written for model-based code generation. (Guidelines §2.5.1, p. 75)|aspice-15-15

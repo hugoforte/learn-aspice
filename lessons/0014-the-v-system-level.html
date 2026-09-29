@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>14 · The V at system level</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Lesson 14 of 16 · The V, process by process · Automotive SPICE, the vital 20 %</p>
+  <h1>The V at system level: SYS.1 to SYS.5</h1>
+  <p class="lede">Lesson 4 drew the V as a chain of traces. This lesson opens each system-level box: what it asks for, what an assessor expects to find, and the few rules that decide its rating.</p>
+</header>
+
+<section class="drill warmup">
+  <p class="score"></p>
+  <div class="mcq" data-answer="flex" data-why="SYS.1 Requirements Elicitation is a flex process. The system plug-in of the recommended VDA Scope is SYS.2 to SYS.5 (lesson 3).">
+    <p class="q">In the recommended VDA Scope, SYS.1 Requirements Elicitation is…</p>
+    <button data-choice="base">Base</button><button data-choice="plugin">Plug-in</button><button data-choice="flex">Flex</button>
+  </div>
+  <div class="mcq" data-answer="no" data-why="Information items are what the assessor looks for, not documents to write. A model in a tool, wiki pages or diagrams in the repo can all carry the characteristics (lesson 2).">
+    <p class="q">To satisfy SYS.3, must the team write a document titled "System Architecture"?</p>
+    <button data-choice="yes">Yes</button><button data-choice="no">No</button>
+  </div>
+</section>
+
+<h2>Seat-Heat's company bids for the whole ECU</h2>
+
+<p>So far Seat-Heat has written software for hardware supplied to it, so its assessment covered the software plug-in only. For the next vehicle generation, its company bids to deliver the complete seat-heating ECU: microcontroller, power stage for the heater mat, temperature sensor input, LIN interface, housing, and Seat-Heat's software inside. A system team now owns the ECU as a whole, and the system processes come into scope.</p>
+
+<p>"System" in ASPICE is not a fixed product level. The SYS processes are "not tied to a particular system boundary": a mechatronic-system or drive supplier can apply them to its mechatronic system, an ECU supplier to its ECU, a chip supplier to its microcontroller<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=49">[Guidelines §2.3.2, pp. 47–48]</a>. Whatever the team delivers as its product is its system.</p>
+
+<h2>The left leg: from needs to an architecture</h2>
+
+<table>
+  <tr><th>Process</th><th>What it asks for</th><th>What an assessor expects to find</th></tr>
+  <tr><td class="id">SYS.1 Requirements Elicitation</td><td>Obtain stakeholders' expectations, agree them as requirements, analyse every change to them, and keep their status visible to all affected parties.</td><td>Stakeholder requirements with their source, evidence of agreement, change analysis. Outputs include 17-00 Requirement and 15-51 Analysis results.</td></tr>
+  <tr><td class="id">SYS.2 System Requirements Analysis</td><td>Specify functional and non-functional system requirements with defined characteristics (such as verifiability), structure and prioritise them, analyse correctness and feasibility, analyse their impact on the system context, trace them to the stakeholder requirements, and communicate them.</td><td>A structured requirement set, analysis results, consistency evidence to the stakeholder requirements.</td></tr>
+  <tr><td class="id">SYS.3 System Architectural Design</td><td>Specify the static aspects (system elements, interfaces, relationships) and the dynamic aspects (behaviour and interaction in each system mode), analyse the design, record the rationale for key decisions, derive special characteristics for the non-software elements, trace, and communicate.</td><td>04-06 System architecture, analysis results, 17-57 Special characteristics.</td></tr>
+</table>
+<p>Source: PAM §4.3.1–4.3.3, pp. 33–38.</p>
+
+<p>Three things from the Guidelines that decide ratings here:</p>
+<ul>
+  <li><strong>Structure means more than two folders.</strong> If "functional" and "non-functional" are the only way the requirements are structured, then SYS.2.BP2 "shall be rated as N" (SYS.2.RL.5)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=124">[Guidelines p. 122]</a>. Group by function, feature or variant instead. SWE.1.RL.4 says the same for software requirements.</li>
+  <li><strong>Requirements may grow by release.</strong> When not all system requirements exist yet because of release-driven incremental development, BP1 and BP2 are not downrated (SYS.2.RL.4)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=123">[p. 121]</a>.</li>
+  <li><strong>The architecture needs both views.</strong> At least one static and at least one dynamic view; no particular set of views is prescribed<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=127">[p. 125]</a>. The hardware-software interface is defined at system level, in SYS.3, and is an input to the software requirements<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=46">[PAM SWE.2.BP1 note 1, p. 46]</a>.</li>
+</ul>
+
+<p class="aside">Not every customer requirement travels down the V. Only requirements about the product itself need to trace down to design and verification. Process requirements (such as "reach ASPICE level 2") and work-product requirements (such as a coding standard) are evidenced in other ways, for example by audit reports<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=118">[Guidelines §3.3.1, pp. 116–117]</a>.</p>
+
+<h2>The right leg: one pattern, used five times</h2>
+
+<p>SYS.4 verifies the integrated system against the <em>architecture</em>: interfaces, signal flow and timing between elements, hardware–software interaction. SYS.5 verifies the integrated system against the <em>system requirements</em>, including aspects such as thermal behaviour, robustness and EMC<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=39">[PAM §4.3.4–4.3.5, pp. 39–43]</a>. Both are written to broadly the same pattern, and so are SWE.4, SWE.5, SWE.6 and, for validation, VAL.1. Learn it once, and expect small variations (SWE.5, for instance, splits component verification from integration verification):</p>
+
+<ol>
+  <li><strong>Specify</strong> the verification measures. At system level that means techniques, pass/fail criteria, entry and exit criteria, sequence, and the infrastructure and environment setup; the list is shorter for some processes (SWE.4 names pass/fail and entry/exit criteria and infrastructure).</li>
+  <li><strong>Select</strong> which measures to run, with criteria that include regression, documented, with "sufficient coverage according to the release scope".</li>
+  <li><strong>Perform</strong> them and record the results, with pass/fail status. Deviations go to SUP.9.</li>
+  <li><strong>Trace</strong> the measures to what they verify (bidirectionally, and consistent), and the results to the measures.</li>
+  <li><strong>Summarise and communicate</strong> the results to all affected parties.</li>
+</ol>
+
+<p>ASPICE 4 says "verification" rather than "testing" on purpose: "testing is not the only verification approach". Measurements, calculations, analyses and simulations are verification measures too<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=63">[Guidelines §2.3.6, p. 61]</a>.</p>
+
+<table>
+  <tr><th>Rule</th><th>What it says</th></tr>
+  <tr><td class="id">SYS.4.RL.2, SYS.5.RL.2</td><td>An automated verification measure whose definition doesn't address the correctness, completeness and consistency of its scripts and programs: BP1 shall be downrated.</td></tr>
+  <tr><td class="id">SYS.4.RL.3, SYS.5.RL.3</td><td>Exploratory tests can't trace to the architecture or the requirements, and BP4 is not downrated for that. Each exploratory test must still trace to its results.</td></tr>
+  <tr><td class="id">SYS.4.RL.4, SYS.5.RL.4</td><td>A sound selection of measures, made against an inadequate or incomplete release plan: BP2 is not downrated. The weakness belongs to the release planning.</td></tr>
+</table>
+<p>Source: Guidelines §3.6–3.7, pp. 128–132.</p>
+
+<div class="callout">
+  <p><strong>Test code is a work product too.</strong> A HIL suite that runs every night proves nothing if nobody has asked whether its scripts check the right thing. The Guidelines make that part of defining the measure, and downrate its absence.</p>
+</div>
+
+<h2>Practice</h2>
+
+<section class="drill">
+  <h3>A. Which system process?</h3>
+  <p class="score"></p>
+  <div class="mcq" data-answer="SYS.1" data-why="Obtaining the customer's expectations, clarifying them and agreeing a set of requirements is elicitation: SYS.1.BP1–BP2.">
+    <p class="q">The OEM's 200-page specification is read, clarified in two workshops, and agreed as the requirement set for the first release.</p>
+    <button data-choice="SYS.1">SYS.1</button><button data-choice="SYS.2">SYS.2</button><button data-choice="SYS.3">SYS.3</button><button data-choice="SYS.5">SYS.5</button>
+  </div>
+  <div class="mcq" data-answer="SYS.2" data-why="A verifiable requirement for the ECU, derived from and traced to the stakeholder requirement: SYS.2.BP1 and BP5.">
+    <p class="q">"The ECU shall bring the seat surface to 35 °C within 4 minutes at an ambient temperature of −20 °C", derived from a line of the OEM specification and linked to it.</p>
+    <button data-choice="SYS.1">SYS.1</button><button data-choice="SYS.2">SYS.2</button><button data-choice="SYS.3">SYS.3</button><button data-choice="SYS.5">SYS.5</button>
+  </div>
+  <div class="mcq" data-answer="SYS.3" data-why="System elements with their interfaces (static) and their interaction over time (dynamic): SYS.3.BP1 and BP2.">
+    <p class="q">A block diagram of microcontroller, power stage, sensor input and LIN transceiver, plus a sequence diagram of what happens at start-up.</p>
+    <button data-choice="SYS.1">SYS.1</button><button data-choice="SYS.2">SYS.2</button><button data-choice="SYS.3">SYS.3</button><button data-choice="SYS.5">SYS.5</button>
+  </div>
+  <div class="mcq" data-answer="SYS.4" data-why="Bringing system elements together in a defined sequence and checking their interfaces and timing against the architecture is SYS.4.">
+    <p class="q">On a test bench, the power stage and the flashed microcontroller are brought together step by step, checking the PWM signal timing across the interface.</p>
+    <button data-choice="SYS.3">SYS.3</button><button data-choice="SYS.4">SYS.4</button><button data-choice="SYS.5">SYS.5</button><button data-choice="SWE.6">SWE.6</button>
+  </div>
+  <div class="mcq" data-answer="SYS.5" data-why="The integrated ECU verified against a system requirement is SYS.5. A climate chamber is simply its verification environment.">
+    <p class="q">In a climate chamber, the complete ECU is checked against the 4-minute heat-up requirement at −20 °C.</p>
+    <button data-choice="SYS.3">SYS.3</button><button data-choice="SYS.4">SYS.4</button><button data-choice="SYS.5">SYS.5</button><button data-choice="SWE.6">SWE.6</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>B. Would an assessor downrate?</h3>
+  <p class="score"></p>
+  <div class="mcq" data-answer="down" data-why="SYS.2.RL.5: when functional/non-functional is the only structuring criterion, SYS.2.BP2 shall be rated N.">
+    <p class="q">The system requirements are sorted into two folders, "Functional" and "Non-functional", and nothing else.</p>
+    <button data-choice="ok">No downrate</button><button data-choice="down">Downrate</button>
+  </div>
+  <div class="mcq" data-answer="ok" data-why="SYS.2.RL.4: requirements missing because of release-driven incremental development do not downrate BP1 or BP2.">
+    <p class="q">Release 3's system requirements are not written yet; releases 1 and 2 are complete, and the release plan shows when release 3's will be.</p>
+    <button data-choice="ok">No downrate</button><button data-choice="down">Downrate</button>
+  </div>
+  <div class="mcq" data-answer="down" data-why="SYS.5.RL.2 (and SYS.4.RL.2): an automated measure whose definition doesn't address the correctness of its scripts means BP1 shall be downrated.">
+    <p class="q">The HIL tests run automatically every night. Their definitions say nothing about how the test scripts themselves are checked.</p>
+    <button data-choice="ok">No downrate</button><button data-choice="down">Downrate</button>
+  </div>
+  <div class="mcq" data-answer="ok" data-why="Verification is broader than testing: measurements, calculations, analyses and simulations are verification measures too (Guidelines §2.3.6).">
+    <p class="q">The EMC requirements are verified by measurement in an EMC lab, with no test cases in the test tool.</p>
+    <button data-choice="ok">No downrate</button><button data-choice="down">Downrate</button>
+  </div>
+  <div class="mcq" data-answer="ok" data-why="SYS.5.RL.3: exploratory tests can't trace to requirements, and BP4 is not downrated for that. Traceability is still needed between the exploratory tests and their results, which exists here.">
+    <p class="q">Exploratory sessions on the test bench trace to no requirement, but each session is recorded and linked to its findings.</p>
+    <button data-choice="ok">No downrate</button><button data-choice="down">Downrate</button>
+  </div>
+</section>
+
+<section class="drill">
+  <h3>C. From memory</h3>
+  <div class="recall">
+    <p>Name the five steps the verification processes on the right of the V broadly share.</p>
+    <textarea></textarea>
+    <div class="model"><p>Specify the verification measures (techniques, pass/fail, entry/exit criteria, sequence, infrastructure); select them, with regression criteria and sufficient coverage for the release scope; perform them and record the results; trace measures to what they verify and results to measures; summarise and communicate the results.</p></div>
+  </div>
+  <div class="recall">
+    <p>What does SYS.1 deal with that SYS.2 doesn't?</p>
+    <textarea></textarea>
+    <div class="model"><p>The stakeholders' own expectations: obtaining them, agreeing them as stakeholder requirements, and analysing their changes. SYS.2 turns the agreed stakeholder requirements into structured, analysed system requirements for the product and traces back to them.</p></div>
+  </div>
+</section>
+
+<div class="win">
+  <p><strong>Your win:</strong> you can say what each system-level process asks for, tell SYS.4 from SYS.5, and name the pattern every verification process follows. Next: the same walk through the software level, where most of a software team's evidence lives.</p>
+</div>
+
+<p class="aside">To keep it: import this lesson's <a href="../anki/0014-the-v-system-level.txt" download>Anki deck</a> (<a href="../index.html#anki">how</a>).</p>
+
+<h2>Read next</h2>
+<p>The SYS processes in the <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=33">PAM, pp. 33–43</a>, then their chapters in the <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=116">Guidelines §3.3–3.7, pp. 114–132</a>. The Guidelines' Table 3-1 on which requirements trace down is worth the detour.</p>
+
+<p class="aside">Does your team deliver software, an ECU, or something bigger? Ask your teacher (the agent) in the chat where your system boundary sits.</p>
+
+<footer>
+  <nav class="pager">
+    <a href="0013-red-pen.html">← Lesson 13: Red pen</a>
+    <a href="0015-the-v-software-level.html">Lesson 15: The V at software level →</a>
+  </nav>
+  <nav>
+    <a href="../index.html">Course index</a>
+    <a href="../reference/process-cards.html">Process cards</a>
+    <a href="../reference/glossary.html">Glossary</a>
+  </nav>
+</footer>
+
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
