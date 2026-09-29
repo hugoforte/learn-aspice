@@ -197,11 +197,11 @@ Whatever the team delivers as its product, whether a mechatronic system, an ECU 
 Taught in: [L14 · Seat-Heat's company bids for the whole ECU](lessons/0014-the-v-system-level.html)
 
 **System element**:
-A building block of the system architecture, whether logical (a design object) or physical (a sensor, a mechanical part, a software executable).
+A building block of the system architecture. PAM p. 10 lets it be logical (a design object) or physical (a sensor, a mechanical part, a software executable).
 Taught in: [L14 · The left leg: from needs to an architecture](lessons/0014-the-v-system-level.html)
 
 **Stakeholder requirement (SYS.1)**:
-An agreed requirement from a stakeholder such as the customer, a regulator or the supplier itself. System requirements are derived from them.
+An agreed requirement from a stakeholder. Besides the customer's, PAM p. 10 counts regulatory and legal requirements and the supplier's own. System requirements are derived from them.
 _Avoid_: customer requirement, when other stakeholders count too
 Taught in: [L14 · The left leg: from needs to an architecture](lessons/0014-the-v-system-level.html)
 
@@ -295,7 +295,7 @@ Independent, objective assurance that work products and processes meet their cri
 Taught in: [L03 · The eleven, one line each](lessons/0003-the-vda-scope.html)
 
 **Independence**:
-SUP.1's demand that quality assurance is unbiased and free of conflicts of interest: no self-monitoring, and not done by the project's own manager or developers. ASPICE demands it of no other process.
+SUP.1's demand that quality assurance is unbiased and free of conflicts of interest: no self-monitoring, and, per Guidelines p. 192, not done by the project's own manager or developers. ASPICE demands it of no other process.
 _Avoid_: using it for GEN.RL.1, or for verification
 Taught in: [L11 · Two things gates are often credited with, wrongly](lessons/0011-lifecycles-gates-and-approvals.html)
 
