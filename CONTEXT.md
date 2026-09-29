@@ -141,7 +141,7 @@ Taught in: [L06 · Four generic practices, two pairs](lessons/0006-level-2-manag
 
 **Standard process**:
 The organisation-wide reference process, with tailoring guidelines (PA 3.1).
-_Avoid_: the standard, the handbook
+_Avoid_: the standard, the handbook (the company's own word in L07's story, never the course's)
 Taught in: [L07 · Two kinds of process](lessons/0007-level-3-standard-and-defined-process.html)
 
 **Defined process**:
@@ -265,8 +265,8 @@ _Avoid_: test code, as if it were exempt
 Taught in: [L14 · The right leg: one pattern, used five times](lessons/0014-the-v-system-level.html)
 
 **Exploratory test**:
-A verification measure with no specification to trace to. Not downrated for that, but it must trace to its results.
-Taught in: [L14 · The right leg: one pattern, used five times](lessons/0014-the-v-system-level.html)
+A verification or validation measure with no specification to trace to. Not downrated for that, but it must trace to its results.
+Taught in: [L14 · The right leg: one pattern, used five times](lessons/0014-the-v-system-level.html), [L16 · What VAL.1 asks for](lessons/0016-validation.html)
 
 **Component verification / integration verification**:
 SWE.5's two halves: each component's behaviour and interfaces, then how the integrated elements work together.
@@ -295,7 +295,7 @@ Independent, objective assurance that work products and processes meet their cri
 Taught in: [L03 · The eleven, one line each](lessons/0003-the-vda-scope.html)
 
 **Independence**:
-SUP.1's demand that quality assurance is not self-monitoring (the four-eyes principle). ASPICE demands it of no other process.
+SUP.1's demand that quality assurance is unbiased and free of conflicts of interest: no self-monitoring, and not done by the project's own manager or developers. ASPICE demands it of no other process.
 _Avoid_: using it for GEN.RL.1, or for verification
 Taught in: [L11 · Two things gates are often credited with, wrongly](lessons/0011-lifecycles-gates-and-approvals.html)
 
@@ -304,7 +304,7 @@ A deviation found against defined criteria, by a review or by quality assurance.
 Taught in: [L06 · Review evidence has a shape](lessons/0006-level-2-managing-work-products.html)
 
 **Configuration item**:
-A work product, or a group of them, managed as one entity under SUP.8. With AI assistance, prompts are new configuration items. AI tools, models and their settings are kept under version control.
+A work product, or a group of them, managed as one entity under SUP.8. With AI assistance, prompts can be new configuration items, and AI tools, models and their settings are kept under version control.
 Taught in: [L12 · What the Guidelines say](lessons/0012-ai-generated-work-products.html)
 
 **Baseline**:
@@ -314,17 +314,16 @@ Taught in: [L11 · Seat-Heat's gates, and where each lands](lessons/0011-lifecyc
 
 **Problem (SUP.9)**:
 Something wrong, to be analysed and tracked to closure.
-_Avoid_: bug, defect, when a change is meant
 Taught in: [L03 · The two pairs people confuse](lessons/0003-the-vda-scope.html)
 
 **Change request (SUP.10)**:
 A wanted change, analysed, approved before implementation and traced to what it affects.
-_Avoid_: CR in prose
+_Avoid_: CR in prose; bug or defect, for a change request
 Taught in: [L03 · The two pairs people confuse](lessons/0003-the-vda-scope.html)
 
 **CCB (change control board)**:
-The body that approves change requests (SUP.10.BP3). It represents the required stakeholders, with authority to decide.
-_Avoid_: approving body, approval authority
+The decision authority that approves change requests (SUP.10.BP3), which the Guidelines simplify to "CCB". It represents all affected disciplines and required stakeholders, with authority to decide, and there may be more than one.
+_Avoid_: approving body; approval authority, except when quoting the Guidelines' rules
 Taught in: [L09 · SUP.10 in brief](lessons/0009-capstone-assess-seat-heat.html)
 
 **Lifecycle**:
@@ -342,7 +341,7 @@ _Avoid_: release approval
 Taught in: [L11 · Seat-Heat's gates, and where each lands](lessons/0011-lifecycles-gates-and-approvals.html)
 
 **Release approval (SPL.2.BP5)**:
-Approval against release criteria before delivery, recorded as information item 13-13 with the date and the approver's name and role.
+Approval against release criteria before delivery. An assessor looks for it as information item 13-13: the date and the approver's name and role.
 _Avoid_: gate approval, sign-off
 Taught in: [L11 · A new process for the course: SPL.2 Product Release](lessons/0011-lifecycles-gates-and-approvals.html)
 
@@ -382,7 +381,8 @@ Taught in: [L12 · Four consequences worth designing for](lessons/0012-ai-genera
 
 **Assessment purpose**:
 Why the assessment is done, such as supplier evaluation or an improvement baseline. The scope is defined to cover it.
-Taught in: [L08 · 1. Everything starts from the scope](lessons/0008-how-assessors-rate.html)
+Taught in: [Assessment rules · Scope first](reference/assessment-rules.html)
+First used in: [L08 · 1. Everything starts from the scope](lessons/0008-how-assessors-rate.html)
 
 **Assessment scope**:
 Four things: organisational-unit boundaries, the processes, the target capability level per process, and the process context. The purpose is not part of it.
@@ -433,11 +433,11 @@ First used in: [L03 · A. Which process?](lessons/0003-the-vda-scope.html)
 
 **SIL (software-in-the-loop)**:
 Running software against a simulated environment with no target hardware. It can support integration verification.
-Taught in: [L15 · The right leg: units, components, the whole software](lessons/0015-the-v-software-level.html)
+First used in: [L15 · A. Which process?](lessons/0015-the-v-software-level.html)
 
 **CI (continuous integration)**:
 Building and checking every change automatically. Never used for configuration items.
-First used in: [L10 · Seat-Heat goes docs-as-code](lessons/0010-automated-checks.html)
+First used in: [L01 · opening](lessons/0001-two-axes-of-a-rating.html)
 
 **RASIC**:
 A matrix saying who is Responsible, Approves, Supports, is Informed or Consulted for each activity (GP 3.1.1).
@@ -445,7 +445,7 @@ First used in: [L07 · PA 3.1: the standard process](lessons/0007-level-3-standa
 
 **intacs / Gate4SPICE**:
 The assessor certification body / its regular community events where practising assessors talk.
-First used in: [L09 · Where to go from here](lessons/0009-capstone-assess-seat-heat.html)
+First used in: [L07 · Read next](lessons/0007-level-3-standard-and-defined-process.html)
 
 ### The course
 
@@ -473,7 +473,7 @@ The box closing each lesson's practice, saying what the learner can now do.
 
 **Capstone**:
 Lesson 9: a paper assessment of one Seat-Heat process, using everything in the core course.
-Taught in: [L09 · Capstone: assess Seat-Heat](lessons/0009-capstone-assess-seat-heat.html)
+Taught in: [L09 · Capstone: assess Seat-Heat's change management](lessons/0009-capstone-assess-seat-heat.html)
 
 **Reference sheet**:
 One printable page in `reference/`, such as the glossary, process cards or assessment rules.

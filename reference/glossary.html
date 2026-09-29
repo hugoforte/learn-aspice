@@ -56,7 +56,7 @@
   <p><strong>Process performance strategy</strong>: how a process will be performed to meet its objectives (GP 2.1.2). Tool-enforced workflows and CI can be one.</p>
   <p><strong>Review evidence (13-19)</strong>: the information item a review leaves: the object and its version, the reviewers and their roles, the date, the status, the criteria and the non-conformances found.</p>
   <p><strong>Status model</strong>: the defined states a work product moves through, part of its storage and control (GP 2.2.2).</p>
-  <p><strong>Standard process</strong>: the organisation-wide reference process, with tailoring guidelines (PA 3.1). <em>Avoid:</em> "the standard", "the handbook".</p>
+  <p><strong>Standard process</strong>: the organisation-wide reference process, with tailoring guidelines (PA 3.1). <em>Avoid:</em> "the standard"; "the handbook" (the company's own word in L07's story, never the course's).</p>
   <p><strong>Defined process</strong>: a project's tailored instance of the standard process (PA 3.2).</p>
   <p><strong>Tailoring guideline</strong>: predefined, unambiguous criteria for deriving a defined process from the standard process, naming who tailors and who approves.</p>
   <p><strong>Waiver</strong>: an approved one-off deviation from the standard process. A recurring waiver for the same deviation is a sign the standard process needs changing.</p>
@@ -92,7 +92,7 @@
   <p><strong>Verification measure</strong>: any check against a specification: a test, measurement, calculation, simulation, review or analysis. ASPICE 4 says "verification" rather than "testing". <em>Avoid:</em> "test", when any other kind of measure would do.</p>
   <p><strong>Verification pattern</strong>: the five steps every right-leg process follows: specify measures, select them, perform and record, trace, and summarise and communicate.</p>
   <p><strong>Automated verification measure</strong>: a measure run by scripts or programs. Its definition must address their correctness, completeness and consistency. <em>Avoid:</em> "test code", as if it were exempt.</p>
-  <p><strong>Exploratory test</strong>: a verification measure with no specification to trace to. Not downrated for that, but it must trace to its results.</p>
+  <p><strong>Exploratory test</strong>: a verification or validation measure with no specification to trace to. Not downrated for that, but it must trace to its results.</p>
   <p><strong>Component verification / integration verification</strong>: SWE.5's two halves: each component's behaviour and interfaces, then how the integrated elements work together.</p>
   <p><strong>Code coverage</strong>: accompanying information on how complete the chosen tests are. Never a verification objective in itself.</p>
   <p><strong>Validation (VAL.1)</strong>: evidence that the end product meets its users' intended-use expectations in its operational target environment. It checks intended use, not a specification. It does not apply to pure embedded software, an ECU or a drive.</p>
@@ -103,17 +103,17 @@
 <section>
   <h2>Support, change and release</h2>
   <p><strong>Quality assurance (SUP.1)</strong>: independent, objective assurance that work products and processes meet their criteria, with non-conformances resolved.</p>
-  <p><strong>Independence</strong>: SUP.1's demand that quality assurance is not self-monitoring (the four-eyes principle). ASPICE demands it of no other process. <em>Avoid:</em> using it for GEN.RL.1, or for verification.</p>
+  <p><strong>Independence</strong>: SUP.1's demand that quality assurance is unbiased and free of conflicts of interest: no self-monitoring, and not done by the project's own manager or developers. ASPICE demands it of no other process. <em>Avoid:</em> using it for GEN.RL.1, or for verification.</p>
   <p><strong>Non-conformance</strong>: a deviation found against defined criteria, by a review or by quality assurance.</p>
-  <p><strong>Configuration item</strong>: a work product, or a group of them, managed as one entity under SUP.8. With AI assistance, prompts are new configuration items. AI tools, models and their settings are kept under version control.</p>
+  <p><strong>Configuration item</strong>: a work product, or a group of them, managed as one entity under SUP.8. With AI assistance, prompts can be new configuration items, and AI tools, models and their settings are kept under version control.</p>
   <p><strong>Baseline</strong>: a defined, consistent, read-only set of configuration items at a point in time, serving as input for the affected parties. <em>Avoid:</em> "snapshot", "tag".</p>
-  <p><strong>Problem (SUP.9)</strong>: something wrong, to be analysed and tracked to closure. <em>Avoid:</em> "bug" or "defect", when a change is meant.</p>
-  <p><strong>Change request (SUP.10)</strong>: a wanted change, analysed, approved before implementation and traced to what it affects. <em>Avoid:</em> "CR" in prose.</p>
-  <p><strong>CCB (change control board)</strong>: the body that approves change requests (SUP.10.BP3). It represents the required stakeholders, with authority to decide. <em>Avoid:</em> "approving body", "approval authority".</p>
+  <p><strong>Problem (SUP.9)</strong>: something wrong, to be analysed and tracked to closure.</p>
+  <p><strong>Change request (SUP.10)</strong>: a wanted change, analysed, approved before implementation and traced to what it affects. <em>Avoid:</em> "CR" in prose; "bug" or "defect", for a change request.</p>
+  <p><strong>CCB (change control board)</strong>: the decision authority that approves change requests (SUP.10.BP3), which the Guidelines simplify to "CCB". It represents all affected disciplines and required stakeholders, with authority to decide, and there may be more than one. <em>Avoid:</em> "approving body"; "approval authority", except when quoting the Guidelines' rules.</p>
   <p><strong>Lifecycle</strong>: the project's own phases, gates and order (MAN.3.BP2): a HOW. ASPICE defines none. <em>Avoid:</em> "ASPICE phases".</p>
   <p><strong>Gate</strong>: a decision point in a project's lifecycle, such as "Requirements agreed". A stage-gate model is a lifecycle, and going back through a gate is iteration, not a deviation.</p>
   <p><strong>Gate approval</strong>: the decision to pass a gate: a lifecycle HOW. A complete, consistent baseline can support one (SUP.8.BP7). <em>Avoid:</em> "release approval".</p>
-  <p><strong>Release approval (SPL.2.BP5)</strong>: approval against release criteria before delivery, recorded as information item 13-13 with the date and the approver's name and role. <em>Avoid:</em> "gate approval", "sign-off".</p>
+  <p><strong>Release approval (SPL.2.BP5)</strong>: approval against release criteria before delivery. An assessor looks for it as information item 13-13: the date and the approver's name and role. <em>Avoid:</em> "gate approval", "sign-off".</p>
   <p><strong>Release note</strong>: what SPL.2 delivers alongside a release to say what it contains (information item 11-03).</p>
 </section>
 
