@@ -81,7 +81,7 @@
   <p><strong>Hardware-software interface (HSI)</strong>: which pins, signals and timing the software sees. It is defined at system level in SYS.3 and is an input to the software requirements.</p>
   <p><strong>Special characteristic</strong>: a property of a non-software system element derived in the system architecture (SYS.3.BP3) and communicated to all affected parties.</p>
   <p><strong>Software component</strong>: what the software architecture (SWE.2) decomposes the software into, down to the lowest-level components.</p>
-  <p><strong>Software unit</strong>: what the detailed design (SWE.3) decomposes a component into, not subdivided further. A design idea, not a file or a function. <em>Avoid:</em> "module" (Seat-Heat's own word in L04's story, never the course's).</p>
+  <p><strong>Software unit</strong>: what the detailed design (SWE.3) decomposes a component into, not subdivided further. First a design idea, not a file or a function; under verification it is represented by source code or object files. <em>Avoid:</em> "module" (Seat-Heat's own word in L04's story, never the course's).</p>
   <p><strong>Software element</strong>: a component or a unit, seen as something that is integrated (SWE.5). <em>Avoid:</em> "element", on its own, for anything else.</p>
   <p><strong>Detailed design</strong>: what each software unit shall do and how it interacts with other units. It is not a picture of the code.</p>
   <p><strong>Coding principles</strong>: rules units are developed to (SWE.3.BP3), such as no implicit type conversions, one entry and one exit, and range checks. A level 1 matter.</p>
@@ -95,7 +95,7 @@
   <p><strong>Exploratory test</strong>: a verification or validation measure with no specification to trace to. Not downrated for that, but it must trace to its results.</p>
   <p><strong>Component verification / integration verification</strong>: SWE.5's two halves: each component's behaviour and interfaces, then how the integrated elements work together.</p>
   <p><strong>Code coverage</strong>: accompanying information on how complete the chosen tests are. Never a verification objective in itself.</p>
-  <p><strong>Validation (VAL.1)</strong>: evidence that the end product meets its users' intended-use expectations in its operational target environment. It checks intended use, not a specification. It does not apply to pure embedded software, an ECU or a drive.</p>
+  <p><strong>Validation (VAL.1)</strong>: evidence that the end product meets its users' intended-use expectations in its operational target environment. The test is not whether a requirement exists but whether objective measurement settles it (verification) or it takes end users' judgement (validation). It does not apply to pure embedded software, an ECU or a drive.</p>
   <p><strong>Validation measure</strong>: a check against intended use, such as use-case testing under real-life conditions, end-user trials, panel or blind tests, or expert panels.</p>
   <p><strong>End product</strong>: a product people use directly, with a direct end-user interface. It is the only thing VAL.1 validates.</p>
 </section>

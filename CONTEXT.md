@@ -231,7 +231,7 @@ What the software architecture (SWE.2) decomposes the software into, down to the
 Taught in: [L15 · Three words first: element, component, unit](lessons/0015-the-v-software-level.html)
 
 **Software unit**:
-What the detailed design (SWE.3) decomposes a component into, not subdivided further. A design idea, not a file or a function.
+What the detailed design (SWE.3) decomposes a component into, not subdivided further. First a design idea, not a file or a function; under verification it is represented by source code or object files.
 _Avoid_: module (Seat-Heat's own word in L04's story, never the course's)
 Taught in: [L15 · Three words first: element, component, unit](lessons/0015-the-v-software-level.html)
 
@@ -277,7 +277,7 @@ Accompanying information on how complete the chosen tests are. Never a verificat
 Taught in: [L15 · The right leg: units, components, the whole software](lessons/0015-the-v-software-level.html)
 
 **Validation (VAL.1)**:
-Evidence that the end product meets its users' intended-use expectations in its operational target environment. It checks intended use, not a specification. It does not apply to pure embedded software, an ECU or a drive.
+Evidence that the end product meets its users' intended-use expectations in its operational target environment. The test is not whether a requirement exists but whether objective measurement settles it (verification) or it takes end users' judgement (validation). It does not apply to pure embedded software, an ECU or a drive.
 Taught in: [L16 · Verification and validation are different questions](lessons/0016-validation.html), [L16 · Who validates](lessons/0016-validation.html)
 
 **Validation measure**:
