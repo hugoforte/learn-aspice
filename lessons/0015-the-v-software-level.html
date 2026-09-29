@@ -34,7 +34,7 @@
   <li><strong>Software unit:</strong> what the detailed design decomposes a component into; a unit "is decided not to be further subdivided".</li>
   <li><strong>Software element:</strong> either of them, as something that is integrated.</li>
 </ul>
-<p>Source: <a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=10">PAM terminology, p. 10</a>. A unit is a design idea, not a file or a function: "not an implementation-level term but a logical modeling-level term"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=147">[Guidelines p. 145]</a>. In code it may be one subroutine or several<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=48">[PAM SWE.3.BP1 note 1, p. 48]</a>.</p>
+<p>Source: <a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=10">PAM terminology, p. 10</a>. A unit is first a design idea, not a file or a function: in design, "not an implementation-level term but a logical modeling-level term"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=147">[Guidelines p. 145]</a>. In code it may be one subroutine or several<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=48">[PAM SWE.3.BP1 note 1, p. 48]</a>, and once implemented and under verification it is represented by source code files or an object file (PAM p. 10).</p>
 
 <h2>The left leg: requirements, architecture, design and code</h2>
 
@@ -44,7 +44,7 @@
   <tr><td class="id">SWE.2 Software Architectural Design</td><td>Static aspects (components, interfaces, relationships) and dynamic aspects (behaviour, modes, concurrency such as interrupts and threads); analysis, e.g. of timing and resource consumption (RAM, ROM, CPU load), with rationales; trace to the software requirements; communicate.</td></tr>
   <tr><td class="id">SWE.3 Detailed Design and Unit Construction</td><td>For each component, the behaviour of its units, their structure and interfaces, including valid value ranges and physical units such as <code>0..3.8 [A]</code>; the interactions between units; units developed to the design and to coding principles; traces from design to architecture, from units to design, and from design to software requirements; communicate.</td></tr>
 </table>
-<p>Source: PAM §4.4.1–4.4.3, pp. 44–50.</p>
+<p class="aside">Source: <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=44">PAM §4.4.1–4.4.3, pp. 44–50</a>.</p>
 
 <ul>
   <li><strong>Trace one path, not two.</strong> A software requirement traces to whichever of system requirement or system architecture fits it. "Redundant traceability is not intended"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=45">[PAM SWE.1.BP5 note 9, p. 45]</a>, and tracing only one path is not downrated (SWE.1.RL.10)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=139">[Guidelines p. 137]</a>. For a software-only supplier, lesson 3's shortcut applies: stakeholder requirements can take the place of system requirements.</li>
@@ -52,7 +52,7 @@
 </ul>
 
 <div class="callout">
-  <p><strong>A detailed design is not a picture of the code.</strong> It says "what each software unit shall do and how it interacts with other units", and it "is not a mere graphical representation of the source code logic"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=146">[Guidelines §3.10.1, p. 144]</a>. Who writes the code, a person or a coding agent, is a HOW (lesson 12). What SWE.3 needs is units consistent with a design that says what they should do. Diagrams generated from the code after the fact describe what the code does, so they can't show that. (That last step is this course's inference; the Guidelines have no rule about generated designs.)</p>
+  <p><strong>A detailed design is not a picture of the code.</strong> It says "what each software unit shall do and how it interacts with other units", and it "is not a mere graphical representation of the source code logic"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=146">[Guidelines §3.10.1, p. 144]</a>. Who writes the code, a person or a coding agent, is a HOW (lesson 1). What SWE.3 needs is units consistent with a design that says what they should do. Diagrams generated from the code after the fact describe what the code does, so they can't show that. (That last step is this course's inference; the Guidelines have no rule about generated designs.)</p>
 </div>
 
 <h2>The right leg: units, components, the whole software</h2>
@@ -63,10 +63,11 @@
   <tr><td class="id">SWE.5 Component and Integration Verification</td><td>Each component's behaviour and interfaces; then the integration: data flow, timing, interface interpretation, resource consumption</td><td>The architecture (and the detailed design)</td></tr>
   <tr><td class="id">SWE.6 Software Verification</td><td>The fully integrated software</td><td>The software requirements</td></tr>
 </table>
-<p>Source: PAM §4.4.4–4.4.6, pp. 50–57. Each follows lesson 14's five-step pattern, broadly: SWE.5 specifies and performs component and integration verification separately.</p>
+<p class="aside">Source: <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=50">PAM §4.4.4–4.4.6, pp. 50–57</a>. Each follows lesson 14's five-step pattern, broadly: SWE.5 specifies and performs component and integration verification separately.</p>
 
 <ul>
-  <li><strong>Verify against the design, not the code.</strong> A unit "shall not be verified against the code itself": that "would just prove that the code works as programmed"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=156">[Guidelines §3.11.1, p. 154]</a>. Unit tests generated by reading the code, by a person or an agent, fall into exactly this trap (the course's reading of this rule).</li>
+  <li><strong>Static analysis and reviews count.</strong> The PAM's unit verification measures are static analysis, code reviews and unit tests; static analysis "can be done based on MISRA rulesets and other coding standards"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=50">[SWE.4.BP1 notes 1–2, p. 50]</a>. Writing units to coding principles is SWE.3; checking that they were is SWE.4.</li>
+  <li><strong>Test against the design, not the code.</strong> What a unit should do comes from the detailed design, so its tests do too. A unit "shall not be verified against the code itself": that "would just prove that the code works as programmed"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=156">[Guidelines §3.11.1, p. 154]</a>. Unit tests generated by reading the code, by a person or an agent, fall into exactly this trap (the course's reading of this rule).</li>
   <li><strong>Coverage is not the goal.</strong> Code coverage is "accompanying information that helps judging completeness" of the chosen tests; "code coverage alone is not a verification objective"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=156">[p. 154]</a>.</li>
   <li><strong>Integrate however you like.</strong> Big-bang, continuous integration or stepwise integration are all allowed<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=53">[PAM SWE.5.BP4 note 6, p. 53]</a>, and software-in-the-loop simulation can support integration verification (SWE.5.BP1 note 2).</li>
   <li><strong>Check the test code.</strong> As at system level, an automated measure whose definition doesn't address the correctness, completeness and consistency of its scripts means BP1 shall be downrated, or for SWE.5 BP1 or BP2 (SWE.4.RL.2, SWE.5.RL.2, SWE.6.RL.2)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=159">[Guidelines pp. 157, 159–161]</a>.</li>
@@ -112,7 +113,7 @@
     <p class="q">Software requirements trace to the system architecture, but not also to the system requirements.</p>
     <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
   </div>
-  <div class="mcq" data-answer="weak" data-why="A design generated from the code describes the code; it can't show the units were built consistent with a design. And a design that only appears at release end has a history the plausibility check (lesson 8) will question.">
+  <div class="mcq" data-answer="weak" data-why="A design generated from the code describes the code; it can't show the units were built consistent with a design. And a design that only appears at release end looks back-filled: its history shows it was written after the code.">
     <p class="q">At release end, an agent generates class diagrams from the code and files them as the detailed design.</p>
     <button data-choice="ok">Acceptable</button><button data-choice="weak">A weakness</button>
   </div>
