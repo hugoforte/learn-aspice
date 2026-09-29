@@ -7,8 +7,8 @@
 #columns:Front|Back|GUID
 List the five base processes of the recommended VDA Scope.|MAN.3 Project Management · SUP.1 Quality Assurance · SUP.8 Configuration Management · SUP.9 Problem Resolution Management · SUP.10 Change Request Management. (Guidelines Fig. 1-1, p. 29)|aspice-03-01
 Besides the base five, what must the recommended VDA Scope include?|At least one engineering plug-in: SYS.2–SYS.5, SWE.1–SWE.6, HWE.1–HWE.4, or MLE.1–MLE.4 with SUP.11.|aspice-03-02
-What is the PAM's plug-in concept?|Management and support processes are domain-independent; the engineering disciplines (SYS, SWE, HWE, MLE) plug in underneath them. (PAM Annex C.1, p. 153)|aspice-03-03
-Name four flex processes outside the base of the recommended VDA Scope.|Any four of: ACQ.4 Supplier Monitoring, MAN.5 Risk, MAN.6 Measurement, SYS.1 Requirements Elicitation, VAL.1 Validation, SPL.2 Product Release, PIM.3 Process Improvement, REU.2 Reuse.|aspice-03-04
+What is the PAM's plug-in concept?|The system V sits at the top; domain disciplines such as SWE and HWE plug in beneath it; management and support processes are domain-independent and apply at every level. (PAM Annex C.1, p. 153)|aspice-03-03
+Name four flex processes, outside the base and the plug-ins of the recommended VDA Scope.|Any four of: ACQ.4 Supplier Monitoring, MAN.5 Risk Management, MAN.6 Measurement, SYS.1 Requirements Elicitation, VAL.1 Validation, SPL.2 Product Release, PIM.3 Process Improvement, REU.2 Management of Products for Reuse.|aspice-03-04
 What does deviating from the recommended scope need?|A documented rationale tied to the assessment purpose. (Guidelines pp. 29–30)|aspice-03-05
 Seat-Heat has no QA function and asks to mark SUP.1 “not applicable”, without the sponsor's approval. What happens?|It stays in scope and is rated, usually N. “Not applicable” needs the sponsor's approval, and non-existence of evidence is not a valid reason to exclude. (Guidelines pp. 29–30)|aspice-03-06
 Which processes make up Seat-Heat's assessment scope, and how many are there?|The five base processes plus the software plug-in SWE.1–SWE.6: eleven.|aspice-03-07

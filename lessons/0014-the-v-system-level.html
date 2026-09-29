@@ -43,6 +43,8 @@
 </table>
 <p class="aside">Source: <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=33">PAM §4.3.1–4.3.3, pp. 33–38</a>.</p>
 
+<p>Two words in that table are wider than they sound. A <strong>stakeholder requirement</strong> is not only the customer's: the PAM's examples also include the supplier's own (product-specific or platform), legal, regulatory and statutory requirements, industry-sector requirements, international standards and codes of practice, and the list is open. A <strong>system element</strong> can be logical, a structural object at architecture or design level that may be decomposed further, or physical, or a combination, such as a sensor, an actuator, a mechanical part or a software executable<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=10">[PAM p. 10]</a>.</p>
+
 <p>Three things from the Guidelines that decide ratings here:</p>
 <ul>
   <li><strong>Structure means more than two folders.</strong> If "functional" and "non-functional" are the only way the requirements are structured, then SYS.2.BP2 "shall be rated as N" (SYS.2.RL.5)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=124">[Guidelines p. 122]</a>. Group by function, feature or variant instead. SWE.1.RL.4 says the same for software requirements.</li>
@@ -75,7 +77,7 @@
 <p class="aside">Source: <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=130">Guidelines §3.6–3.7, pp. 128–132</a>.</p>
 
 <div class="callout">
-  <p><strong>Test code is a work product too.</strong> A HIL suite that runs every night proves nothing if nobody has asked whether its scripts check the right thing. The Guidelines make that part of defining the measure, and downrate its absence.</p>
+  <p><strong>Test code is a work product too.</strong> A hardware-in-the-loop (HIL) suite that runs every night proves nothing if nobody has asked whether its scripts check the right thing. The Guidelines make that part of defining the measure, and downrate its absence.</p>
 </div>
 
 <h2>Practice</h2>
@@ -153,7 +155,7 @@
 <h2>Read next</h2>
 <p>The SYS processes in the <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=33">PAM, pp. 33–43</a>, then their chapters in the <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=116">Guidelines §3.3–3.7, pp. 114–132</a>. The Guidelines' Table 3-1 on which requirements trace down is worth the detour.</p>
 
-<p class="aside">Does your team deliver software, an ECU, or something bigger? Ask your teacher (the agent) in the chat where your system boundary sits.</p>
+<p class="aside">Does your team deliver software, an ECU, or something bigger? Ask your teacher in the chat where your system boundary sits.</p>
 
 <footer>
   <nav class="pager">

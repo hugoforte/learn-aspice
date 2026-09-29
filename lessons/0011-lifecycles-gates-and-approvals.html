@@ -39,12 +39,12 @@
 
 <h2>A new process for the course: SPL.2 Product Release</h2>
 
-<p>It is flex, not base, but it is the process a final gate most often lands in. Purpose: "to control the release of a product to the intended customer". Its BPs define release content and criteria, define the package, identify each release uniquely, build it "from items under configuration control", ensure approval before delivery, provide a release note, state the support terms, and deliver<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=30">[PAM pp. 30–32]</a>. The approval record, <code>13-13 Product release approval</code>, identifies the release date and "name and role of approver"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=138">[Annex B, p. 138]</a>.</p>
+<p>It is flex, not base, but it is the process a final gate most often lands in. Purpose: "to control the release of a product to the intended customer". Its BPs define release content and criteria, define the package, identify each release uniquely, build it "from items under configuration control", ensure approval before delivery, provide a release note, state the support terms, and deliver<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=30">[PAM pp. 30–32]</a>. The information item <code>13-13 Product release approval</code> identifies the release date and "name and role of approver"<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=138">[Annex B, p. 138]</a>.</p>
 
 <h2>Seat-Heat's gates, and where each lands</h2>
 
 <table>
-  <tr><th>Seat-Heat gate</th><th>ASPICE home</th><th>Record it should leave</th></tr>
+  <tr><th>Seat-Heat gate</th><th>ASPICE home</th><th>Evidence it should leave</th></tr>
   <tr><td class="id">Scope agreed</td><td>MAN.3.BP1 scope, BP3 feasibility; SYS.1 elicitation</td><td>Scope of work (<code>08-53</code>), who confirmed it, when</td></tr>
   <tr><td class="id">Requirements agreed</td><td>SYS.2 / SWE.1; for a change, SUP.10.BP2–BP3</td><td>Analysed requirements; impact analysis covering side effects</td></tr>
   <tr><td class="id">Plan and design agreed</td><td>SYS.3 / SWE.2; MAN.3.BP4/BP8; GP 2.1.2–2.1.4</td><td>Approved plan, named responsibilities</td></tr>
@@ -58,14 +58,14 @@
 <h3>Two things gates are often credited with, wrongly</h3>
 <ul>
   <li><strong>System requirements are analysed in SYS.2, not SYS.1.</strong> SYS.1 is Requirements <em>Elicitation</em>: it gathers and analyses <em>stakeholder</em> needs and their changes. Software requirements are SWE.1.</li>
-  <li><strong>Independent verification is not an ASPICE demand.</strong> In PAM 4.1 only quality assurance must be independent (SUP.1.BP1, "no self-monitoring")<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=79">[p. 79]</a>. ASPICE doesn't require independent verification. Other standards your project follows, such as ISO 26262, have their own independence rules: check which apply, and credit the right standard.</li>
+  <li><strong>Independent verification is not an ASPICE demand.</strong> In PAM 4.1 only quality assurance must be independent, "without conflicts of interest" (SUP.1.BP1, "no self-monitoring")<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=79">[p. 79]</a>, and the Guidelines spell out what that means for roles: the project manager or a developer of the same project may not take the quality-assurance role, though they may in another project<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=194">[Guidelines §3.23.2.1, p. 192]</a>. ASPICE doesn't require independent verification. Other standards your project follows, such as ISO 26262, have their own independence rules: check which apply, and credit the right standard.</li>
 </ul>
 
 <h2>Practice</h2>
 
 <section class="drill">
   <p class="score"></p>
-  <div class="mcq" data-answer="SPL.2" data-why="Approving a release against defined criteria before delivery is SPL.2.BP5; 13-13 is the approval record.">
+  <div class="mcq" data-answer="SPL.2" data-why="Approving a release against defined criteria before delivery is SPL.2.BP5; 13-13 is the information item an assessor looks for.">
     <p class="q">The final "Released" gate approval is primarily evidence for…</p>
     <button data-choice="MAN.3">MAN.3</button><button data-choice="SPL.2">SPL.2</button><button data-choice="SUP.9">SUP.9</button><button data-choice="SWE.6">SWE.6</button>
   </div>
@@ -73,7 +73,7 @@
     <p class="q">A feature goes back from "Verified" to "Candidate frozen" after a failed test. Is that a deviation from ASPICE?</p>
     <button data-choice="yes">Yes</button><button data-choice="no">No</button>
   </div>
-  <div class="mcq" data-answer="flex" data-why="VAL.1 and SPL.2 are both in the flex/optional set, outside the recommended VDA Scope.">
+  <div class="mcq" data-answer="flex" data-why="VAL.1 and SPL.2 are both in the flex set of the recommended VDA Scope, outside the base and the plug-ins.">
     <p class="q">In the recommended VDA Scope, VAL.1 Validation is…</p>
     <button data-choice="base">Base</button><button data-choice="plugin">Plug-in</button><button data-choice="flex">Flex</button>
   </div>
@@ -104,7 +104,7 @@
 <h2>Read next</h2>
 <p><a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=30">SPL.2 Product Release, PAM pp. 30–32</a>, and its rating rules in the <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=114">Guidelines §3.2, pp. 112–113</a>.</p>
 
-<p class="aside">Mapping your own team's gates? Walk through them with your teacher (the agent) in the chat.</p>
+<p class="aside">Mapping your own team's gates? Walk through them with your teacher in the chat.</p>
 
 <footer>
   <nav class="pager">

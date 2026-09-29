@@ -6,7 +6,7 @@
 #guid column:3
 #columns:Front|Back|GUID
 What is VAL.1 Validation for?|Evidence that the end product, allowing direct end-user interaction, satisfies the intended-use expectations in its operational target environment. (PAM §4.5.1, p. 58)|aspice-16-01
-What separates verification from validation, according to the Guidelines?|Whether objective measurement can settle it (verification) or it takes end users’ judgement of intended use (validation). Having a written requirement is not the criterion. (Guidelines pp. 163–164)|aspice-16-02
+What separates verification from validation, according to the Guidelines?|Whether objective measurement can settle it (verification) or it takes a judgement of what users need, made by end users or their representatives or approximated, for instance by accident simulations (validation). A simulation checked against a specification is still verification. Having a written requirement is not the criterion. (Guidelines pp. 163–164)|aspice-16-02
 Gear-shift time within spec vs a good gear-shift feel: which is verification, which validation?|Shift time: verification, it “can be measured objectively”. Shift feel: validation, it “requires feedback from end users”. (Guidelines §3.14.1, p. 163)|aspice-16-03
 Name three kinds of validation measure the PAM gives.|Any three of: operational use-case testing under real-life conditions, highly accelerated life testing, simulations under real-life conditions, end-user trials, panel or blind tests, expert panels. (PAM p. 10)|aspice-16-04
 Which products does VAL.1 exclude, and why?|Pure embedded software, ECUs and drives: none of them “provides a direct end user interface”. (Guidelines §3.14.1, p. 163)|aspice-16-05

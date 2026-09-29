@@ -9,7 +9,7 @@ What does the assessment scope fix before anything is rated?|The boundaries of t
 What is the process context, and what does it limit?|The factors bounding what is rated, such as which releases, which components and whether open source is included. Every PA rating “shall strictly remain within” it.|aspice-08-02
 Who decides the evidence samples, and what path should they mark?|The assessor decides (the organisation may propose). Samples should “mark a clear path through the engineering lifecycle”. (Guidelines §1.4.3.1, pp. 37–38)|aspice-08-03
 Name three kinds of content an assessor makes sure the samples cover.|Any three of: the most important functions; new, adapted, reused and platform content; safety- and security-relevant content; every coding and modelling approach used.|aspice-08-04
-State the plausibility rule for documents.|Every document is checked for its change history. One created shortly before the assessment is not considered unless there is a plausible reason, and its history should match its update cycle. (Guidelines §1.4.3.2, p. 38)|aspice-08-05
+State the plausibility rule for work products.|Every work product is checked for its change history. One created shortly before the assessment is not considered unless there is a plausible reason, and its history should match its update cycle. (Guidelines §1.4.3.2, p. 38)|aspice-08-05
 A two-year-old project's risk register was created nine days before the assessment and has one version. What does the assessor do?|Ignores it: created shortly before the assessment with no plausible reason.|aspice-08-06
 A sub-project started twelve days before the assessment; its risk register dates from day three. What does the assessor do?|Accepts it: the late creation has a plausible reason.|aspice-08-07
 Why is evidence that piles up as a side effect of the work the strongest kind?|Git history, tool timestamps and review records show the process was lived, not written up for the visit. (The course's inference from the plausibility rules.)|aspice-08-08
@@ -20,7 +20,7 @@ Describe the recommended aggregation method, including the rounding rule.|Conver
 Aggregate two instances: L and F.|F: (2 + 3) / 2 = 2.5, and exactly halfway rounds up.|aspice-08-13
 Aggregate three instances: N, N, F.|P: (0 + 0 + 3) / 3 = 1.0. One excellent instance can't carry two absent ones.|aspice-08-14
 Aggregate P, L, F weighted 70 % / 20 % / 10 %.|P: 0.7 + 0.4 + 0.3 = 1.4, which rounds down to 1.|aspice-08-15
-What are the three patterns of Guideline rating rules?|“Shall not be downrated” · “shall be downrated” (at least one step) · “shall not be rated higher than”. (Guidelines §1.5, pp. 42–44)|aspice-08-16
+What are the three patterns of rating rules?|“Shall not be downrated” · “shall be downrated” (at least one step) · “shall not be rated higher than”. (Guidelines §1.5, pp. 42–44)|aspice-08-16
 Three rating rules each call for a downrate. Is the PA downrated three steps?|Not automatically: there is no “rating rule algebra”. (Guidelines §1.5, pp. 42–44)|aspice-08-17
 What three things does a sound weakness statement contain?|What is missing or weak, the traceable objective evidence showing it, and the process risk it creates.|aspice-08-18
 What happens to an assessment report that cites only rating rules instead of weakness statements?|It is invalid: every downrating needs the process risk “substantiated by traceable objective evidence”. (Guidelines §1.5.4.2, p. 44)|aspice-08-19

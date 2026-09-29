@@ -52,7 +52,7 @@ A CI job runs on every pull request and blocks the merge if any check fails:
 </table>
 
 <h3>Stricter than ASPICE is fine; just don't say ASPICE demands it</h3>
-<p>The Guidelines protect lighter approaches with "shall not be downrated" rules: cluster-level tracing (TAC.RL.1), manual snapshot checks (TAC.RL.2), and consistency shown through pair work or commit comments without formal review records (TAC.RL.3)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=60">[§2.3.4.3–5, pp. 58–60]</a>. An automated, atomic, merge-blocking checker goes beyond all of them. That's a sound engineering choice, but it is not what the model requires.</p>
+<p>The Guidelines protect lighter approaches with "shall not be downrated" rules: cluster-level tracing (TAC.RL.1), manual snapshot checks (TAC.RL.2), and consistency shown through pair work or commit comments without formal review records (TAC.RL.3)<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=60">[§2.3.4.3–5, pp. 58–60]</a>. An automated, atomic, merge-blocking checker goes beyond all of them. That's a sound engineering choice, but it is not what the PAM requires.</p>
 
 <h2>What no structural check can establish</h2>
 
@@ -66,7 +66,7 @@ A CI job runs on every pull request and blocks the merge if any check fails:
 
 <section class="drill">
   <p class="score"></p>
-  <p>For each rule or situation: does it <strong>support</strong> an ASPICE practice, go <strong>beyond</strong> what ASPICE asks, or is it <strong>wrong</strong> because it contradicts the model? The first question asks which property failed.</p>
+  <p>For each rule or situation: does it <strong>support</strong> an ASPICE practice, go <strong>beyond</strong> what ASPICE asks, or is it <strong>wrong</strong> because it contradicts the PAM? The first question asks which property failed.</p>
   <div class="mcq" data-answer="consistency" data-why="Every link resolves and every pairing is legal, so CI is green. But the two items disagree, and only a semantic check catches that.">
     <p class="q">CI is green. A SWE.6 test checks a 90 s ramp; the requirement it traces to now says 60 s. What failed?</p>
     <button data-choice="traceability">Traceability</button><button data-choice="consistency">Consistency</button>
@@ -106,7 +106,7 @@ A CI job runs on every pull request and blocks the merge if any check fails:
 <h2>Read next</h2>
 <p>The traceability BPs and their notes: SYS on <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=35">PAM pp. 35–43</a>, SWE on <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=44">pp. 44–57</a>; then <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=57">Guidelines §2.3.4, pp. 55–60</a>.</p>
 
-<p class="aside">Have a check that isn't covered here? Ask your teacher (the agent) to map it to a practice.</p>
+<p class="aside">Have a check that isn't covered here? Ask your teacher to map it to a practice.</p>
 
 <footer>
   <nav class="pager">

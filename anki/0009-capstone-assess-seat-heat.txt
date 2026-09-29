@@ -7,7 +7,7 @@
 #columns:Front|Back|GUID
 List the six base practices of SUP.10 Change Request Management.|BP1 identify and record · BP2 analyse and assess · BP3 approve before implementation · BP4 bidirectional traceability · BP5 confirm implementation · BP6 track to closure. (PAM pp. 85–86)|aspice-09-01
 SUP.10.RL.1: change request analysis omits potential side effects. What follows?|BP2 shall not be rated F. (Guidelines §3.26, pp. 208–211)|aspice-09-02
-SUP.10.RL.3: not all relevant disciplines or stakeholders sit in the approval authority. What follows?|BP3 shall not be rated F.|aspice-09-03
+SUP.10.RL.3: not all relevant disciplines or stakeholders are represented in the approval authority (the CCB). What follows?|BP3 shall not be rated F.|aspice-09-03
 SUP.10.RL.4: approval decisions are not taken, or not in time, without justification. What follows?|BP3 shall be downrated.|aspice-09-04
 2 of 10 sampled CRs went Open → Implemented as “urgent customer fixes”, and no emergency path is defined. Which BP is hit, and which rule applies?|SUP.10.BP3 approve before implementation; RL.4 calls for a downrate.|aspice-09-05
 Seat-Heat's CCB has no test lead. Which BP can no longer be F, and under which rule?|SUP.10.BP3, under SUP.10.RL.3.|aspice-09-06

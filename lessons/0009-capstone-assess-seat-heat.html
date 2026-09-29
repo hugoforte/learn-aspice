@@ -25,10 +25,10 @@
 </table>
 
 <h3>SUP.10 in brief</h3>
-<p>Purpose: "to ensure that change requests are recorded, analyzed, tracked, approved, and implemented". The base practices are BP1 identify and record · BP2 analyse and assess · BP3 approve before implementation · BP4 bidirectional traceability · BP5 confirm implementation · BP6 track to closure<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=85">[PAM pp. 85–86]</a>. Guideline rules you will need<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=210">[Guidelines §3.26, pp. 208–211]</a>:</p>
+<p>Purpose: "to ensure that change requests are recorded, analyzed, tracked, approved, and implemented". The base practices are BP1 identify and record · BP2 analyse and assess · BP3 approve before implementation · BP4 bidirectional traceability · BP5 confirm implementation · BP6 track to closure<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=85">[PAM pp. 85–86]</a>. Rating rules you will need<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=210">[Guidelines §3.26, pp. 208–211]</a>:</p>
 <ul>
   <li><code>SUP.10.RL.1</code> If the analysis omits potential side effects, BP2 shall not be rated F.</li>
-  <li><code>SUP.10.RL.3</code> If not all relevant disciplines or stakeholders are in the approval authority, BP3 shall not be rated F.</li>
+  <li><code>SUP.10.RL.3</code> If not all relevant disciplines or stakeholders are represented in the approval authority (the change control board, CCB), BP3 shall not be rated F.</li>
   <li><code>SUP.10.RL.4</code> If approval decisions are apparently not taken, or not taken in time, without justification, BP3 shall be downrated.</li>
 </ul>
 
@@ -42,7 +42,7 @@ Sample of 10 CRs, chosen by the assessor, traced from OEM request to release:
   · CCB (product owner + SW lead) meets weekly; the test lead is not a member; minutes in Confluence, one page per meeting, edited the same week;
   · 2 of 10 went Open → Implemented, skipping Approved ("urgent customer fix"); no emergency path is defined;
   · every CR links to the requirement issues it changes and to its PRs; PRs cite the CR key; CRs raised from bugs link to the bug;
-  · the test lead sets Verified only after the linked HIL tests pass;
+  · the test lead sets Verified only after the linked hardware-in-the-loop (HIL) tests pass;
   · a dashboard shows CR status; the OEM portal is synced weekly.
 Project handbook: "Every CR analysed within 5 working days. No unanalysed CR 4 weeks before a release."
 Dashboard of analysis age reviewed at stand-up. It showed the 5-day target missed in sprints 12 and 13; no action was recorded.
@@ -156,7 +156,7 @@ Nobody has set targets for platform changes, planned time for them, or tracks ho
 </section>
 
 <div class="win">
-  <p><strong>You've finished the core course.</strong> You can now read the model, pick the processes that matter, trace the V, tell level 1 from level 2 from level 3 weaknesses, and reach a rating the way an assessor does. That is the vital 20 %. Lessons 10–13 apply it to automated checks, stage gates and AI-generated work. They matter most if your team builds or uses that kind of tooling. Lessons 14–16 then open each process of the V, if you skipped them after lesson 4.</p>
+  <p><strong>You've finished the core course.</strong> You can now read the PAM, pick the processes that matter, trace the V, tell level 1 from level 2 from level 3 weaknesses, and reach a rating the way an assessor does. That is the vital 20 %. Lessons 10–13 apply it to automated checks, stage gates and AI-generated work. They matter most if your team builds or uses that kind of tooling. Lessons 14–16 then open each process of the V, if you skipped them after lesson 4.</p>
 </div>
 
 <p class="aside">To keep it: import this lesson's <a href="../anki/0009-capstone-assess-seat-heat.txt" download>Anki deck</a> (<a href="../index.html#anki">how</a>).</p>
@@ -168,7 +168,7 @@ Nobody has set targets for platform changes, planned time for them, or tracks ho
   <li><strong>Revisit in a week.</strong> Retake the warm-ups of lessons 2–8 without rereading the lessons. What you can't retrieve is what to review, and spacing is where long-term retention comes from.</li>
 </ul>
 
-<p class="aside">Want a second capstone on another process (SUP.8, SWE.1, MAN.3), or to walk through your own team's evidence? Ask your teacher (the agent) in the chat.</p>
+<p class="aside">Want a second capstone on another process (SUP.8, SWE.1, MAN.3), or to walk through your own team's evidence? Ask your teacher in the chat.</p>
 
 <footer>
   <nav class="pager">
