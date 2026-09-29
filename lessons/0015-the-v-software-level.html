@@ -42,7 +42,7 @@
   <tr><th>Process</th><th>What it asks for</th></tr>
   <tr><td class="id">SWE.1 Software Requirements Analysis</td><td>Specify software requirements from the system requirements and architecture, with defined characteristics; structure and prioritise; analyse correctness and feasibility; analyse the impact on the operating environment; trace to the system requirements and the system architecture (one path per requirement, see below); communicate.</td></tr>
   <tr><td class="id">SWE.2 Software Architectural Design</td><td>Static aspects (components, interfaces, relationships) and dynamic aspects (behaviour, modes, concurrency such as interrupts and threads); analysis, e.g. of timing and resource consumption (RAM, ROM, CPU load), with rationales; trace to the software requirements; communicate.</td></tr>
-  <tr><td class="id">SWE.3 Detailed Design and Unit Construction</td><td>For each component, the behaviour of its units, their structure and interfaces, including valid value ranges and physical units such as <code>0..3.8 [A]</code>; the interactions between units; units developed to the design and to coding principles; traces from design to architecture, from units to design, and from design to software requirements; communicate.</td></tr>
+  <tr><td class="id">SWE.3 Software Detailed Design and Unit Construction</td><td>For each component, the behaviour of its units, their structure and interfaces, including valid value ranges and physical units such as <code>0..3.8 [A]</code>; the interactions between units; units developed to the design and to coding principles; traces from design to architecture, from units to design, and from design to software requirements; communicate.</td></tr>
 </table>
 <p>Source: PAM §4.4.1–4.4.3, pp. 44–50.</p>
 
@@ -59,8 +59,8 @@
 
 <table>
   <tr><th>Process</th><th>Verifies</th><th>Against</th></tr>
-  <tr><td class="id">SWE.4 Unit Verification</td><td>Each software unit, by static analysis, code reviews and unit tests</td><td>The detailed design</td></tr>
-  <tr><td class="id">SWE.5 Component and Integration Verification</td><td>Each component's behaviour and interfaces; then the integration: data flow, timing, interface interpretation, resource consumption</td><td>The architecture (and the detailed design)</td></tr>
+  <tr><td class="id">SWE.4 Software Unit Verification</td><td>Each software unit, by static analysis, code reviews and unit tests</td><td>The detailed design</td></tr>
+  <tr><td class="id">SWE.5 Software Component Verification and Integration Verification</td><td>Each component's behaviour and interfaces; then the integration: data flow, timing, interface interpretation, resource consumption</td><td>The architecture (and the detailed design)</td></tr>
   <tr><td class="id">SWE.6 Software Verification</td><td>The fully integrated software</td><td>The software requirements</td></tr>
 </table>
 <p>Source: PAM §4.4.4–4.4.6, pp. 50–57. Each follows lesson 14's five-step pattern, broadly: SWE.5 specifies and performs component and integration verification separately.</p>
@@ -149,7 +149,7 @@
 <h2>Read next</h2>
 <p>The SWE processes in the <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=44">PAM, pp. 44–57</a>. In the Guidelines, <a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=146">§3.10–3.11, pp. 144–158</a>, the detailed design and unit verification chapters, with worked examples of what a unit is.</p>
 
-<p class="aside">Using coding agents? Describe your agent's inputs and outputs to your teacher (the agent) in the chat, and map them to SWE.3 and SWE.4.</p>
+<p class="aside">Using coding agents? Describe your agent's inputs and outputs to your teacher in the chat, and map them to SWE.3 and SWE.4.</p>
 
 <footer>
   <nav class="pager">

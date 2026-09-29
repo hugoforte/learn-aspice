@@ -12,7 +12,7 @@
 <header>
   <p class="kicker">Lesson 7 of 16 · Automotive SPICE, the vital 20 %</p>
   <h1>Level 3: the standard process and the defined process</h1>
-  <p class="lede">At level 2 a project manages itself. At level 3 the organisation owns the process: one standard, tailored per project by stated rules, and improved from what projects report back.</p>
+  <p class="lede">At level 2 a project manages itself. At level 3 the organisation owns the process: one standard process, tailored per project by stated rules, and improved from what projects report back.</p>
 </header>
 
 <section class="drill warmup">
@@ -22,7 +22,7 @@
     <button data-choice="2.1.5">GP 2.1.5</button><button data-choice="2.2.2">GP 2.2.2</button><button data-choice="2.2.3">GP 2.2.3</button><button data-choice="2.2.4">GP 2.2.4</button>
   </div>
   <div class="mcq" data-answer="yes" data-why="It is a target for how the verification process itself is performed, not a project goal or a restated outcome, so it fits GP 2.1.1.">
-    <p class="q">Does "every HIL regression run finishes within 24 h of a merge to main" work as a GP 2.1.1 objective for SWE.6?</p>
+    <p class="q">Does "every hardware-in-the-loop (HIL) regression run finishes within 24 h of a merge to main" work as a GP 2.1.1 objective for SWE.6?</p>
     <button data-choice="yes">Yes</button><button data-choice="no">No</button>
   </div>
   <div class="mcq" data-answer="ok" data-why="TAC.RL.2: a manual approach with snapshot-based checks shall not be downrated.">
@@ -45,7 +45,7 @@
 
 <table>
   <tr><th>GP</th><th>What must exist</th></tr>
-  <tr><td class="id">3.1.1</td><td>The standard process: activities with inputs and outputs, their sequence and interactions, roles with their involvement (e.g. RASIC), guidance and templates, <strong>tailoring guidelines with "predefined unambiguous criteria"</strong>, and maintenance from feedback.</td></tr>
+  <tr><td class="id">3.1.1</td><td>The standard process: activities with inputs and outputs, their sequence and interactions, roles with their involvement (e.g. a RASIC matrix: who is Responsible, Approves, Supports, is Informed or Consulted), guidance and templates, <strong>tailoring guidelines with "predefined unambiguous criteria"</strong>, and maintenance from feedback.</td></tr>
   <tr><td class="id">3.1.2</td><td>Required competencies for each role, and how people acquire them.</td></tr>
   <tr><td class="id">3.1.3</td><td>Required resources and infrastructure: tools, licences, labs.</td></tr>
   <tr><td class="id">3.1.4</td><td>Methods to monitor whether the standard process works, such as lessons learned, compliance checks, audits or change requests.</td></tr>
@@ -57,17 +57,17 @@
   <li>Missing activity descriptions, or missing inputs and outputs: GP 3.1.1 no higher than <strong>P</strong> (PA3.1.RL.2, RL.3).</li>
   <li>No template, but detailed content requirements exist: not downrated (RL.6).</li>
   <li>The tailoring guidelines don't say who tailors and who approves: downrated (RL.14).</li>
-  <li>The same deviation keeps being approved by waiver without updating the standard: downrated (RL.15). A recurring exception is a sign the standard process is wrong.</li>
+  <li>The same deviation keeps being approved by waiver without updating the standard process: downrated (RL.15). A recurring exception is a sign the standard process is wrong.</li>
 </ul>
 
 <h2>PA 3.2: deploying it</h2>
 
 <table>
   <tr><th>GP</th><th>What must be shown</th></tr>
-  <tr><td class="id">3.2.1</td><td>The project's defined process was selected or tailored from the standard, conformance was verified, and it is used as the managed process.</td></tr>
+  <tr><td class="id">3.2.1</td><td>The project's defined process was selected or tailored from the standard process, conformance was verified, and it is used as the managed process.</td></tr>
   <tr><td class="id">3.2.2</td><td>People are assigned to the roles by competency, gaps are found and closed.</td></tr>
   <tr><td class="id">3.2.3</td><td>The resources and infrastructure are actually available and used.</td></tr>
-  <tr><td class="id">3.2.4</td><td>Data on the defined process is collected and analysed, and fed back to improve the standard or the defined process.</td></tr>
+  <tr><td class="id">3.2.4</td><td>Data on the defined process is collected and analysed, and fed back to improve the standard process or the defined process.</td></tr>
 </table>
 <p class="aside">Source: <a href="https://vda-qmc.de/wp-content/uploads/2026/04/Automotive-SPICE-PAM-4.1_Preview.pdf#page=108">PAM §5.4.2, pp. 108–109</a>. The tailoring decisions and their rationale must be documented, and conformance checked by an authorised role<a class="cite" href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=264">[Guidelines §5.2.2.1, p. 262]</a>.</p>
 
@@ -115,7 +115,7 @@ Each project's retrospective actions about the process go to a monthly process b
     <p class="q">"Reviews may be skipped where the project lead deems appropriate."</p>
     <button data-choice="ok">No downrate</button><button data-choice="down">Downrate</button>
   </div>
-  <div class="mcq" data-answer="down" data-why="PA3.1.RL.15: the same deviation approved again and again without updating the standard means GP 3.1.1 shall be downrated.">
+  <div class="mcq" data-answer="down" data-why="PA3.1.RL.15: the same deviation approved again and again without updating the standard process means GP 3.1.1 shall be downrated.">
     <p class="q">Three waivers this year for the same template, and the handbook is unchanged.</p>
     <button data-choice="ok">No downrate</button><button data-choice="down">Downrate</button>
   </div>
@@ -143,7 +143,7 @@ Each project's retrospective actions about the process go to a monthly process b
 <h2>Read next</h2>
 <p><a href="https://vda-qmc.de/wp-content/uploads/2026/03/ASPICE_BGB_2.1_Yellow-Volume_final-2.pdf#page=256">VDA Guidelines chapter 5, pp. 254–274</a>, especially the tailoring and versioning rules in §5.1.2.1.</p>
 
-<p class="aside">Thinking about whether a small organisation with one team can reach level 3? It is a good question to put to your teacher (the agent) or to an assessor at a Gate4SPICE event.</p>
+<p class="aside">Thinking about whether a small organisation with one team can reach level 3? It is a good question to put to your teacher or to an assessor at a Gate4SPICE event.</p>
 
 <footer>
   <nav class="pager">
