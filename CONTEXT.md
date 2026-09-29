@@ -277,7 +277,7 @@ Accompanying information on how complete the chosen tests are. Never a verificat
 Taught in: [L15 · The right leg: units, components, the whole software](lessons/0015-the-v-software-level.html)
 
 **Validation (VAL.1)**:
-Evidence that the end product meets its users' intended-use expectations in its operational target environment. The test is not whether a requirement exists but whether objective measurement settles it (verification) or it takes end users' judgement (validation). It does not apply to pure embedded software, an ECU or a drive.
+Evidence that the end product meets its users' intended-use expectations in its operational target environment. The test is not whether a requirement exists but whether objective measurement settles it (verification) or it needs a judgement of what users need, from end users' feedback or an approximation such as simulation (validation). It does not apply to pure embedded software, an ECU or a drive.
 Taught in: [L16 · Verification and validation are different questions](lessons/0016-validation.html), [L16 · Who validates](lessons/0016-validation.html)
 
 **Validation measure**:
