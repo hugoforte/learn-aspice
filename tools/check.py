@@ -1,6 +1,6 @@
 """Check the course's cross-file rules that no browser shows.
 
-- reference/glossary.html matches CONTEXT.md's ASPICE terms word for word,
+- reference/glossary.html matches GLOSSARY.md's ASPICE terms word for word,
   in the same groups and order.
 - Every "Taught in" / "First used in" pointer names a heading on its page.
 - Every Anki deck row has three fields, a GUID of its own lesson, no "&"
@@ -33,7 +33,7 @@ def read(path):
 
 def context_terms():
     """(group, term, definition, avoid) for each ASPICE term, in file order."""
-    lines = read("CONTEXT.md").split("\n")
+    lines = read("GLOSSARY.md").split("\n")
     terms, group = [], None
     for i, line in enumerate(lines):
         if line.startswith("### "):
@@ -74,19 +74,19 @@ def check_glossary():
     expected = context_terms()
     actual = glossary_terms()
     if len(expected) != len(actual):
-        problems.append(f"glossary: {len(actual)} terms, CONTEXT.md has {len(expected)}")
+        problems.append(f"glossary: {len(actual)} terms, GLOSSARY.md has {len(expected)}")
     for (group, term, definition, avoid), (g_group, g_term, g_definition, g_avoid) in zip(expected, actual):
         where = f"glossary: {term!r}"
         if term != g_term:
             problems.append(f"{where}: glossary has {g_term!r} in its place")
             continue
         if group != g_group:
-            problems.append(f"{where}: under {g_group!r}, CONTEXT.md groups it under {group!r}")
+            problems.append(f"{where}: under {g_group!r}, GLOSSARY.md groups it under {group!r}")
         if lowercase_first_word(definition) != g_definition:
-            problems.append(f"{where}: definition differs from CONTEXT.md")
-        # The glossary quotes the avoided words, which CONTEXT.md leaves bare.
+            problems.append(f"{where}: definition differs from GLOSSARY.md")
+        # The glossary quotes the avoided words, which GLOSSARY.md leaves bare.
         if (avoid or "") != (g_avoid or "").replace('"', "").removesuffix("."):
-            problems.append(f"{where}: avoid list differs from CONTEXT.md")
+            problems.append(f"{where}: avoid list differs from GLOSSARY.md")
 
 
 class Headings(HTMLParser):
@@ -109,18 +109,18 @@ class Headings(HTMLParser):
 
 
 def check_pointers():
-    context = read("CONTEXT.md")
+    context = read("GLOSSARY.md")
     for label, path in re.findall(r"\[([^\]]+ · [^\]]+)\]\(([^)#]+)\)", context):
         heading = label.split(" · ", 1)[1]
         if heading == "opening":
             continue
         if not os.path.exists(os.path.join(ROOT, path)):
-            problems.append(f"CONTEXT.md: [{label}] points at missing {path}")
+            problems.append(f"GLOSSARY.md: [{label}] points at missing {path}")
             continue
         parser = Headings()
         parser.feed(read(path))
         if heading not in parser.headings:
-            problems.append(f"CONTEXT.md: [{label}] names no heading in {path}")
+            problems.append(f"GLOSSARY.md: [{label}] names no heading in {path}")
 
 
 def check_decks():
